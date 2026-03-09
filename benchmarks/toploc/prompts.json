@@ -1,0 +1,4002 @@
+[
+  {
+    "prompt": "Give three tips for staying healthy.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are the three primary colors?",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the structure of an atom.",
+    "language": "en"
+  },
+  {
+    "prompt": "How can we reduce air pollution?",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe a time when you had to make a difficult decision.",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the odd one out.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain why the following fraction is equivalent to 1/4",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a short story in third person narration about a protagonist who has to make an important career decision.",
+    "language": "en"
+  },
+  {
+    "prompt": "Render a 3D model of a house",
+    "language": "en"
+  },
+  {
+    "prompt": "Evaluate this sentence for spelling and grammar mistakes",
+    "language": "en"
+  },
+  {
+    "prompt": "How did Julius Caesar die?",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the capital of France?",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of ten items a person might need for a camping trip",
+    "language": "en"
+  },
+  {
+    "prompt": "Discuss the causes of the Great Depression",
+    "language": "en"
+  },
+  {
+    "prompt": "Classify the following into animals, plants, and minerals",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain the use of word embeddings in Natural Language Processing",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the function of a computer motherboard",
+    "language": "en"
+  },
+  {
+    "prompt": "Reverse engineer this code to create a new version",
+    "language": "en"
+  },
+  {
+    "prompt": "Propose an ethical solution to the problem of data privacy",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate three verbs that mean the same as \"to apologize\"",
+    "language": "en"
+  },
+  {
+    "prompt": "What does DNA stand for?",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare and contrast the Cuban Missile Crisis and the Vietnam War.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of random words.",
+    "language": "en"
+  },
+  {
+    "prompt": "Transcribe the recording into text.",
+    "language": "en"
+  },
+  {
+    "prompt": "Who is the world's most famous painter?",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain the concept of cogging torque.",
+    "language": "en"
+  },
+  {
+    "prompt": "Look up the boiling point of water.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the life and reign of King Charles II.",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the area of a circle given its radius.",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the lines of longitude that divides North and South America.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain the process of cellular respiration in plants.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the following sentence using active voice.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of adjectives that describe a person as brave.",
+    "language": "en"
+  },
+  {
+    "prompt": "Outline the consequences of deforestation.",
+    "language": "en"
+  },
+  {
+    "prompt": "Develop a plan to reduce electricity usage in a home.",
+    "language": "en"
+  },
+  {
+    "prompt": "Arrange the words in the given sentence to form a grammatically correct sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Analyze the given text for its tone.",
+    "language": "en"
+  },
+  {
+    "prompt": "Use the given data to calculate the median.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the given paragraph in a shorter, easier to understand form.",
+    "language": "en"
+  },
+  {
+    "prompt": "Design a logo for a website about recycling.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a poem that expresses joy.",
+    "language": "en"
+  },
+  {
+    "prompt": "Convert the given equation into an algebraic expression.",
+    "language": "en"
+  },
+  {
+    "prompt": "Brainstorm possible solutions to reduce water pollution.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain why the given definition is wrong.",
+    "language": "en"
+  },
+  {
+    "prompt": "Variable x is defined as “4x + 2y = 10”. Find the value of x.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a short paragraph about the given topic.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain the concept of artificial intelligence in simple terms.",
+    "language": "en"
+  },
+  {
+    "prompt": "Design an app for a delivery company.",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize the given passage.",
+    "language": "en"
+  },
+  {
+    "prompt": "Extract the facts from the paragraph.",
+    "language": "en"
+  },
+  {
+    "prompt": "Edit the following sentence to make it more concise.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a poem with 10 lines.",
+    "language": "en"
+  },
+  {
+    "prompt": "Convert from celsius to fahrenheit.",
+    "language": "en"
+  },
+  {
+    "prompt": "Arrange the given numbers in ascending order.",
+    "language": "en"
+  },
+  {
+    "prompt": "Calculate the total surface area of a cube with a side length of 5 cm.",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the force on a 1 kg mass due to the gravitational force?",
+    "language": "en"
+  },
+  {
+    "prompt": "Provide one example for a cultural practice.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given a set of numbers, find the maximum value.",
+    "language": "en"
+  },
+  {
+    "prompt": "Give two examples of a liquid.",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the product of 6 and 2?",
+    "language": "en"
+  },
+  {
+    "prompt": "What type of plant is a skunk cabbage?",
+    "language": "en"
+  },
+  {
+    "prompt": "Convert the given binary number to its decimal equivalent.",
+    "language": "en"
+  },
+  {
+    "prompt": "Name two types of desert biomes.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given a sentence, convert it into passive voice.",
+    "language": "en"
+  },
+  {
+    "prompt": "Transform the following sentence into the passive voice",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a dialog between two people who are discussing a scientific phenomenon",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the most suitable adverb for the following sentence",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the main idea of the following passage",
+    "language": "en"
+  },
+  {
+    "prompt": "Analyze the tone of the following sentences",
+    "language": "en"
+  },
+  {
+    "prompt": "Construct an argument to defend the following statement",
+    "language": "en"
+  },
+  {
+    "prompt": "Convert the following sentence into the present continuous tense",
+    "language": "en"
+  },
+  {
+    "prompt": "Give an example of a metaphor that uses the following object",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the following person",
+    "language": "en"
+  },
+  {
+    "prompt": "Construct a mathematical problem with the following numbers",
+    "language": "en"
+  },
+  {
+    "prompt": "Aim to reduce the following sentence without changing its meaning",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the conjunctions in the following sentence",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the following sentence in the third person",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of business ideas for a food delivery service.",
+    "language": "en"
+  },
+  {
+    "prompt": "Edit the following sentence to improve clarity and flow.",
+    "language": "en"
+  },
+  {
+    "prompt": "Imagine you are speaking with a customer who is unsatisfied with the product they bought from you. Construct a response that diffuses the situation.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain the concept of a bubble sort algorithm to a non-technical audience.",
+    "language": "en"
+  },
+  {
+    "prompt": "Classify the following incident as a breach of protocol. Output 1 for breach, and 0 for no breach.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given the following input, construct a creative story.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of methods to reduce food waste.",
+    "language": "en"
+  },
+  {
+    "prompt": "Propose an idea for a self-driving car.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain the concept of a linear regression model using simple language.",
+    "language": "en"
+  },
+  {
+    "prompt": "Construct a list of tips to help reduce stress.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a review of a recent movie you watched.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a Twitter post to promote your new product.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given the following input, classify the verb as transitive or intransitive.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of marketing strategies to promote a new mobile app.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the sentence to provide more clarity and flow.",
+    "language": "en"
+  },
+  {
+    "prompt": "Give a description of the following customer segment.",
+    "language": "en"
+  },
+  {
+    "prompt": "Design a logo for a mobile application.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of country names in the western hemisphere.",
+    "language": "en"
+  },
+  {
+    "prompt": "Translate the following phrase into French.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain what an API is.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compute the area of a rectangle with length 10cm and width 5cm.",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the capital of Spain.",
+    "language": "en"
+  },
+  {
+    "prompt": "Classify the following statement as true or false.",
+    "language": "en"
+  },
+  {
+    "prompt": "Design a database to record employee salaries.",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the theme of the following book.",
+    "language": "en"
+  },
+  {
+    "prompt": "Assign each word in the sentence below to its part of speech.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a password of 8 characters.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a web page about robotics.",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the most commonly shared type of content on social media?",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the main idea of this text?",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of present continuous verbs.",
+    "language": "en"
+  },
+  {
+    "prompt": "Think of a phrase or idiom containing the word \"sleep\".",
+    "language": "en"
+  },
+  {
+    "prompt": "Make a prediction about what will happen in the next paragraph.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a headline for the following article.",
+    "language": "en"
+  },
+  {
+    "prompt": "What type of punctuation should be used at the end of the following sentence?",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the incorrect word and suggest a better version.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite this sentence using the third person point of view.",
+    "language": "en"
+  },
+  {
+    "prompt": "Change this sentence into the future tense.",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize the following article in your own words.",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the meaning of the following idiom?",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a sentence using the following words in the correct order.",
+    "language": "en"
+  },
+  {
+    "prompt": "Is the sentence grammatically correct?",
+    "language": "en"
+  },
+  {
+    "prompt": "Classify the relationship between John and Mary.",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the language used in the given sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a summary of the given article.",
+    "language": "en"
+  },
+  {
+    "prompt": "Conver the temperature from Fahrenheit to Celsius.",
+    "language": "en"
+  },
+  {
+    "prompt": "Construct a phrase using the given words",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the synonyms of the following word: 'Tenacious'.",
+    "language": "en"
+  },
+  {
+    "prompt": "Suggest a good restaurant.",
+    "language": "en"
+  },
+  {
+    "prompt": "Calculate the area of the triangle.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the sentence with more descriptive words.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a creative birthday wish for a friend.",
+    "language": "en"
+  },
+  {
+    "prompt": "Make the second sentence shorter.",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the solution to the quadratic equation.",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the average of these three numbers.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the sentence in a different tense.",
+    "language": "en"
+  },
+  {
+    "prompt": "Classify the following data with three labels.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compose a five word sentence describing your day.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the following painting in one sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Search the web and find the title of the longest novel.",
+    "language": "en"
+  },
+  {
+    "prompt": "Change the following sentence from the singular form to the plural form.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compile a list of 5 US states located in the Mid West.",
+    "language": "en"
+  },
+  {
+    "prompt": "Analyze the following sentence and find the direct object.",
+    "language": "en"
+  },
+  {
+    "prompt": "During the last member meeting, create a list of 5 ideas to improve the club.",
+    "language": "en"
+  },
+  {
+    "prompt": "Edit the following sentence to correct the grammar and syntax errors",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a questions that can be answered using the following sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a simple definition of the word \"economics\".",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the cutoff score for successful completion of the exam",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a topic sentence to introduce the following text.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a function to calculate the factorial of a given number.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a function to convert a given string to uppercase.",
+    "language": "en"
+  },
+  {
+    "prompt": "Extract the positive integers from an array?",
+    "language": "en"
+  },
+  {
+    "prompt": "Calculate the square root of a given number.",
+    "language": "en"
+  },
+  {
+    "prompt": "Reverse a linked list.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compute the longest increasing subsequence of a given array?",
+    "language": "en"
+  },
+  {
+    "prompt": "Design an algorithm to find the maximum profit of a stock buy and sell?",
+    "language": "en"
+  },
+  {
+    "prompt": "Given two strings, check whether one string is a rotation of another?",
+    "language": "en"
+  },
+  {
+    "prompt": "Given an array of integers, return the first repeating element.",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the two non-repeating elements in an array of repeating elements?",
+    "language": "en"
+  },
+  {
+    "prompt": "Given a binary tree, check if it is a binary search tree?",
+    "language": "en"
+  },
+  {
+    "prompt": "Find the maximum profit that can be earned from a given sequence of transactions?",
+    "language": "en"
+  },
+  {
+    "prompt": "Calculate the amount of money in a bank account with an initial $100 deposit and an interest rate of 6%, compounded annually",
+    "language": "en"
+  },
+  {
+    "prompt": "Give me a detailed overview of the framework of a web service.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a timeline describing the history of the internet",
+    "language": "en"
+  },
+  {
+    "prompt": "Paraphrase the following sentence",
+    "language": "en"
+  },
+  {
+    "prompt": "Develop a web-based application that does the following",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the pros and cons of the following policy",
+    "language": "en"
+  },
+  {
+    "prompt": "Design a post for a social media account to promote the following product",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize the following article",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a job description for the following role",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the correct order for the following commands",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a survey question to measure customer satisfaction",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a list of 10 different animals",
+    "language": "en"
+  },
+  {
+    "prompt": "Suggest a good idea for a family photoshoot.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a response for a customer's email about a refund issue.",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize the given news article in one sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Provide five adjectives that describe a particular animal.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rearrange the words to create a complete sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a story that begins with the following sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Convert the given sentence into active voice.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain why a given topic is important.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the sound of the given object.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the given sentence using a different but similar word.",
+    "language": "en"
+  },
+  {
+    "prompt": "Classify the given input as either a poem, story, or song.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a title for the following description.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the given sentence in a more formal tone.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a few sentences about a given historical figure.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a list of questions related to a given topic.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a slogan for a given product.",
+    "language": "en"
+  },
+  {
+    "prompt": "Categorize the following text into one of the two sentiment classes: positive or negative.",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize the paragraph into a sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Make the following sentence more concise.",
+    "language": "en"
+  },
+  {
+    "prompt": "Transform the following sentence into a yes/no question.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compose a tweet that addresses the issue of environmental degradation.",
+    "language": "en"
+  },
+  {
+    "prompt": "Replace the underlined words with appropriate synonyms.",
+    "language": "en"
+  },
+  {
+    "prompt": "Correct the grammatical errors in the sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the type of the relationship between the two words in the sentence.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compose an informative sentence explaining the given term.",
+    "language": "en"
+  },
+  {
+    "prompt": "Rewrite the following sentence without changing the meaning.",
+    "language": "en"
+  },
+  {
+    "prompt": "What's the output of this code?",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a short review for the novel \"The Catcher in the Rye\".",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify the following animal.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the impact of the coronavirus on the economy.",
+    "language": "en"
+  },
+  {
+    "prompt": "Crea un ejemplo de algo que represente la metáfora dada.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Resuma el artículo titulado \"Los beneficios del ejercicio al aire libre\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Añade el sujeto que falta para completar la oración.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Da dos razones por las que es importante beber agua.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere un ejemplo de un momento en el que tuvo que ir contra la multitud y defender su propio terreno.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cambia la estructura de la oración para explicar la misma idea usando la voz activa.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe cómo es un día perfecto para ti.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuál es el significado de la frase 'ser sensato y tonto'?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Da un ejemplo de algo que a menudo pospones.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Da dos razones por las que es importante estar activo en las redes sociales.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Generar una historia donde el protagonista descubra su superpoder.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Encuentre un trabajo para un ingeniero de sistemas de transporte que pague al menos 65k por año.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Explique el riesgo que implica el uso de una tecnología como la IA.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Encuentra el tema común entre las siguientes tres palabras: tren, avión y barco.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Clasifique los siguientes datos como cualitativos o cuantitativos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genera una nueva forma de aprovechar las sobras de una fiesta.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Qué elementos geográficos podrían usarse para definir una región?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombra un animal que tenga pelaje rojo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dime por qué la gente querría visitar el Gran Cañón.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Encuentra la raíz segunda de 9.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Construye un titular de noticias usando los adjetivos emocionado, pequeño y fabuloso.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe el costo de vida en la ciudad de Nueva York.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Encuentra todos los números primos entre 20 y 30.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe el sabor característico del café negro.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Piense en una solución para reducir la congestión del tráfico.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Generar una forma creativa de estar saludable.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Encuentra la quinta potencia de -2.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Explica qué es una función recíproca.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribe un titular que capte la idea más importante del siguiente artículo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Construya una consulta para encontrar los artículos de noticias más recientes sobre inteligencia artificial",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribir un correo electrónico a un cliente agradeciéndole su compra",
+    "language": "sp"
+  },
+  {
+    "prompt": "Crear un algoritmo para identificar duplicados en un conjunto de datos",
+    "language": "sp"
+  },
+  {
+    "prompt": "Generar una historia en la que un personaje tenga que tomar una decisión difícil",
+    "language": "sp"
+  },
+  {
+    "prompt": "Calcula el promedio de estos tres números: 1, 2 y 3",
+    "language": "sp"
+  },
+  {
+    "prompt": "Sugerir un título para una publicación en las redes sociales sobre una nueva tecnología de inteligencia artificial",
+    "language": "sp"
+  },
+  {
+    "prompt": "Diseñe un logotipo para promover un negocio de inicio.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere tres preguntas de ejemplo para hacer en una entrevista de trabajo",
+    "language": "sp"
+  },
+  {
+    "prompt": "Construya una consulta para enumerar los títulos de todos los libros escritos por John Smith",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dadas dos oraciones, construya una tercera oración combinando las ideas expresadas en las dos oraciones.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cita evidencia del texto para apoyar la siguiente afirmación.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cree 3 preguntas de opción múltiple basadas en el texto a continuación.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿En qué circunstancias elegiría una entidad registrarse como una Corporación C?",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Qué características debe tener un frigorífico?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe el final del movimiento de industrialización del siglo XIX en los Estados Unidos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Evaluar la efectividad de los métodos de votación actuales en los Estados Unidos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Determinar el estado de ánimo actual de los EE. UU. con respecto a la política exterior.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Componga un poema de 8 líneas que enfatice la belleza de la naturaleza.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cree un algoritmo para resolver un problema de la Torre de Hanoi.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Construya una consulta para buscar libros sobre el Imperio Romano.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere una declaración de misión para una organización sin fines de lucro enfocada en el bienestar animal.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escriba un párrafo que describa las diferencias entre practicar deportes de equipo y deportes individuales.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Identifica el tipo de poema a partir del siguiente fragmento de poema.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuál es la estrategia de marketing digital para una nueva idea?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe el problema que resuelve este algoritmo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe la historia y el diseño del puente Golden Gate.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombre 3 principios de la metodología ágil de desarrollo de software.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Analiza el uso del lenguaje figurativo en el poema.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cuéntame una historia centrada en este tema.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Evalúa esta respuesta a la pregunta.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuáles son los pasos para implementar una red neuronal convolucional?",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuál es la primera letra del alfabeto?",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Por qué es importante ahorrar dinero?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Piensa en una broma graciosa.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe el proceso para hacer una taza de café.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Comparar y contrastar perros y gatos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Vuelva a escribir esta oración para que sea más vívida y póngala en tiempo pasado:\nEl gato saltó sobre la mesa.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dada una receta, ajuste los ingredientes para una receta de 8 porciones.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Vuelve a escribir esta oración para que sea más concisa y persuasiva:\nNuestra empresa tiene muchos productos excelentes que todos nuestros clientes aprecian.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Piense en una lista de 5 posibles causas del fenómeno \"Niebla de guerra\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Reescribe esta oración para que sea más formal:\nEste trabajo es realmente realmente genial.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Convierta las siguientes letras de canciones desde el punto de vista de primera persona a segunda persona.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Reorganiza las siguientes palabras para formar una oración significativa:\ncaro, más, del mundo, es, diamante",
+    "language": "sp"
+  },
+  {
+    "prompt": "Reescribe esta oración para que sea más formal:\nEsta nueva política ha recibido mucha aprobación.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Encuentre tres ejemplos de aliteración en la siguiente oración:\nEl burbujeante bebé anduvo a ciegas por el dormitorio.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dada la descripción de un producto, identifique la característica principal del producto y descríbala en una oración.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Convierte la siguiente oración de voz activa a voz pasiva.\nLa policía arrestó al sospechoso.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dada una oración, encuentra su idea principal.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Vuelve a escribir la siguiente oración para que suene más conversacional:\nEs imperativo que todos los empleados cumplan con las políticas de la empresa.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombre un tipo de pez que vive en un acuario.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribe un verso de rap sobre estudiar.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Identifique el papel sintáctico de la palabra \"gato\" en la siguiente oración.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuántos grados de arco hay en un círculo?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Analiza los elementos estructurales de esta canción.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuál es la tasa de inflación actual en los EE.UU.?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Compare los beneficios de comer alimentos saludables con los beneficios de hacer ejercicio regularmente.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Convierte este número a representación hexadecimal.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Qué debe hacer cuando está atascado en un problema?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Enumere todas las verduras que son ricas en vitamina C.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe las características físicas de un caballo Clydesdale.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Reorganiza las siguientes palabras para formar una declaración gramaticalmente correcta.\nProducción:\nPropuesta: El artículo publicado fue una nueva investigación innovadora.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Enumere tres mejores prácticas de ingeniería de software.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Crea un poema original inspirado en la siguiente línea.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dada la siguiente declaración, proponga un eslogan de marketing que tenga 7 palabras o menos.\nSalida: Ofrecemos los mejores precios en zapatos de calidad.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dadas dos oraciones, identifique cualquier gramática y uso de palabras incorrectos y revise las oraciones.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dada una entrada adecuada, genere un poema que capture la emoción de la felicidad.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe una manera de hacer un delicioso batido de plátano.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Crea un programa para calcular el área de un triángulo dados tres lados.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dada una palabra inspiradora, genere un poema que capture su esencia.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Identifica si el siguiente enunciado es un enunciado categórico u ordinal.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dado un sujeto y un objeto, generar una metáfora para describir su relación.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genera una historia sobre un mundo mágico donde todo es posible.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dado un evento, generar un reportaje sobre el mismo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dados los siguientes hechos, genere un acertijo de historia.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dadas dos frases, reescríbalas en una oración concisa con la puntuación adecuada.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Detecte el sentimiento de la siguiente declaración y clasifíquelo en uno de los siguientes: positivo, negativo o neutral.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Proporcione cinco ejemplos de animales que hibernan para sobrevivir el invierno.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuál es el proceso de fotosíntesis y cómo lo utilizan las plantas?",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cómo influyen los factores ambientales en el crecimiento de las plantas?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Necesitas escribir una descripción de trabajo para un chef.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Identificar cuatro usos de la inteligencia artificial en el cuidado de la salud.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Diseñe una función para una aplicación web que calcule el costo total de un número determinado de artículos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere un esquema para un artículo que explore los efectos del calentamiento global en la seguridad alimentaria.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuál es una buena manera de presentar a dos personas?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Clasifica los siguientes animales en carnívoros y herbívoros.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Asigna un color a cada una de las estaciones.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribe una oración corta sobre los beneficios de ir a la playa.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Proporcione una lista de cinco efectos positivos y cinco negativos de las redes sociales.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Seleccione la palabra correcta dado el contexto.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Suponga que usted es un agricultor. Resuma los beneficios de plantar sus propios cultivos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Compare y contraste las dos palabras, \"emplear\" y \"contratar\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Decora el siguiente espacio con un presupuesto de $1000.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe por qué es importante reciclar.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Suponga que es un investigador. Explicar la importancia de realizar una encuesta.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Calcula la suma de cada columna en la siguiente tabla.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dada una ubicación, proporcione una lista de los mejores restaurantes cercanos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe el proceso para construir una entrada de blog.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cree una línea de tiempo que describa los diferentes pasos en el proceso de hacer un pastel.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describa el síntoma de la influenza.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribe una historia corta en tres oraciones sobre un árbol de mango.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere una historia de terror de 3 oraciones que incorpore \"cuervos negros\" y \"miedos supersticiosos\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Comenta sobre la siguiente obra de arte creando 3 afirmaciones que invitan a la reflexión.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Diseñe un código de vestimenta para un profesor de secundaria.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Componer un poema de 5 versos que tenga como tema los recuerdos nostálgicos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Explica cómo los antiguos egipcios pudieron construir la Gran Pirámide.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Compara y contrasta el periodismo digital y el periodismo tradicional.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere una letra para una canción sobre estar perdido en la ciudad.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuáles son los cinco países más grandes de Europa por área?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Crea una historia sobre un grupo de animales que viajan a una tierra lejana.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Explica el concepto de relatividad en 100 palabras.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Diseñe una aplicación GUI que permita a los usuarios buscar y comprar artículos en línea.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe el flujo de oxígeno en el cuerpo humano.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Diseña un algoritmo para encontrar las palabras más frecuentes en una oración.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿Cuáles son las cinco ciudades más grandes del mundo por población?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cree un programa para generar una matriz aleatoria de tamaño n por m.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Explique en 100 palabras el concepto de aprendizaje profundo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cree un breve artículo de noticias que resuma la siguiente información.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Considere la siguiente oración. Explícalo para hacer una oración más interesante.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribe una oración usando estas dos palabras: \"octogenario\" y \"peregrinaje\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dime qué debo hacer para almorzar hoy.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Corrija los errores tipográficos de la siguiente oración.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Sugiera un tema para una presentación de 5 minutos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Haz una analogía comparando dos conceptos diferentes.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Proporcione un ejemplo de una situación en la que se podría usar la siguiente frase: \"Es demasiado poco, demasiado tarde\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Identifica el tono de la siguiente afirmación: \"No puedo creer que hayas tomado una decisión tan mala\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Elija una de las siguientes palabras y proporcione un sinónimo: ajeno, dilema, ideado",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere una comparación entre dos piezas de tecnología.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Identifique cuál de estas dos tecnologías es más efectiva.",
+    "language": "sp"
+  },
+  {
+    "prompt": "¿A cuánta distancia está San Francisco de Los Ángeles?",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cuéntame de qué trata el siguiente artículo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribe una historia humorística usando el conjunto de palabras dado.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Explicar qué es la clave primaria en una base de datos relacional.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Explicar el concepto de Big Data en términos sencillos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Sugiera una forma de acelerar el tiempo de respuesta en la aplicación web.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombre las técnicas utilizadas para encontrar anomalías en los datos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describe una película que tiene lugar en el espacio exterior.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Crea un algoritmo para resolver el revoltijo de palabras a continuación",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escribe una historia corta sobre un personaje que lucha contra un monstruo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Proponer una solución creativa para reducir las emisiones de carbono",
+    "language": "sp"
+  },
+  {
+    "prompt": "Redacte un eslogan publicitario pegadizo",
+    "language": "sp"
+  },
+  {
+    "prompt": "Estime el costo de los artículos enumerados",
+    "language": "sp"
+  },
+  {
+    "prompt": "Vuelva a escribir el código a continuación para usar la recursividad.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Reordena las oraciones en el orden lógico apropiado.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genera tres palabras válidas que riman.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Proporcione un caso de uso de aprendizaje por refuerzo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Prediga la probabilidad de que los datos pertenezcan a la clase A dadas las siguientes características.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cambia las palabras subrayadas de tiempo presente a tiempo pasado.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Escriba una breve descripción de un sistema de IA.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombre los dos componentes principales de un sistema de aprendizaje automático.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Seleccione dos elementos de la lista dada de países.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombra tres plantas en la ecorregión.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Identifique la ciudad más grande de los Estados Unidos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Encuentra el significado implícito en este mensaje.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Relaciona dos ideas del pasaje.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Categorizar los siguientes objetos: libro, silla, escritorio",
+    "language": "sp"
+  },
+  {
+    "prompt": "Determinar a qué categoría pertenece el texto.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Utilice la información proporcionada para responder a la pregunta.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Cambia el texto a nombres propios.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombre el tipo de inferencia que se está utilizando.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Combine las frases y reescriba la oración usando la voz activa.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Predecir el resultado más probable.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Genere una lista de tres puntos de referencia ubicados en Tokio.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Resume el artículo \"La importancia de la historia\".",
+    "language": "sp"
+  },
+  {
+    "prompt": "Agregue las estadísticas de las redes sociales y proporcione un análisis comparativo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Transformar el texto en presente continuo.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Nombra cinco cosas que puedes usar para hacer fuego.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describir la diferencia entre la minería de datos y el análisis de datos.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Tome la oración dada y cámbiela a una oración imperativa.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Describa la oración principal en no más de 40 palabras.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Dados los hechos, responde la pregunta.",
+    "language": "sp"
+  },
+  {
+    "prompt": "Resumir los pros y los contras de la energía solar.",
+    "language": "sp"
+  },
+  {
+    "prompt": "给出三个保持健康的秘诀。",
+    "language": "ch"
+  },
+  {
+    "prompt": "什么是三原色？",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述原子的结构。",
+    "language": "ch"
+  },
+  {
+    "prompt": "我们怎样才能减少空气污染？",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述一次你不得不做出艰难决定的经历。",
+    "language": "ch"
+  },
+  {
+    "prompt": "找出奇数。",
+    "language": "ch"
+  },
+  {
+    "prompt": "解释为什么下面的分数等于 1/4",
+    "language": "ch"
+  },
+  {
+    "prompt": "以第三人称叙述的方式写一个关于必须做出重要职业决定的主人公的短篇故事。",
+    "language": "ch"
+  },
+  {
+    "prompt": "渲染房屋的 3D 模型",
+    "language": "ch"
+  },
+  {
+    "prompt": "评估这句话的拼写和语法错误",
+    "language": "ch"
+  },
+  {
+    "prompt": "朱利叶斯凯撒是怎么死的？",
+    "language": "ch"
+  },
+  {
+    "prompt": "法国的首都是什么？",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成一个人野营旅行可能需要的十件物品的清单",
+    "language": "ch"
+  },
+  {
+    "prompt": "讨论大萧条的原因",
+    "language": "ch"
+  },
+  {
+    "prompt": "将以下分类为动物、植物和矿物",
+    "language": "ch"
+  },
+  {
+    "prompt": "解释词嵌入在自然语言处理中的使用",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述电脑主板的功能",
+    "language": "ch"
+  },
+  {
+    "prompt": "逆向工程此代码以创建新版本",
+    "language": "ch"
+  },
+  {
+    "prompt": "提出数据隐私问题的道德解决方案",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成三个与“道歉”意思相同的动词",
+    "language": "ch"
+  },
+  {
+    "prompt": "DNA代表什么？",
+    "language": "ch"
+  },
+  {
+    "prompt": "比较和对比古巴导弹危机和越南战争。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成一个随机单词列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将录音转录成文字。",
+    "language": "ch"
+  },
+  {
+    "prompt": "谁是世界上最著名的画家？",
+    "language": "ch"
+  },
+  {
+    "prompt": "解释齿槽转矩的概念。",
+    "language": "ch"
+  },
+  {
+    "prompt": "查看水的沸点。",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述国王查理二世的生平和统治。",
+    "language": "ch"
+  },
+  {
+    "prompt": "求出给定半径的圆的面积。",
+    "language": "ch"
+  },
+  {
+    "prompt": "确定划分北美和南美的经线。",
+    "language": "ch"
+  },
+  {
+    "prompt": "解释植物细胞呼吸的过程。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用主动语态改写下面的句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成形容一个人勇敢的形容词列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "概述砍伐森林的后果。",
+    "language": "ch"
+  },
+  {
+    "prompt": "制定减少家庭用电量的计划。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将给定句子中的单词排列成语法正确的句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "分析给定文本的语气。",
+    "language": "ch"
+  },
+  {
+    "prompt": "使用给定的数据计算中位数。",
+    "language": "ch"
+  },
+  {
+    "prompt": "以更短、更容易理解的形式重写给定的段落。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为一个关于回收的网站设计一个标志。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成一首表达喜悦的诗。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将给定的方程式转换为代数表达式。",
+    "language": "ch"
+  },
+  {
+    "prompt": "集体讨论减少水污染的可能解决方案。",
+    "language": "ch"
+  },
+  {
+    "prompt": "解释为什么给定的定义是错误的。",
+    "language": "ch"
+  },
+  {
+    "prompt": "变量 x 定义为“4x + 2y = 10”。求出 x 的值。",
+    "language": "ch"
+  },
+  {
+    "prompt": "写一个关于给定主题的简短段落。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用简单的术语解释人工智能的概念。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为快递公司设计一个应用程序。",
+    "language": "ch"
+  },
+  {
+    "prompt": "总结给定的段落。",
+    "language": "ch"
+  },
+  {
+    "prompt": "从段落中提取事实。",
+    "language": "ch"
+  },
+  {
+    "prompt": "编辑下面的句子，使之更简洁。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成一首 10 行的诗。",
+    "language": "ch"
+  },
+  {
+    "prompt": "从摄氏度转换为华氏度。",
+    "language": "ch"
+  },
+  {
+    "prompt": "按升序排列给定的数字。",
+    "language": "ch"
+  },
+  {
+    "prompt": "计算边长为 5 厘米的立方体的总表面积。",
+    "language": "ch"
+  },
+  {
+    "prompt": "由于重力作用在 1 kg 质量上的力是多少？",
+    "language": "ch"
+  },
+  {
+    "prompt": "提供一个文化实践的例子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "给定一组数字，找出最大值。",
+    "language": "ch"
+  },
+  {
+    "prompt": "举两个液体的例子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "6 和 2 的乘积是多少？",
+    "language": "ch"
+  },
+  {
+    "prompt": "臭甘蓝是一种什么植物？",
+    "language": "ch"
+  },
+  {
+    "prompt": "将给定的二进制数转换为其等效的十进制数。",
+    "language": "ch"
+  },
+  {
+    "prompt": "说出两种类型的沙漠生物群落。",
+    "language": "ch"
+  },
+  {
+    "prompt": "给定一个句子，将其转换为被动语态。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将下列句子变为被动语态",
+    "language": "ch"
+  },
+  {
+    "prompt": "在讨论科学现象的两个人之间创建对话",
+    "language": "ch"
+  },
+  {
+    "prompt": "找出最适合下列句子的副词",
+    "language": "ch"
+  },
+  {
+    "prompt": "找出以下段落的主要思想",
+    "language": "ch"
+  },
+  {
+    "prompt": "分析下列句子的语气",
+    "language": "ch"
+  },
+  {
+    "prompt": "构造一个论证来捍卫以下陈述",
+    "language": "ch"
+  },
+  {
+    "prompt": "将下列句子转换成现在进行时",
+    "language": "ch"
+  },
+  {
+    "prompt": "举一个使用以下对象的隐喻示例",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述下面的人",
+    "language": "ch"
+  },
+  {
+    "prompt": "用下列数字构造一道数学题",
+    "language": "ch"
+  },
+  {
+    "prompt": "旨在减少以下句子而不改变其含义",
+    "language": "ch"
+  },
+  {
+    "prompt": "识别下列句子中的连词",
+    "language": "ch"
+  },
+  {
+    "prompt": "用第三人称改写下面的句子",
+    "language": "ch"
+  },
+  {
+    "prompt": "为送餐服务生成商业创意列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "编辑以下句子以提高清晰度和流畅度。",
+    "language": "ch"
+  },
+  {
+    "prompt": "想象一下，您正在与一位对从您那里购买的产品不满意的客户交谈。构建一个分散情况的响应。",
+    "language": "ch"
+  },
+  {
+    "prompt": "向非技术人员解释冒泡排序算法的概念。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将以下事件归类为违反协议。输出 1 表示违规，0 表示未违规。",
+    "language": "ch"
+  },
+  {
+    "prompt": "给定以下输入，构建一个有创意的故事。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成一份减少食物浪费的方法列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "提出一个关于自动驾驶汽车的想法。",
+    "language": "ch"
+  },
+  {
+    "prompt": "使用简单的语言解释线性回归模型的概念。",
+    "language": "ch"
+  },
+  {
+    "prompt": "构建有助于减轻压力的技巧列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "写下您最近观看的电影的评论。",
+    "language": "ch"
+  },
+  {
+    "prompt": "创建 Twitter 帖子来宣传您的新产品。",
+    "language": "ch"
+  },
+  {
+    "prompt": "给定以下输入，将动词分类为及物动词或不及物动词。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成营销策略列表以推广新的移动应用程序。",
+    "language": "ch"
+  },
+  {
+    "prompt": "重写句子以提供更清晰和流畅的内容。",
+    "language": "ch"
+  },
+  {
+    "prompt": "请描述以下客户群。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为移动应用程序设计徽标。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成西半球国家名称列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将下列短语翻译成法语。",
+    "language": "ch"
+  },
+  {
+    "prompt": "解释什么是 API。",
+    "language": "ch"
+  },
+  {
+    "prompt": "计算长 10cm 宽 5cm 的长方形的面积。",
+    "language": "ch"
+  },
+  {
+    "prompt": "找到西班牙的首都。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将以下陈述分类为正确或错误。",
+    "language": "ch"
+  },
+  {
+    "prompt": "设计一个数据库来记录员工的工资。",
+    "language": "ch"
+  },
+  {
+    "prompt": "确定以下书籍的主题。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将下面句子中的每个单词分配给它的词性。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成一个 8 个字符的密码。",
+    "language": "ch"
+  },
+  {
+    "prompt": "创建一个关于机器人技术的网页。",
+    "language": "ch"
+  },
+  {
+    "prompt": "社交媒体上最常分享的内容类型是什么？",
+    "language": "ch"
+  },
+  {
+    "prompt": "这篇课文的主要思想是什么？",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成现在连续动词的列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "想一想包含“睡眠”一词的短语或成语。",
+    "language": "ch"
+  },
+  {
+    "prompt": "预测下一段会发生什么。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为以下文章生成标题。",
+    "language": "ch"
+  },
+  {
+    "prompt": "下列句子的末尾应该使用什么类型的标点符号？",
+    "language": "ch"
+  },
+  {
+    "prompt": "找出不正确的词并建议一个更好的版本。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用第三人称的观点重写这句话。",
+    "language": "ch"
+  },
+  {
+    "prompt": "把这句话改成将来时。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用你自己的话总结以下文章。",
+    "language": "ch"
+  },
+  {
+    "prompt": "下面的成语是什么意思？",
+    "language": "ch"
+  },
+  {
+    "prompt": "按照正确的顺序使用下列单词造句。",
+    "language": "ch"
+  },
+  {
+    "prompt": "句子在语法上是否正确？",
+    "language": "ch"
+  },
+  {
+    "prompt": "对约翰和玛丽之间的关系进行分类。",
+    "language": "ch"
+  },
+  {
+    "prompt": "识别给定句子中使用的语言。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成给定文章的摘要。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将华氏温度转换为摄氏温度。",
+    "language": "ch"
+  },
+  {
+    "prompt": "使用给定的单词构造一个短语",
+    "language": "ch"
+  },
+  {
+    "prompt": "找到以下单词的同义词：'Tenacious'。",
+    "language": "ch"
+  },
+  {
+    "prompt": "推荐一家不错的餐厅。",
+    "language": "ch"
+  },
+  {
+    "prompt": "计算三角形的面积。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用更多描述性的词重写句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为朋友创造一个有创意的生日祝福。",
+    "language": "ch"
+  },
+  {
+    "prompt": "缩短第二句话。",
+    "language": "ch"
+  },
+  {
+    "prompt": "找到二次方程的解。",
+    "language": "ch"
+  },
+  {
+    "prompt": "求出这三个数字的平均值。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用不同的时态重写句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "使用三个标签对以下数据进行分类。",
+    "language": "ch"
+  },
+  {
+    "prompt": "写一个五个词的句子来描述你的一天。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用一句话描述下面的画。",
+    "language": "ch"
+  },
+  {
+    "prompt": "在网上搜索并找到最长的小说的标题。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将下列句子从单数形式改为复数形式。",
+    "language": "ch"
+  },
+  {
+    "prompt": "编制位于美国中西部的 5 个州的列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "分析下面的句子，找出直接宾语。",
+    "language": "ch"
+  },
+  {
+    "prompt": "在最后一次会员会议上，列出 5 个改进俱乐部的想法。",
+    "language": "ch"
+  },
+  {
+    "prompt": "编辑以下句子以更正语法和句法错误",
+    "language": "ch"
+  },
+  {
+    "prompt": "创建一个可以使用以下句子回答的问题。",
+    "language": "ch"
+  },
+  {
+    "prompt": "写下“经济学”一词的简单定义。",
+    "language": "ch"
+  },
+  {
+    "prompt": "找到成功完成考试的截止分数",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成一个主题句来介绍下面的文字。",
+    "language": "ch"
+  },
+  {
+    "prompt": "编写一个函数来计算给定数字的阶乘。",
+    "language": "ch"
+  },
+  {
+    "prompt": "编写一个函数将给定的字符串转换为大写。",
+    "language": "ch"
+  },
+  {
+    "prompt": "从数组中提取正整数？",
+    "language": "ch"
+  },
+  {
+    "prompt": "计算给定数字的平方根。",
+    "language": "ch"
+  },
+  {
+    "prompt": "反转链表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "计算给定数组的最长递增子序列？",
+    "language": "ch"
+  },
+  {
+    "prompt": "设计一个算法来找到股票买卖的最大利润？",
+    "language": "ch"
+  },
+  {
+    "prompt": "给定两个字符串，检查一个字符串是否是另一个字符串的旋转？",
+    "language": "ch"
+  },
+  {
+    "prompt": "给定一个整数数组，返回第一个重复元素。",
+    "language": "ch"
+  },
+  {
+    "prompt": "在重复元素数组中找到两个非重复元素？",
+    "language": "ch"
+  },
+  {
+    "prompt": "给定一棵二叉树，检查它是否是二叉搜索树？",
+    "language": "ch"
+  },
+  {
+    "prompt": "找出可以从给定的交易序列中获得的最大利润？",
+    "language": "ch"
+  },
+  {
+    "prompt": "计算初始存款为 100 美元且利率为 6% 的银行账户中的金额，每年复利",
+    "language": "ch"
+  },
+  {
+    "prompt": "给我一个网络服务框架的详细概述。",
+    "language": "ch"
+  },
+  {
+    "prompt": "创建一个描述互联网历史的时间线",
+    "language": "ch"
+  },
+  {
+    "prompt": "转述下面的句子",
+    "language": "ch"
+  },
+  {
+    "prompt": "开发执行以下操作的基于 Web 的应用程序",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述以下政策的利弊",
+    "language": "ch"
+  },
+  {
+    "prompt": "为社交媒体帐户设计帖子以推广以下产品",
+    "language": "ch"
+  },
+  {
+    "prompt": "总结如下文章",
+    "language": "ch"
+  },
+  {
+    "prompt": "为以下角色创建职位描述",
+    "language": "ch"
+  },
+  {
+    "prompt": "确定以下命令的正确顺序",
+    "language": "ch"
+  },
+  {
+    "prompt": "创建一个调查问题来衡量客户满意度",
+    "language": "ch"
+  },
+  {
+    "prompt": "创建 10 种不同动物的列表",
+    "language": "ch"
+  },
+  {
+    "prompt": "为全家福拍摄提出一个好主意。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为客户关于退款问题的电子邮件创建回复。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用一句话总结给定的新闻文章。",
+    "language": "ch"
+  },
+  {
+    "prompt": "提供五个描述特定动物的形容词。",
+    "language": "ch"
+  },
+  {
+    "prompt": "重新排列单词以创建一个完整的句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "写一个以下列句子开头的故事。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将给定的句子转换为主动语态。",
+    "language": "ch"
+  },
+  {
+    "prompt": "解释为什么给定的主题很重要。",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述给定对象的声音。",
+    "language": "ch"
+  },
+  {
+    "prompt": "使用不同但相似的词重写给定的句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将给定的输入分类为诗歌、故事或歌曲。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为以下描述创建标题。",
+    "language": "ch"
+  },
+  {
+    "prompt": "以更正式的语气重写给定的句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "写一些关于给定历史人物的句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "生成与给定主题相关的问题列表。",
+    "language": "ch"
+  },
+  {
+    "prompt": "为给定的产品创建一个口号。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将以下文本归类为两种情绪类别之一：正面或负面。",
+    "language": "ch"
+  },
+  {
+    "prompt": "把段落概括成一句话。",
+    "language": "ch"
+  },
+  {
+    "prompt": "使下面的句子更简洁。",
+    "language": "ch"
+  },
+  {
+    "prompt": "将以下句子转换为是/否问题。",
+    "language": "ch"
+  },
+  {
+    "prompt": "撰写一条解决环境退化问题的推文。",
+    "language": "ch"
+  },
+  {
+    "prompt": "用适当的同义词替换下划线的词。",
+    "language": "ch"
+  },
+  {
+    "prompt": "改正句子中的语法错误。",
+    "language": "ch"
+  },
+  {
+    "prompt": "确定句子中两个词之间关系的类型。",
+    "language": "ch"
+  },
+  {
+    "prompt": "写一个信息性的句子来解释给定的术语。",
+    "language": "ch"
+  },
+  {
+    "prompt": "在不改变意思的情况下改写下面的句子。",
+    "language": "ch"
+  },
+  {
+    "prompt": "这段代码的输出是什么？",
+    "language": "ch"
+  },
+  {
+    "prompt": "为小说《麦田里的守望者》写一篇短评。",
+    "language": "ch"
+  },
+  {
+    "prompt": "认出下列动物。",
+    "language": "ch"
+  },
+  {
+    "prompt": "描述冠状病毒对经济的影响。",
+    "language": "ch"
+  },
+  {
+    "prompt": "यदि आप साइकिल खरीदने पर विचार कर रहे हैं तो अपने बजट पर विचार करें, ऑनलाइन समीक्षाएं देखें, दोस्तों से बात करें और उनका परीक्षण करें!",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सा वाद्य यंत्र स्ट्रिंग या पर्क्यूशन है: वॉबल बोर्ड, शीथोल्ट",
+    "language": "hi"
+  },
+  {
+    "prompt": "फुली पेड शेयर क्या होता है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "11 सितंबर, 2001 को क्या हुआ था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "कौन है कंपनी नोवार्टिस",
+    "language": "hi"
+  },
+  {
+    "prompt": "जेवीएम का \"कचरा संग्रह\" लॉग निम्नानुसार स्वरूपित है:\n1. प्रत्येक पंक्ति टाइमस्टैम्प से शुरू होने वाले एकल कचरा संग्रह संचालन का प्रतिनिधित्व करती है।\n2. जेवीएम में विभिन्न मेमोरी क्षेत्रों के पहले और बाद के आकार को \"मेमोरी एरिया: बिफोरसाइज-> आफ्टरसाइज (आवंटित आकार)\" के रूप में दिखाया गया है, जहां मेमोरीएरिया PSYoungGen, ParOldGen, या मेटास्पेस में से एक है।\n3. यदि \"MemoryArea:\" को छोड़ दिया जाता है, तो यह संपूर्ण JVM की मेमोरी के पहले और बाद के आकार का प्रतिनिधित्व करता है।\n4. प्रत्येक पंक्ति में सेकंड में ऑपरेशन के लिए लिया गया समय होता है।\n\nनिम्नलिखित लॉग को सारांशित करें और किसी भी महत्वपूर्ण विसंगतियों को नोट करें:\n2023-03-30T07:00:19.800+0000: [GC (आवंटन विफल) [PSYoungGen: 17197776K->2224032K(21782528K)] 64496630K->49524856K(79218176K), 3.2658630 सेकंड, 0.0 सेकंड] [समय:0 वास्तविक = 3.27 सेकेंड]\n2023-03-30T07:01:06.553+0000: [GC (आवंटन विफल) [PSYoungGen: 17471392K->2195300K(22969344K)] 64772216K->49530782K(80404992K), 3.3074224 सेकंड.0, 0.0 समय: 0 सेकंड: वास्तविक = 3.30 सेकेंड]\n2023-03-30T07:01:56.129+0000: [GC (आवंटन विफल) [PSYoungGen: 19045732K->2429792K(22598656K)] 66381214K->49767742K(80034304K), 3.5912859 सेकंड=4.9 समय:0 वास्तविक = 3.59 सेकेंड]\n2023-03-30T07:02:46.034+0000: [GC (आवंटन विफल) [PSYoungGen: 19280224K->2428421K(23520768K)] 66618174K->49768148K(80956416K), 3.6520001 सेकंड=5, 07 समय: वास्तविक = 3.65 सेकंड]\n2023-03-30T07:03:39.130+0000: [GC (आवंटन विफल) [PSYoungGen: 20488709K->2600800K(23257088K)] 67828436K->49943004K(80692736K), 3.8378192 सेकंड=5, 09 सेकंड] समय:0 वास्तविक = 3.84 सेकेंड]\n2023-03-30T07:04:31.634+0000: [GC (आवंटन विफल) [PSYoungGen: 20661088K->2550592K(23885312K)] 68003292K->49894476K(81320960K), 3.7886199 सेकंड=5, 0.15 समय: वास्तविक = 3.78 सेकेंड]\n2023-03-30T07:05:28.784+0000: [GC (आवंटन विफल) [PSYoungGen: 21416768K->2709510K(23698432K)] 68760652K->50055163K(81134080K), 3.9951697 सेकंड=5 सेकंड, 04 समय: 5 बार: वास्तविक = 3.99 सेकेंड]\n2023-03-30T07:06:24.857+0000: [GC (आवंटन विफल) [PSYoungGen: 21575686K->2709696K(24113664K)] 68921339K->50058933K(81549312K), 4.0210395 सेकंड.0, 47 सेकंड] समय: वास्तविक = 4.02 सेकेंड]\n2023-03-30T07:07:21.991+0000: [GC (आवंटन विफल) [PSYoungGen: 22106304K->2835749K(24000512K)] 69455541K->50186794K(81436160K), 4.0703042 सेकंड.0, 06 सेकंड] समय:06 वास्तविक = 4.06 सेकेंड]\n2023-03-30T07:08:18.668+0000: [GC (आवंटन विफल) [PSYoungGen: 22232357K->2785312K(24265216K)] 69583402K->50204626K(81700864K), 4.1296625 सेकंड.0, 07 सेकंड] समय:0 वास्तविक = 4.13 सेकेंड]\n2023-03-30T07:09:16.891+0000: [GC (आवंटन विफल) [PSYoungGen: 22510624K->2834405K(24177664K)] 69929938K->50255520K(81613312K), 4.2070487 सेकंड.0.809 सेकंड] समय: वास्तविक = 4.21 सेकेंड]\n2023-03-30T07:10:15.553+0000: [GC (आवंटन विफल) [PSYoungGen: 22559717K->2842896K(24403456K)] 69980832K->50266688K(81839104K), 4.2489383 सेकंड.0.83 सेकंड] वास्तविक = 4.24 सेकेंड]\n2023-03-30T07:11:15.412+0000: [GC (आवंटन विफल) [PSYoungGen: 22863632K->2880069K(24334848K)] 70287424K->50306742K(81770496K), 4.2983311 सेकंड=6.01 सेकंड] [समय:01 सेकंड] वास्तविक = 4.29 सेकेंड]\n2023-03-30T07:12:17.330+0000: [GC (आवंटन विफल) [PSYoungGen: 22900805K->2670097K(24596992K)] 70327478K->50099432K(82032640K), 3.9450690 सेकंड=5, 4 सेकंड] समय:0 वास्तविक = 3.95 सेकेंड]\n2023-03-30T07:13:15.713+0000: [GC (आवंटन विफल) [PSYoungGen: 23009297K->2684375K(24459776K)] 70438632K->50115773K(81895424K), 3.9758416 सेकंड.5 सेकंड, 03 समय:0 वास्तविक = 3.97 सेकेंड]\n2023-03-30T07:14:12.939+0000: [GC (आवंटन विफल) [PSYoungGen: 23023575K->2678912K(24829952K)] 70454973K->50113093K(82265600K), 3.9702778 सेकंड.0.02 सेकंड] [समय:02 सेकंड] वास्तविक = 3.97 सेकेंड]\n2023-03-30T07:15:12.343+0000: [GC (आवंटन विफल) [PSYoungGen: 23508608K->2753575K(24717312K)] 70942789K->50189628K(82152960K), 4.0754481 सेकंड.0.0 समय:0 वास्तविक = 4.08 सेकेंड]\n2023-03-30T07:16:13.026+0000: [GC (आवंटन विफल) [PSYoungGen: 23583271K->2762097K(24974336K)] 71019324K->50201762K(82409984K), 4.1128461 सेकंड.0.606 उपयोगकर्ता] समय:06 वास्तविक = 4.11 सेकेंड]\n2023-03-30T07:17:14.129+0000: [GC (आवंटन विफल) [PSYoungGen: 23924593K->2797957K(24905728K)] 71364258K->50239629K(82341376K), 4.1456776 सेकंड.0, 74 सेकंड] समय: 0 वास्तविक = 4.15 सेकेंड]\n2023-03-30T07:18:14.857+0000: [GC (आवंटन विफल) [PSYoungGen: 23960453K->2804721K(25075712K)] 71402125K->50249103K(82511360K), 4.1905285 सेकंड. वास्तविक = 4.19 सेकेंड]\n2023-03-30T07:19:15.979+0000: [GC (आवंटन विफल) [PSYoungGen: 24189937K->3641846K(25027072K)] 71634319K->51171235K(82462720K), 3.6175882 सेकंड.0.4 सेकंड] [समय:0.0 सेकंड] वास्तविक = 3.62 सेकंड]\n2023-03-30T07:22:24.484+0000: [GC (आवंटन विफल) [PSYoungGen: 25027062K->3360979K(24336896K)] 72556451K->52269877K(81772544K), 0.4407322 सेकंड.0.06 सेकंड] [समय:06 सेकंड] वास्तविक = 0.44 सेकेंड]\n2023-03-30T07:22:38.974+0000: [GC (आवंटन विफल) [PSYoungGen: 24007379K->4035567K(24681984K)] 72916277K->57145380K(82117632K), 0.8531910 सेकंड=0.0 उपयोगकर्ता = 0.0.0 सेकंड] वास्तविक = 0.85 सेकेंड]\n2023-03-30T07:22:52.666+0000: [GC (आवंटन विफल) [PSYoungGen: 24677029K->24677029K(24681984K)] 77786841K->82112670K(82117632K), 7.3509182 सेकंड=2 समय] वास्तविक = 7.35 सेकेंड]\n2023-03-30T07: 23: 00.017+0000: [पूर्ण GC (एर्गोनॉमिक्स) [Psyoungugeen: 24677029k-> 0k (24681984k)] : 241941K->241941K(260096K)], 26.4487596 सेकंड] [समय: उपयोगकर्ता = 313.82 sys = 2.44, वास्तविक = 26.45 सेकंड]\n2023-03-30T07: 24: 07.186+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 12427037K (24681984K) : 241947K->241947K(260096K)], 28.8675082 सेकंड] [समय: उपयोगकर्ता = 350.97 sys = 1.74, वास्तविक = 28.87 सेकंड]\n2023-03-30T07: 24: 36.057+0000: [पूर्ण GC (System.gc ()) [psyoungugeen: 12730000k-> 12427055k (24681984k)] ), [मेटास्पेस: 241947के->241947के(260096के)], 31.3736816 सेकेंड\n25: 18.096+0000: 25: 18.096+0000: [फुल जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 16985330K (24681984K)] [paroldgen: 5743555648k-> 57435308K-> 57435308K-> 57435308K-> 574353088K-> 574333088K-> 574333084308K)] : 241999K->241999K(260096K)], 31.4762980 सेकंड] [समय: उपयोगकर्ता = 363.38 sys = 3.10, वास्तविक = 31.48 सेकंड]\n25: 54.537+0000: [फुल जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 19116969K (24681984k)] [paroldgen: 57435308K-> 57435208K-> 57435208K-> 57435208K-> 57435208K-> : 241999K->241999K(260096K)], 31.0418139 सेकंड] [समय: उपयोगकर्ता = 377.34 sys = 2.75, वास्तविक = 31.04 सेकंड]\n26: 27.487+0000: [फुल जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 19955901K (24681984K)] [paroldgen: 5743515290ka-> 57435290K-> 57435290K-> 57435290K-> 57435290K-> : 241999K->241999K(260096K)], 22.9475977 सेकंड] [समय: उपयोगकर्ता = 280.80 sys = 1.57, वास्तविक = 22.95 सेकंड]\n2023-03-30T07: 26: 51.319+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 20340549k (24681984k) : 242004K->242004K(260096K)], 37.2564843 सेकंड] [समय: उपयोगकर्ता = 458.29 sys = 3.35, वास्तविक = 37.26 सेकंड]\n2023-03-30T07: 27: 28.892+0000: [फुल जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 20465997K (24681984K)] [paroldgen: 574355648K-> 57435230K-> 57435230K-> 57435230K-> 57435230K-> 57435230K-> 57435230K-> : 242007K->242007K(260096K)], 31.4213545 सेकंड] [समय: उपयोगकर्ता = 382.65 sys = 2.74, वास्तविक = 31.42 सेकंड]\n28: 00.350+0000: 28: 00.350+0000: [फुल जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 20492397K (24681984k)] [paroldgen: 57435230K-> 57435230K-> 57435230K-> 57435230K-> : 242011K->242011K(260096K)], 17.3069966 सेकंड] [समय: उपयोगकर्ता = 209.34 sys = 0.45, वास्तविक = 17.31 सेकंड]\n2023-03-30T07: 28: 17.694+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [psyounggen: 20639999k-> 20482496k (24681984k) : 242023K->242023K(260096K)], 39.0253664 सेकंड] [समय: उपयोगकर्ता = 478.37 sys = 3.87, वास्तविक = 39.02 सेकंड]\n2023-03-30T07: 28: 56.752+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20629482k-> 20490559k (24681984k)] : 242023K->242023K(260096K)], 32.7146380 सेकंड] [समय: उपयोगकर्ता = 398.86 sys = 2.93, वास्तविक = 32.71 सेकंड]\n2023-03-30T07: 29: 29.592+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20627596K-> 20498740K (24681984k)] : 242029K->242029K(260096K)], 39.9805382 सेकंड] [समय: उपयोगकर्ता = 491.39 sys = 4.10, वास्तविक = 39.98 सेकंड]\n30: 09.618+0000: 30: 09.618+0000: [फुल जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 20529006K (24681984K)] [paroldgen: 57435482K-> 57435482K-> 57435402K-> 57435402K-> 57435402K-> 57435402K-> : 242038K->242038K(260096K)], 31.3632706 सेकंड] [समय: उपयोगकर्ता = 382.46 sys = 2.74, वास्तविक = 31.36 सेकंड]\n2023-03-30T07: 30: 41.012+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 20535638K (24681984K) : 242053K->242053K(260096K)], 31.0060106 सेकंड] [समय: उपयोगकर्ता = 377.25 sys = 2.72, वास्तविक = 31.00 सेकंड]\n31: 12.0222+0000: [फुल जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 20535719k (24681984k)] [paroldgen: 57435345k-> 57435345k-> 57435297k-> 57435297k-> 57435297k-> : 242053K->242053K(260096K)], 31.1714473 सेकंड] [समय: उपयोगकर्ता = 380.42 sys = 2.74, वास्तविक = 31.18 सेकंड]\n2023-03-30T07: 31: 43.215+0000: [पूर्ण GC (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 20536490k (24681984k)] : 242061K->242061K(260096K)], 30.9676462 सेकंड] [समय: उपयोगकर्ता = 377.19 sys = 2.88, वास्तविक = 30.96 सेकंड]\n2023-03-30T07: 32: 14.216+0000: [पूर्ण GC (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 20537679k (24681984k)] : 242081K->242081K(260096K)], 31.2592798 सेकंड] [समय: उपयोगकर्ता = 379.77 sys = 3.04, वास्तविक = 31.26 सेकंड]\n2023-03-30T07: 32: 45.532+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 20518698k (24681984k) : 242123K->242123K(260096K)], 38.9523351 सेकंड] [समय: उपयोगकर्ता = 478.26 sys = 4.04, वास्तविक = 38.95 सेकंड]\n2023-03-30T07: 33: 45.139+0000: [पूर्ण GC (एर्गोनॉमिक्स) [Psyounggen: 20627835k-> 20519977k (24681984k)] : 242185K->242185K(260096K)], 31.8680480 सेकंड] [समय: उपयोगकर्ता = 388.66 sys = 2.88, वास्तविक = 31.87 सेकंड]\n2023-03-30T07: 34: 17.045+0000: [पूर्ण GC (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 20529987k (24681984k)] : 242185K->242185K(260096K)], 30.6528436 सेकंड] [समय: उपयोगकर्ता = 370.84 sys = 3.05, वास्तविक = 30.65 सेकंड]\n2023-03-30T07: 35: 08.312+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 20552578K (24681984K) : 242202K->242202K(260096K)], 31.3030289 सेकंड] [समय: उपयोगकर्ता = 380.50 sys = 2.90, वास्तविक = 31.30 सेकंड]\n2023-03-30T07: 35: 39.649+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400K-> 20541558K (24681984k)] : 242217K->242217K(260096K)], 31.4996226 सेकंड] [समय: उपयोगकर्ता = 384.32 sys = 3.00, वास्तविक = 31.50 सेकंड]\n2023-03-30T07: 36: 11.199+0000: [पूर्ण जीसी (एर्गोनॉमिक्स) [Psyounggen: 20646400k-> 20562436K (24681984k) : 242238K->242238K(260096K)], 31.1358920 सेकंड] [समय: उपयोगकर्ता = 378.46 sys = 3.00, वास्तविक = 31.14 सेकंड]",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सा वाद्य यंत्र स्ट्रिंग या वुडविंड है: सिंबोआ, सिप्सी",
+    "language": "hi"
+  },
+  {
+    "prompt": "प्रत्येक देश को \"अफ्रीकी\" या \"यूरोपीय\" के रूप में वर्गीकृत करें: नाइजीरिया, रवांडा, पुर्तगाल, रोमानिया, घाना, यूक्रेन",
+    "language": "hi"
+  },
+  {
+    "prompt": "चार्ल्स डिकेंस का अंतिम (अधूरा) उपन्यास क्या था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "आपको बैले इतना पसंद क्यों है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पाब्लो एस्कोबार के बारे में इस पैराग्राफ को देखते हुए, उनकी मृत्यु के समय उनके पास कितना पैसा था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "हॉटपॉट के बारे में वर्णन करने वाले एक संदर्भ पाठ को देखते हुए, यह व्यंजन किस देश से उत्पन्न हुआ है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पाठ से उदाहरणों का उपयोग किए बिना, फ़ुटबॉल के बुनियादी नियमों का सारांश दें",
+    "language": "hi"
+  },
+  {
+    "prompt": "साइ यंग के बारे में इस संदर्भ पाठ को देखते हुए, जब वह बड़ा हो रहा था, तो उसका परिवार किस प्रकार का काम करता था, उसके कितने बड़े भाई-बहन थे, और वह एक बच्चे के रूप में किन दो राज्यों में रहता था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "किस फिल्म ने केविन स्मिथ को प्रसिद्ध किया?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इबेरियन प्रायद्वीप के इलाके के बारे में इस अनुच्छेद को देखते हुए, मुझे प्रायद्वीप और इसकी ऊंचाई में उच्चतम बिंदु बताएं।",
+    "language": "hi"
+  },
+  {
+    "prompt": "स्पेन में Fallas क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "वारसॉ में सबसे ठंडा महीना कौन सा है और यह औसतन कितना ठंडा होता है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "1970 और 1980 के दशक के दौरान अधिकांश अफ्रीकी देशों पर सैन्य तानाशाही का नियंत्रण क्यों था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सा वाद्य यंत्र स्ट्रिंग या पर्क्यूशन है: केमेंस, कास्टानेट्स",
+    "language": "hi"
+  },
+  {
+    "prompt": "वनस्पति उद्यान के बारे में बताएं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "प्रदान किए गए मार्ग से, अडानी समूह की स्थापना का वर्ष निकालें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "लोग ग्रेटफुल डेड को क्यों पसंद करते हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "प्रेम क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित पाठ से निकालें कि घुड़सवार सेना का मुकाबला करने के लिए कौन सी इकाइयाँ मजबूत हैं",
+    "language": "hi"
+  },
+  {
+    "prompt": "पार्करुन क्या है",
+    "language": "hi"
+  },
+  {
+    "prompt": "सबसे शुरुआती प्रतियोगिताएं कौन सी हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "क्या आप फ़ुटबॉल में ऑफ़साइड नियम की व्याख्या कर सकते हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "बास्केटबॉल के खेल का आविष्कार किसने किया था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "आईएसएस की मरम्मत के लिए अंतर्राष्ट्रीय अंतरिक्ष स्टेशन जाने वाली महिलाओं का नाम बताइए",
+    "language": "hi"
+  },
+  {
+    "prompt": "बवंडर क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "दिसंबर में सामान्य मौसम के आधार पर निम्नलिखित प्रमुख शहरों को वर्गीकृत करें यदि यह आम तौर पर ठंडा या आम तौर पर गर्म होता है: शिकागो, इलिनोइस; न्यूयॉर्क शहर, न्यूयॉर्क; और मियामी, फ्लोरिडा",
+    "language": "hi"
+  },
+  {
+    "prompt": "सौरमंडल की कुछ वस्तुओं के नाम लिखिए",
+    "language": "hi"
+  },
+  {
+    "prompt": "विनाइल रिकॉर्ड क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "कृपया दिए गए पाठ से ऑस्ट्रियन कप के बारे में कुछ बिंदु नोट करें",
+    "language": "hi"
+  },
+  {
+    "prompt": "पाइथागोरस कौन थे?",
+    "language": "hi"
+  },
+  {
+    "prompt": "लिगा पुर्तगाल में पाँच टीमों के नाम बताइए।",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे कोई ऐसा नाम बताओ जो रंग और फल हो",
+    "language": "hi"
+  },
+  {
+    "prompt": "सीएसटी 11 क्या है",
+    "language": "hi"
+  },
+  {
+    "prompt": "प्रश्न: क्या हैंड सैनिटाइज़र COVID-19 के विरुद्ध प्रभावी है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मैं कॉफ़ी पर अच्छा पोर कैसे बना सकता हूँ?",
+    "language": "hi"
+  },
+  {
+    "prompt": "ब्रांड के आधार पर उत्पादों का वर्गीकरण कीजिए।\nएंड्रॉइड, सफारी, क्रोम, आईओएस, एलेक्सा, प्राइम वीडियो",
+    "language": "hi"
+  },
+  {
+    "prompt": "रोबोटिक्स में बेजियर कर्व का क्या उपयोग है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इस पैराग्राफ में उल्लिखित टीवी शो श्रृंखला के दो नाम निकालें",
+    "language": "hi"
+  },
+  {
+    "prompt": "भोजन तैयार करने के लिए स्वास्थ्यप्रद खाना पकाने के तरीके क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "विवरण और अनुमान में क्या अंतर है",
+    "language": "hi"
+  },
+  {
+    "prompt": "दिए गए मार्ग से, फिल्म कैप्टन अमेरिका: द फर्स्ट एवेंजर के सीक्वल के नाम खोजें। उन्हें अल्पविराम से अलग करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे बताओ कि ये नदियाँ हैं या महासागर: नील, अमेज़न, गंगा, हडसन, राइन",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित टीवी शो के पहले चलने वाले प्रसारण नेटवर्क (एबीसी, एनबीसी, या सीबीएस) की पहचान करें:\nकैसल, शिकागो फायर, सीएसआई, ईआर, ग्रेज़ एनाटॉमी, स्कैंडल, सेनफेल्ड, मैग्नम पीआई",
+    "language": "hi"
+  },
+  {
+    "prompt": "आप अपने पायलट का लाइसेंस कैसे प्राप्त करते हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "विभिन्न उपहारों के एक समूह के बारे में सोचें जो आप एक शिक्षक को दे सकते हैं",
+    "language": "hi"
+  },
+  {
+    "prompt": "WWII के बारे में इस पैराग्राफ को देखते हुए, कितने घातक परिणाम हुए?",
+    "language": "hi"
+  },
+  {
+    "prompt": "कुछ लोकप्रिय खेलों को 'सुरक्षित', 'इतना सुरक्षित नहीं' या 'खतरनाक' के रूप में वर्गीकृत करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "मेरे पति और मैं सितंबर में इटली की दस दिवसीय यात्रा की योजना बना रहे हैं, क्या यह घूमने का अच्छा समय है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "बच्चे होने का सबसे अच्छा हिस्सा क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "सिएटल के पास कौन से स्की रिसॉर्ट हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "दिए गए पाठ्यांश का प्रयोग करते हुए विज्ञान कथा की अधिक से अधिक परिभाषाएँ निकालें",
+    "language": "hi"
+  },
+  {
+    "prompt": "परिच्छेद के अनुसार गणित के साथ प्रगति करने का सबसे अच्छा तरीका क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "उस वर्ष को निकालें जब वोल्वो XC40 जारी किया गया था।",
+    "language": "hi"
+  },
+  {
+    "prompt": "'अटेंशन डेफिसिट हाइपरएक्टिविटी डिसऑर्डर (एडीएचडी)' के लक्षण क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इनमें से कौन सा जूता प्रकार दौड़ने के लिए उपयुक्त है; नाव के जूते, डर्बी के जूते, लंबी पैदल यात्रा के जूते, ऊँची एड़ी के जूते, स्नीकर्स, सैंडल, टेनिस के जूते, स्केटिंग के जूते, नावें, खच्चर",
+    "language": "hi"
+  },
+  {
+    "prompt": "सैन फ्रांसिस्को में टैकोस के लिए सबसे अच्छी जगह कौन सी है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "क्रिकेट विश्व कप जीतने वाले कुछ देशों के नाम लिखिए",
+    "language": "hi"
+  },
+  {
+    "prompt": "स्थान के लिए रिक्त स्थान छोड़ते हुए एक संघीय नागरिक अधिकार शिकायत के लिए एक संभावित क्षेत्राधिकार अनुभाग प्रदान करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "पैगंबर मुहम्मद (pbuh) कौन थे?",
+    "language": "hi"
+  },
+  {
+    "prompt": "कार्डियोवैस्कुलर बीमारियों के विकास के लिए सभी जोखिम कारकों को निकालें जिनके लिए उनके योगदान के बारे में संख्याएं दी गई हैं और उन्हें उनके सापेक्ष महत्व से रैंक करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "पैरा के आधार पर अल्टेयर क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "केनेबंकपोर्ट के बारे में एक संदर्भ पाठ दिया गया है, मुझे इसके पड़ोसी शहर बताएं और यह कहां स्थित है।",
+    "language": "hi"
+  },
+  {
+    "prompt": "लुकासफिल्म को डिज्नी को बेचने के लिए जॉर्ज लुकास को कितना पैसा मिला?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इस पैराग्राफ को सारांशित करें",
+    "language": "hi"
+  },
+  {
+    "prompt": "डोपामाइन क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहला फॉलआउट गेम कब जारी किया गया था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "वास्तव में अच्छा केक बनाने के लिए कुछ तरकीबें क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "हस फॉर्मूला 1 टीम प्रिंसिपल कौन है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "बॉब रॉस ने पेंट करना कहाँ से सीखा?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहली टाइम पत्रिका मैन ऑफ द ईयर कौन थी?",
+    "language": "hi"
+  },
+  {
+    "prompt": "ओलावृष्टि क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इम्पाला क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "घर खरीदते समय विचार करने वाली बातों की बुलेटेड सूची प्रदान करें",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सी पशु प्रजातियाँ जीवित या विलुप्त हैं: इगु़नोडोन, इरावदी डॉल्फ़िन",
+    "language": "hi"
+  },
+  {
+    "prompt": "इस पैराग्राफ में उल्लिखित सभी लोगों के नाम निकालें और उन्हें {नाम} प्रारूप में गोलियों का उपयोग करके सूचीबद्ध करें",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित में से प्रत्येक को मानव के लिए खाने के लिए सुरक्षित या असुरक्षित के रूप में वर्गीकृत करें: हैमबर्गर, धातु की प्लेट, आईफोन, प्याज, पेड़, आलू की चिप, मोमबत्ती, आइसक्रीम, बैकपैक, स्वेटर, उबला हुआ अंडा।",
+    "language": "hi"
+  },
+  {
+    "prompt": "गुसीपति कस्बा कहाँ है",
+    "language": "hi"
+  },
+  {
+    "prompt": "स्की-यू-मह में क्या लिखा था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे हाल ही में दिवंगत प्रिय मित्र के बारे में एक उत्थान कहानी बताओ और वह कैसे मुझे प्रेरित और मार्गदर्शन करना जारी रखती है। पॉइंट होम ड्राइव करने के लिए स्टार वार्स के संदर्भों का उपयोग करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "नमस्ते, आप कैसे हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "तीन प्रमुख अब्राहमिक धर्म कौन से हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इस गद्यांश के आधार पर नोरा फोस्टर के करियर का सारांश प्रदान करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "सर्वकालिक सर्वश्रेष्ठ शतरंज खिलाड़ी कौन है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "बैंजो और गिटार में क्या अंतर है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "राम को स्पीकर के बाद दोहराने के लिए कहा गया। वक्ता: लाल, राम: लाल। वक्ता: नीला, राम: नीला। वक्ता: हरा, राम: हरा। वक्ता: तुम्हारा नाम क्या है? , राम राम\n\nयहाँ क्या गलत हुआ?",
+    "language": "hi"
+  },
+  {
+    "prompt": "कौन सा फ़ोन OS बेहतर है, IOS या Android?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे नीचे दी गई कहानी का एक पंक्ति का सारांश दें:\n\nबहुत समय पहले उड़ीसा की रानी ने सुना था कि एक प्रस्तर मूर्तिकार था, जिसने देवताओं की ऐसी अद्भुत मूर्तियाँ बनाई थीं कि लोग मूर्तियों की सुंदरता देखकर खुशी से रो पड़ेंगे। एक गर्मी के दिन, शाही महल के मुख्य हॉल में राजा के साथ अकर्मण्यता से आराम करते हुए, रानी को अचानक एक विचार आया। \"यह कितना अच्छा होगा, राजा, अगर हम भगवान जगन्नाथ की कुछ सुंदर मूर्तियों का निर्माण कर सकें ताकि लोग जगन्नाथ, बलभद्र और सुभद्रा की पूजा कर सकें। आप क्या सोचते हैं?\"\n\nराजा ने कुछ देर सोचा और फिर सहमति में सिर हिलाया। \"आपके मन में क्या है, मेरी रानी?\" और इसलिए, जल्द ही पत्थर के मूर्तिकार को देवताओं की मूर्तियों को अपने तरीके से बनाने के लिए अदालत में पेश होने के लिए बुलाया गया। जल्द ही मानसून का मौसम शुरू हो गया और मूर्तिकार अपनी नियुक्ति की प्रतीक्षा में दरबार के सामने उपस्थित हो गया। वह ओडिशा के पहाड़ी क्षेत्रों के एक विनम्र व्यक्ति थे। यहां तक कि उसके सबसे अच्छे कपड़े पहनने पर भी, कोई उसके खुरदरे हाथों और धूल के छोटे-छोटे छिड़काव को नोटिस किए बिना नहीं रह सकता था, जो उसके बालों में हमेशा मौजूद रहता था।\n\nमूर्तिकार के झुके होने पर राजा और रानी ने शालीनता से प्रतीक्षा की और फिर पूछा, \"महाराज, मैं आपके लिए क्या कर सकता हूं?\" रानी अपने सिंहासन पर आगे झुक गई और दरबार में उसकी आवाज़ सुनाई दी, \"हे मास्टर मूर्तिकार, हमने राज्य भर के दूर-दूर के लोगों से आपके कौशल के बारे में सुना है। हम सुंदर मूर्तियों के निर्माण के लिए आपके कौशल का उपयोग करने का सपना देखते हैं। जो हमारे लोगों की पूजा के लिए भगवान जगन्नाथ, सुभद्रा और बलभद्र का प्रतिनिधित्व करेगा।\"\n\nमूर्तिकार चुप था। जैसे-जैसे उसकी चुप्पी बढ़ती गई, दरबार के मंत्री बेचैन होने लगे। \"बोलो! जब रानी तुम पर इतनी कृपा करती है तो तुम चुप कैसे हो सकते हो!\" लेकिन फिर भी मूर्तिकार चुप था।\n\nमूर्तिकार के उत्तर की प्रतीक्षा करते हुए राजा और रानी अपने सिंहासन पर धैर्यपूर्वक बैठे रहे। शायद कार्य की विशालता बहुत अधिक थी। शायद मूर्तिकार सोच रहा था कि बदले में क्या मांगू। या इससे भी अधिक, शायद, मूर्तिकार अनुरोध से भयभीत और सम्मानित था।\n\nअंत में, जैसे ही दोपहर की धूप की परछाइयाँ हॉल के फर्श पर फैलने लगीं, मूर्तिकार ने अपना वजन कम किया, और बोलने के लिए अपना मुँह खोला। \"महामहिम, आपने मुझे इस तरह के अनुरोध के साथ अनुग्रहित किया है, मैं उपकृत किए बिना नहीं रह सकता। यह एक सम्मान की बात है।\" इस पर, रानी छड़ी की तरह सीधी बैठी, आगे आने वाले शब्दों को सुन रही थी। \"लेकिन, मैं यह केवल एक शर्त पर कर सकता हूं। मैं एक बंद हॉल में काम करूंगा, जहां कोई भी प्रवेश नहीं कर सकता है - चाहे वे मुझे काम करते हुए सुनें या अन्यथा। कि मूर्तियां पूरी हो गई हैं।\"\n\nमंत्रियों ने हांफते हुए कहा - इस आदमी ने क्या अजीब अनुरोध किया है। क्या वह मूर्ख था? क्या होगा अगर वह सिर्फ सोया और खाया और कोई काम नहीं किया? राजा और रानी कैसे भरोसा कर सकते थे कि वह जिस काम को करने का वादा कर रहा था, वह करेगा? रानी ने सोच-समझकर देखा। उसने राजा की ओर देखा, और उसे ऐसा लगा कि वह बिना किसी आरक्षण के इस शर्त पर सहमत हो गया। उसने मूर्तिकार की ओर देखा और फिर अपनी स्वीकृति में सिर हिलाया। \"हम यह आज्ञा देते हैं, कि तू इन मूर्तियोंको एक अलग किए हुए भवन में बनाना, जिस में कोई प्रवेश न करना, जब तक तेरा काम पूरा न हो जाए, और तू उस भवन के द्वार को भीतर से खोलकर हमें इसका प्रचार करना।\"",
+    "language": "hi"
+  },
+  {
+    "prompt": "द्वितीय विश्व युद्ध के बाद विश्व के कौन से दो \"महाशक्ति\" राष्ट्र शीत युद्ध में लगे हुए हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "प्रलय के पीड़ितों के लिए स्मारक क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "तेल पानी पर क्यों तैरता है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे उन शहरों की सूची दें जहां मैं ऑस्टिन से शिकागो तक सड़क मार्ग से गाड़ी चलाकर रुक/रह सकता हूं",
+    "language": "hi"
+  },
+  {
+    "prompt": "क्रिप्टो करेंसी जोखिम भरी क्यों है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "बुकशेल्फ़ को अच्छा दिखने के लिए आप किताबों के अलावा और कौन-सी चीज़ें रख सकते हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित में से किस वाद्य यंत्र में चाबियां होती हैं: वीणा, पियानो, सेलो, गिटार, स्पाइनेट, मैंडोलिन, बैगपाइप, बोंगो, क्लैविनेट, अकॉर्डियन, बांसुरी, बास, मारिम्बा, सिंथेसाइज़र, रिकॉर्डर, ऑर्गन, मेलोडिका, सितार",
+    "language": "hi"
+  },
+  {
+    "prompt": "सदाबहार और पर्णपाती वृक्ष में क्या अंतर है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "लुइस पालोमिनो कौन हैं",
+    "language": "hi"
+  },
+  {
+    "prompt": "द आइलैंड बर्ड नाम की डोंगी का मालिक कौन है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "शक्ति प्रशिक्षण अभ्यास करने से कुछ शारीरिक स्वास्थ्य लाभ क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "हम कार्य बैठकें क्यों करते हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "एंड्रेस बेलो कौन है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "क्या सीनोथस की उथली जड़ें होती हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "आईसीसी पुरुष टी20 विश्व कप क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित मदों को आय या व्यय के रूप में वर्गीकृत करें: वेतन, फिल्म, टैक्स रिटर्न, कार का किराया, भोजन",
+    "language": "hi"
+  },
+  {
+    "prompt": "1931 में फोर्ड मोटर कंपनी ब्रिटेन के किस शहर में स्थानांतरित हुई?",
+    "language": "hi"
+  },
+  {
+    "prompt": "क्या ये महासागर या झीलें हैं: सुपीरियर, मिशिगन, केउका, ओंटारियो, ताहो। और येलोस्टोन?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे उत्तरी अमेरिका में फैले कुछ बेहतरीन स्की क्षेत्रों की सूची दें। सूची को उस पर्वतीय क्षेत्र के अनुसार व्यवस्थित करें जिससे वे संबंधित हैं। उस रिसॉर्ट को क्यों चुना गया था, इसके बारे में वांछित होने पर एक बहुत ही संक्षिप्त सारांश दें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "पुरानी कमीजों का उपयोग करने के कुछ तरीके सोचिए",
+    "language": "hi"
+  },
+  {
+    "prompt": "एक ऐसे व्यक्ति के बारे में एक छोटी कहानी लिखिए जिसे उसकी नौकरी से निकाल दिया जाता है, लेकिन उसके जीवन का सबसे अच्छा दिन समाप्त होता है।",
+    "language": "hi"
+  },
+  {
+    "prompt": "वियतनाम में परिवहन का पसंदीदा तरीका क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "कृपया एक कहानी लिखें जो एक परी कथा पर एक आधुनिक मोड़ डालती है",
+    "language": "hi"
+  },
+  {
+    "prompt": "नीचे दिए गए सन्दर्भ पाठ को देखते हुए, \"इट्स ए ग्रेट डे टू बी अलाइव\" किसने गाया था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "नीचे दिए गए पाठ में अनिगमित समुदायों को निकालें जो आर, डब्ल्यू और जी अक्षर से शुरू होते हैं और उन्हें पाइप से अलग सूची में डाल दें",
+    "language": "hi"
+  },
+  {
+    "prompt": "उप्साला और लुंड विश्वविद्यालयों के चांसलर के रूप में, डी गीर ने क्या बढ़ावा दिया?",
+    "language": "hi"
+  },
+  {
+    "prompt": "उपहार देने के रचनात्मक तरीके क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "सभी पूर्व विभागों की सूची बनाएं जो पूर्व में संयुक्त राज्य अमेरिका में कैबिनेट स्तर के थे।",
+    "language": "hi"
+  },
+  {
+    "prompt": "मिनेसोटा में बर्फ में मछली पकड़ने की यात्रा के बारे में एक कहानी लिखें। एक सफल यात्रा के लिए आपको जो चाहिए उसे शामिल करना सुनिश्चित करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "मंगल ग्रह कहाँ है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे तोमर में मुख्य आकर्षणों की अल्पविराम से अलग की गई सूची दें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "पाठ को देखते हुए, सुपर मारियो वीडियोगेम श्रृंखला में सुपर मशरूम पावर-अप के प्रभावों का सारांश लिखें",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित उपकरणों को \"इलेक्ट्रॉनिक\" या \"इलेक्ट्रॉनिक नहीं\" के रूप में वर्गीकृत करें: iPhone, फावड़ा, सैमसंग गैलेक्सी, कैलकुलेटर, सीढ़ी, कागज",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे बताएं कि क्या ये शरीर के अंग या स्थान हैं: नाक, समुद्र तट, सुपरमार्केट, पैर, आंखें, हाथ, मॉल, स्कूल, रेस्तरां, दिल",
+    "language": "hi"
+  },
+  {
+    "prompt": "विश्व युद्ध से कैसे बचें?",
+    "language": "hi"
+  },
+  {
+    "prompt": "एल-एपी4 क्या है",
+    "language": "hi"
+  },
+  {
+    "prompt": "पुनर्जागरण क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इस विकिपीडिया अनुच्छेद के आधार पर, कुबेरनेट्स किस मूल उपकरण पर आधारित था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पैराग्राफ में जानकारी का उपयोग करते हुए, मुझे आर्सेनल फुटबॉल क्लब की मुख्य उपलब्धियों की एक छोटी बुलेटेड सूची दें",
+    "language": "hi"
+  },
+  {
+    "prompt": "होम नेटवर्क को लागू करने के लिए वाईफाई इतना लोकप्रिय तरीका क्यों है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "हमारे आईपीओ की संभावनाओं और शांत अवधि में कर्मचारियों को कैसे कार्य करने की आवश्यकता है, इसके बारे में आगामी ऑल हैंड्स मीटिंग के लिए मुझे एक स्क्रिप्ट लिखें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "कुछ आइवी लीग स्कूलों के नाम बताइए",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे बताओ कि इनमें से कौन मीठा या नमकीन है: रस, आलू के चिप्स, केक, पनीर",
+    "language": "hi"
+  },
+  {
+    "prompt": "एक स्वस्थ सुबह की दिनचर्या कैसी दिखती है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "अल्पाका किस प्रकार की आवाजें निकालते हैं.",
+    "language": "hi"
+  },
+  {
+    "prompt": "एस्प्रेसो बनाने का सबसे अच्छा तरीका क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित में से कौन अर्जेंटीना के फुटबॉल खिलाड़ी नहीं हैं: डिएगो अरमांडो माराडोना, लियोनेल मेस्सी, अल्फ्रेडो डि स्टेफानो, मारियो अल्बर्टो केम्पेस और मौरो कैमोरेनेसी?",
+    "language": "hi"
+  },
+  {
+    "prompt": "आप सिनसिनाटी शैली वेनिसन मिर्च कैसे बनाते हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "वायदा और विकल्प के बीच क्या अंतर है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित में से प्रत्येक को जड़ या प्ररोह सब्जियों के रूप में वर्गीकृत करें: टमाटर, आलू, गाजर, बैंगन, प्याज, भिंडी, ककड़ी, चुकंदर, शकरकंद",
+    "language": "hi"
+  },
+  {
+    "prompt": "मेरी डेट के लिए पकाने के लिए मेरे लिए एक आसान और स्वादिष्ट व्यंजन क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "विनिंग टाइम शो में डॉ. जेरी बस की भूमिका किसने निभाई थी?",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित वस्तुओं को कारों या ट्रकों के रूप में वर्गीकृत करें: Ford F150, Audi A8, BMW 318i, Nissan Titan, Tesla Model 3",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित जानवरों को द्विपाद या चतुर्भुज के रूप में वर्गीकृत करें: कुत्ता, मानव, गाय, मुर्गी, शुतुरमुर्ग, ज़ेबरा, टायरानोसॉरस रेक्स, बाघ",
+    "language": "hi"
+  },
+  {
+    "prompt": "शेलबर्न कहाँ है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "दुनिया में सबसे अच्छे कुत्ते का मालिक कौन है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "न्यूयॉर्क में पहला पिज़्ज़ेरिया किस वर्ष स्थापित किया गया था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "बिटकॉइन का वर्णन करने के लिए सबसे अधिक इस्तेमाल होने वाले शब्द को निकालें और इसे एक वाक्य में सरल करें",
+    "language": "hi"
+  },
+  {
+    "prompt": "अब तक लिखी गई कुछ सबसे प्रसिद्ध काल्पनिक पुस्तकें कौन सी हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "फलों को उनके रंग के आधार पर वर्गीकृत कीजिए।\nरास्पबेरी, नींबू, स्ट्रॉबेरी, क्रैनबेरी, स्टार फल, केला, चेरी, सेब",
+    "language": "hi"
+  },
+  {
+    "prompt": "अर्नेस्ट एंड यंग एंटरप्रेन्योर ऑफ द ईयर अवार्ड 2021 किसे प्रदान किया गया",
+    "language": "hi"
+  },
+  {
+    "prompt": "अगर आप बरमूडा ट्रायंगल में खो गए तो क्या होगा?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मैं शुक्रवार की रात को घर पर क्यों रहना चाह सकता हूँ?",
+    "language": "hi"
+  },
+  {
+    "prompt": "ए सॉन्ग ऑफ आइस एंड फायर श्रृंखला में, हाउस बाराथियोन के संस्थापक कौन हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे यू.एस. के पांच सबसे हाल के उपराष्ट्रपतियों की बुलेटेड सूची दें",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सी पशु प्रजातियाँ जीवित या विलुप्त हैं: काले पैर वाले फेरेट, डोडो",
+    "language": "hi"
+  },
+  {
+    "prompt": "एक अच्छी साइंस फिक्शन किताब कौन सी है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे \"द लिटिल प्रिंस\" पुस्तक से एक लोकप्रिय उद्धरण दें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "Oracle RDBMS में रीडू लॉग क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे डॉग मैन कॉमिक के बारे में कुछ बताएं",
+    "language": "hi"
+  },
+  {
+    "prompt": "एरोप्रेस कॉफी बनाने का सबसे अच्छा तरीका क्या है",
+    "language": "hi"
+  },
+  {
+    "prompt": "साउंडब्रिज को किस कंपनी ने डिजाइन किया था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सा वाद्य यंत्र स्ट्रिंग या पर्क्यूशन है: काबासा, हुकिन",
+    "language": "hi"
+  },
+  {
+    "prompt": "हेनरी होल्स्ट स्ट्रिंग क्वार्टेट के सभी सदस्यों के नाम और उनके द्वारा बजाए जाने वाले वाद्य यंत्र को बुलेट पॉइंट के रूप में निकालें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "गिटार और बास में क्या अंतर है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पाठ से सीधे उद्धृत किए बिना मुझे शतरंज के खेल का सारांश दें",
+    "language": "hi"
+  },
+  {
+    "prompt": "कृपया अल्पविराम द्वारा अलग किए गए प्रसिद्ध क्राइम बॉस स्टेफानो मैगाडिनो के उपनामों को सूचीबद्ध करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "फाइंडिंग फ़ार्ले में ट्रेक किस वर्ष समाप्त हुआ?",
+    "language": "hi"
+  },
+  {
+    "prompt": "नीचे दी गई संख्याओं को इस आधार पर वर्गीकृत करें कि वे पूर्ण वर्ग हैं या नहीं।\n64, 9, 81, 100, 57, 16",
+    "language": "hi"
+  },
+  {
+    "prompt": "अंगुल थर्मल पावर स्टेशन क्या है",
+    "language": "hi"
+  },
+  {
+    "prompt": "भूमध्यसागर के आसपास की प्राचीन संस्कृतियों को बिजली के बारे में क्या पता था?",
+    "language": "hi"
+  },
+  {
+    "prompt": "न्यूटन, मैसाचुसेट्स में 13 गाँव कौन से हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "आधुनिक आक्रामक युद्ध लड़ने के लिए F-15EX ईगल II एक आदर्श विमान क्यों नहीं है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "स्वामित्व के परिवर्तन की तिथियां निकालें और नया स्वामी कौन था",
+    "language": "hi"
+  },
+  {
+    "prompt": "टैकोस क्या हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "विंबलडन क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मार्गरिटा बनाने के लिए मुझे किन सामग्रियों की आवश्यकता होगी?",
+    "language": "hi"
+  },
+  {
+    "prompt": "किसने कहा \"जन सेवा ही मेरा ध्येय है\"",
+    "language": "hi"
+  },
+  {
+    "prompt": "ग्रीस के आसपास के क्षेत्रों के नाम की सूची बनाएं और गलियारों से दिशाओं के अनुसार समूह बनाएं। परिणामों को अल्पविराम से अलग किए गए प्रारूप में सूचीबद्ध करें।",
+    "language": "hi"
+  },
+  {
+    "prompt": "इस संदर्भ परीक्षण को देखते हुए, यूके में पुरुषों के लिए मैग्नीशियम की दैनिक अनुशंसित मात्रा क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे ब्राजील के सात सबसे हाल के राष्ट्रपतियों की बुलेटेड सूची दें",
+    "language": "hi"
+  },
+  {
+    "prompt": "सोसाइटी ऑफ जीसस की स्थापना किसने की, और उन्हें आमतौर पर किस नाम से जाना जाता है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "स्की करने के लिए पहाड़ चुनते समय किन 3 बातों का ध्यान रखना चाहिए?",
+    "language": "hi"
+  },
+  {
+    "prompt": "ऐनी फ्रांसिस कौन है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इनमें से किन खाद्य पदार्थों से मनुष्यों में एलर्जी होने की संभावना है: दूध, मूंगफली, चावल, अंगूर, गेहूं, सलाद, पुदीना।",
+    "language": "hi"
+  },
+  {
+    "prompt": "क्या कोई रग्बी खेल सकता है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इस पैराग्राफ में प्राथमिक जानकारी क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सा वाद्य यंत्र स्ट्रिंग या पर्क्यूशन है: रेबाना, कुद्यापी",
+    "language": "hi"
+  },
+  {
+    "prompt": "पहचानें कि कौन सा वाद्य यंत्र स्ट्रिंग या पर्क्यूशन है: नगोमा ड्रम, झूहु",
+    "language": "hi"
+  },
+  {
+    "prompt": "मुझे उन चीजों की सूची दें जो मैं रात में बेहतर नींद के लिए कर सकता हूँ",
+    "language": "hi"
+  },
+  {
+    "prompt": "निम्नलिखित को सजीव बनाम निर्जीव के रूप में वर्गीकृत करें: पौधे, पैंट, मधुमक्खियां, बीयर, मग, बकरी, कलम, नाइट लैंप, गाय, सुअर, फोन, कुत्ता, पत्ती, मोमबत्ती, मच्छर",
+    "language": "hi"
+  },
+  {
+    "prompt": "यूनिवर्सल डेटा एलीमेंट फ्रेमवर्क (यूडीईएफ) के बारे में एक संदर्भ पाठ को देखते हुए, मुझे बताएं कि ढांचे का उपयोग कैसे किया जाता है।",
+    "language": "hi"
+  },
+  {
+    "prompt": "रैकेटबॉल और टेनिस में क्या अंतर है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "योग का तीसरा अंग क्या है ?",
+    "language": "hi"
+  },
+  {
+    "prompt": "उत्तर में ठंडे महीनों के लिए पक्षी उत्तर से दक्षिण की ओर क्यों जाते हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "जलवायु परिवर्तन से इनकार के पीछे क्या हित हैं?",
+    "language": "hi"
+  },
+  {
+    "prompt": "इंटरचेंज शुल्क क्या है?",
+    "language": "hi"
+  },
+  {
+    "prompt": "قم بإنشاء قائمة من ثلاث أفكار للحفاظ على المنزل نظيفًا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي طرق استخدام الملعقة؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "اكتب قصة اليوم الأول لشاب في المدرسة الابتدائية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "صِف سمة شخصية للملكة إليزابيث الثانية وادعمها بمثال.",
+    "language": "ar"
+  },
+  {
+    "prompt": "من قائمة الكلمات ، حدد المتناقض المركب المكون من كلمتين لكلمة \"ظلم\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "قارن وقارن بين الزواحف والبرمائيات.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء مثال على البنية الموازية المتعلقة بالعافية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتوليد خمس صفات لوصف يوم صيفي مشمس.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي العمليات الجديدة التي يمكن أن تقدمها الشركة لتقليل انبعاثات الكربون؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "حدد مجموعة الكلمات أدناه التي تعتبر أداة ربط.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر ثلاث نظريات للعلاقات الدولية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ابحث عن البلدان المقابلة لقائمة العملات التالية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتقييم الجملة المحددة ولاحظ صحتها النحوية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أوجد مساحة المستطيل بمعلومية الأطوال التالية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي عناصر المشروع التي يجب أن تعطيها الأولوية؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي مزايا استخدام منهجية Scrum Agile؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتوليد إجابة لسؤال المستخدم: \"هل أحتاج إلى جواز سفر لزيارة المملكة المتحدة؟\"",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتكوين عبارة باستخدام حرفين مختلفين أو أكثر.",
+    "language": "ar"
+  },
+  {
+    "prompt": "صنف الجملة التالية: \"تستطيع Apple Watch الآن قياس مستوى الأكسجين في الدم\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتوليد رد على استعلام المستخدم: \"ما الذي يجب أن أفعله لتحسين مهاراتي اللغوية؟\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "حدد أقرب مرادف لكلمة \"نتوء\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "حدد الكلمات الرئيسية الأكثر صلة من الجملة التالية: \"كان ديكور المطعم حديثًا ولكنه تقليدي\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء قائمة من 10 كتب يجب على من يحب الخيال التاريخي قراءتها.",
+    "language": "ar"
+  },
+  {
+    "prompt": "استخدم كلمة واحدة لوصف الطقس اليوم.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر استراتيجيتين للسلامة للركض.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أكمل العبارة التالية: \"اليوم هو ____ حياتك\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "أعد كتابة التعبير التالي باستخدام تدوين Big O.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اشرح الفرق بين الانحدار غير الخطي والانحدار الخطي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنهِ هذه القصة: \"دخل الفارس القلعة ووجد ...\"",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما نوع الفن الذي يصنعه الانطباعيون؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر ثلاثة رواد أعمال مؤثرين في مجال التكنولوجيا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تخيل أنك ميكانيكي سيارات. تشخيص هذه المشكلة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اعثر على أكثر المقالات الإخبارية ذات الصلة بأوروبا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "لخص اقتصاد الصين في 100 كلمة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اصنع وصفة من ثلاث خطوات لعمل خبز الموز.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اسم خمس أغنيات تم إصدارها في عام 2005.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ناقش تأثير الإنترنت على المجتمع.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ضع فرضية حول سوق الأوراق المالية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تصميم برنامج تعليمي لطفل في الصف الأول.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تخيل محادثة بين موظفين حول عملهم.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتسمية خمس مدارس تقدم دورات عبر الإنترنت.",
+    "language": "ar"
+  },
+  {
+    "prompt": "وصف خمسة إجراءات أمنية لحماية البيانات عبر الإنترنت.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإجراء تحليل المشاعر لمراجعة هذا الفيلم",
+    "language": "ar"
+  },
+  {
+    "prompt": "إنشاء مصنف يمكنه التصنيف بين فئتين",
+    "language": "ar"
+  },
+  {
+    "prompt": "أعد كتابة هذه الجملة بلغة إبداعية ومثيرة للاهتمام",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي أهم خطوة يجب على الحكومة اتخاذها لمكافحة تغير المناخ؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "صنف بين نوعين مختلفين من القطط",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء مثال واحد معقول لكل كلمة من الكلمات التالية",
+    "language": "ar"
+  },
+  {
+    "prompt": "إعطاء قيمة عددية ، اكتب النسبة المئوية",
+    "language": "ar"
+  },
+  {
+    "prompt": "اكتب دالة في Javascript لتوليد رقم عشوائي",
+    "language": "ar"
+  },
+  {
+    "prompt": "متى كانت آخر مرة كان جون في المكتب؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "ابحث عن مقال عن لقاح Covid-19.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أقترح ثلاثة أصناف طعام يمكنني تحضيرها بالمكونات الموجودة في مطبخي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء قائمة من 5 وجهات سياحية مقترحة بناءً على مناخ مارس في إفريقيا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنشئ قصة مستوحاة من عمل روائي أو أسطورة حديث.",
+    "language": "ar"
+  },
+  {
+    "prompt": "صمم خوارزمية لطباعة نمط الشبكة الموضح أدناه.",
+    "language": "ar"
+  },
+  {
+    "prompt": "انسخ النص التالي أثناء إجراء التغييرات الضرورية في المحتوى.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اشرح كيف يمكن استخدام الذكاء الاصطناعي للكشف عن الجرائم الإلكترونية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "وضع سياسة شاملة لحماية البيانات لشركة وهمية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أضف خمس صفات لوصف الشخص في الجملة المحددة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "صنف القصة المعينة في إحدى الفئات التالية: الكوميديا ، الرعب ، الخيال العلمي ، الدراما ، الغموض.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر خمسة أسماء تتعلق بموضوع استكشاف الفضاء.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء 3 جمل إضافية للربط بين جملتين.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر نوعين من الثدييات.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قدم طريقتين إضافيتين لوصف البطل من المعلومات المقدمة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنشئ كودًا كاذبًا للمشكلة التالية: اكتب برنامجًا لحساب متوسط ثلاثة أرقام.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تحليل أسلوب الكتابة في الفقرة الأولى من المقالة التالية.\nإخراج وصف لأسلوب الكتابة والتقنيات المستخدمة وكيف تساهم التقنيات في المعنى (لا يزيد عن 100 كلمة).",
+    "language": "ar"
+  },
+  {
+    "prompt": "اشرح لماذا يعتبر الذكاء الاصطناعي (AI) أداة قوية للتنبؤ بسلوك العملاء.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء مراجعة للفيلم بناءً على عنوان الفيلم \"Joker\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "صف نمط القطعة الفنية التالية",
+    "language": "ar"
+  },
+  {
+    "prompt": "أضف خمسة تشبيهات على الأقل إلى الجملة التالية:\nطارت الأوراق في كل مكان",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتحرير هذه الجملة بحيث تحتوي على فعل واحد فقط.\nكان يمشي لأميال عندما واجه دبًا فجأة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر سبب أهمية الذكاء الاصطناعي (AI) للأمن السيبراني.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أعد كتابة الجملة التالية باستخدام استعارة:\nكان غروب الشمس جميلاً",
+    "language": "ar"
+  },
+  {
+    "prompt": "انشر ميمي مضحك عن القطط.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هو تاريخ لوحة \"ليلة النجوم\"؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "من كتب كتاب أليس في بلاد العجائب؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "أضف هذه العبارة للرد حول تاريخ الثورة الفرنسية: \"في النهاية أدت إلى إنشاء الجمهورية\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "اسم الحدث الذي أدى إلى اندلاع الثورة الفرنسية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قارن بين الكمبيوتر المحمول والهاتف الذكي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "احذف الكلمات الزائدة واجعل الجملة نحوية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتحرير المستند حتى تصبح اللغة أكثر رسمية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أصلح الأخطاء وصحح الجملة نحويًا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ابحث عن 3 متضادات على الأقل لكلمة \"هادئ\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "ابتكر وصفة للبراونيز النباتي بدون بيض.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اكتب مقالاً عن مزايا الطاقة المتجددة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ارفع مستوى نموذج الحوار التالي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "إنشاء تمثيل البيانات من شجرة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "إنشاء نظام حجز فندق في الرمز الكاذب.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اطرح خمس طرق لتصبح مستمعًا أفضل.",
+    "language": "ar"
+  },
+  {
+    "prompt": "حدد الحدث الحالي الذي يؤثر بشكل مباشر على موضوع تغير المناخ.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتأليف مقال يقارن ويقارن بين الشيوعية والرأسمالية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "بالنسبة للنص المحدد ، حدد ثلاث كلمات غامضة واستخدمها في جملة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "في أي منطقة من الولايات المتحدة تقع البوكيرك؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي أهمية البحث في مجال العلوم؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما الفائدة الأساسية من استخدام الذكاء الاصطناعي في الرعاية الصحية؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر ميزتين للذكاء الاصطناعي في التعليم.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اشرح سبب أهمية الحفاظ على جدول نوم صحي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء جدول بيانات الميزانية باستخدام التفاصيل المالية المحددة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اشرح كيف يكون الانتعاش الاقتصادي بعد COVID-19 مفيدًا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "بناءً على المعلومات التالية ، حدد النقاط الرئيسية للأخبار.",
+    "language": "ar"
+  },
+  {
+    "prompt": "باستخدام المثال الموضح ، أعد كتابة الجملة في زمن المضارع المستمر.",
+    "language": "ar"
+  },
+  {
+    "prompt": "وصف السلوك غير الأخلاقي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما نوع بنية البيانات التي ستستخدمها لتخزين قائمة المشتركين الفريدين؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنشئ استعلامًا للعثور على جميع الصفوف في الجدول التي تفي بشروط معينة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي بعض التحديات مع تخزين البيانات الموزعة؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بالوصول إلى إعدادات المتصفح الافتراضية على جهاز الكمبيوتر.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تخيل أنك حصلت على مشروع لبناء نموذج GPT. ما التقنيات التي ستستخدمها لتقييم النموذج؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء سيرة ذاتية بعنوان \"محاسب مالي\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "لخص قصة بياض الثلج والأقزام السبعة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتحرير الجملة التالية لتحسين وضوحها: \"القرار هو حساب كمية التوريدات\"",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء وصفة بعنوان \"بسكويت شوكولاتة تشيب\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنشئ عنوان إعلان وظيفي بعنوان \"محلل بيانات\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "وصف واجبات الوظيفة اليومية لمدير الموارد البشرية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أعد كتابة الجملة التالية لجعلها تبدو أكثر احترافية: \"لقد طُلب مني القيام بالمهمة\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "ضع قائمة ببعض المواقع الشهيرة للتسوق عبر الإنترنت.",
+    "language": "ar"
+  },
+  {
+    "prompt": "صمم شعارًا وشعارًا لشركة خدمات غسيل الملابس.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اكتب وصفًا لقاعة الرقص.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ضع فرضية لتوضيح سبب زيادة إنتاجية بعض الأشخاص أثناء النهار بينما يكون البعض الآخر في الليل؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء خوارزمية لاكتشاف عناوين URL الضارة من خلال مجموعة بيانات من عناوين URL.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء عنوان لتقديم المشورة حول كيفية النجاح في الكلية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اشرح كيفية معرفة السيارة ذاتية القيادة متى تتوقف عند لافتة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "فك الشفرة التالية \"XIBQCVU\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "تطوير نظام تصنيف لتحديد ما إذا كان البريد الإلكتروني بريدًا عشوائيًا أم لا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قارن عوامل المعادلتين.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تحديد نوع التورية في جملة معينة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "احسب مساحة سطح الأسطوانة بمعلومية نصف قطرها وارتفاعها.",
+    "language": "ar"
+  },
+  {
+    "prompt": "عبر عن الملاحظة المقدمة بكلمات مختلفة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "عند إعطاء جملة ، أضف عبارة تشير إلى حدث سابق.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أعد كتابة الجملة التالية باستخدام لغة أكثر ملاءمة للتواصل الرسمي والمهني.",
+    "language": "ar"
+  },
+  {
+    "prompt": "في جملتين ، أعد كتابتهما بطريقة تشبه الصوت النشط.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ضع قائمة بمواد البقالة ، أنشئ قائمة بقالة لعائلة مكونة من أربعة أفراد.",
+    "language": "ar"
+  },
+  {
+    "prompt": "عند إعطاء جملة ، قم بتحويلها إلى بيان سلبي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "بالنظر إلى وصف المنتج ، ابتكر 3 أفكار إبداعية لتسويق المنتج.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قل لي ما هي أصوات القطط التي تحب سماعها.",
+    "language": "ar"
+  },
+  {
+    "prompt": "وصف أكبر مطار في الولايات المتحدة",
+    "language": "ar"
+  },
+  {
+    "prompt": "صف سبب استخدام الروبوتات في التصنيع",
+    "language": "ar"
+  },
+  {
+    "prompt": "كيف أثرت نهاية الحرب العالمية الثانية على المرأة البريطانية؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي الأذواق الخمسة المختلفة التي يمكن للإنسان اكتشافها؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "ابحث عن اسم الفيلم الذي تم إصداره عام 2010 والذي قام ببطولته Tom Hanks و Julia Roberts.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر ثلاث دول غير ساحلية في إفريقيا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء مثال لوصف مكون من 5 جمل للإعداد.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قدم مثالاً على الطريقة الصحيحة التي ينبغي للمرء أن يستقبل بها شخصًا ما باللغة الألمانية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "احسب الدالة التالية: f (x) = 3x + 2",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر ثلاث مزايا لاستخدام التعلم الآلي في معالجة اللغة الطبيعية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء سؤال لطرحه على الأصدقاء حول عطلة نهاية الأسبوع.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هو الغرض من الزي المدرسي؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر خمس طرق أثرت بها التكنولوجيا على العالم",
+    "language": "ar"
+  },
+  {
+    "prompt": "أعد كتابة هذه الجملة بثلاث طرق مختلفة:",
+    "language": "ar"
+  },
+  {
+    "prompt": "اكتب دالة تأخذ عددين صحيحين ، m و n ، وتعيد مجموع كل الأرقام بينهما",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء دالة تأخذ عددًا صحيحًا كوسيطة ، وتطبع عامليها.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما معنى عبارة الحياة ما تصنعها؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "إجراء هندسة عكسية لبيان السياسة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء قصيدة تحتوي على عشرة أسطر ، كل منها يحتوي على عدد من خمسة مقاطع لفظية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء قائمة تسوق لعائلة مكونة من أربعة أفراد بميزانية محدودة ولكنهم يرغبون في إعداد مجموعة متنوعة من الوجبات الصحية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي فوائد استخدام السلم في مكان العمل؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "عدّل الجملة التالية: \"بالتأكيد لا أريد حضور الحفلة غدًا\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "وصف خطوات خوارزمية كشف البروز.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أوجد حل المعادلة ax3 + bx2 + cx + d = 0",
+    "language": "ar"
+  },
+  {
+    "prompt": "زيادة صعوبة اللغز التالي:\n\"ما الذي يحتوي على العديد من المفاتيح ولكن لا يمكنه حتى فتح باب واحد؟\"",
+    "language": "ar"
+  },
+  {
+    "prompt": "بالنظر إلى تسلسل الحمض النووي ، حدد تكوين القاعدة النووية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "صف عملية لتشغيل مصباح كهربائي باستخدام بطارية",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي علامة الجفاف؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتحية المتحدث بطريقة احترافية وودية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي بعض مزايا استخدام التقنيات الرقمية في الفصل؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "بناء حجة لماذا يجب على الجميع التصويت.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هو الحافز غير المادي الذي يمكن استخدامه لتحفيز الموظفين؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "أعد كتابة الجملة التالية لتجنب التكرار.",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي الجوانب الرئيسية لإدارة المشروع؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "تتقاطع دائرتان من نفس الحجم بزوايا قائمة. ما هي مساحة المنطقة المظللة؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "من أين يحصل جسم الإنسان على الطاقة؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتسمية ثلاث لغات برمجة مستخدمة بشكل متكرر في التعلم الآلي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اكتب تعريفًا لمصطلح \"معالجة اللغة الطبيعية\" في أقل من 50 كلمة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تعديل الجملة لتشمل عبارة \"بالإضافة\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "قدم مثالين لكيفية تعامل الطالب مع ضغوط الامتحانات",
+    "language": "ar"
+  },
+  {
+    "prompt": "اقترح استراتيجيتين يمكن للشركة استخدامهما لتقليل انبعاثات الكربون",
+    "language": "ar"
+  },
+  {
+    "prompt": "كيف تشجع شخصًا ما على تجربة شيء جديد",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء طريقتين لاستخدام التكنولوجيا لتحسين إنتاجيتك الشخصية",
+    "language": "ar"
+  },
+  {
+    "prompt": "إنشاء قائمة من الهوايات التي يمكن أن يمارسها المراهق.",
+    "language": "ar"
+  },
+  {
+    "prompt": "تصميم مخطط أرضي للمنزل مع ثلاث غرف نوم وحمامين.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنشئ جملة رياضية تعبر عن القسمة والضرب التي تتضمن المتغيرات.",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنشئ برنامجًا يُرجع \"صواب\" عندما يكون رقم معين عددًا أوليًا.",
+    "language": "ar"
+  },
+  {
+    "prompt": "وصف تأثير الوباء العالمي على الاقتصادات في جميع أنحاء العالم",
+    "language": "ar"
+  },
+  {
+    "prompt": "كيف تتفاعل الإلكترونات في الذرات مع بعضها البعض؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء خوارزمية للبحث عن رقم هاتف معين في قائمة الأسماء وأرقام الهواتف.",
+    "language": "ar"
+  },
+  {
+    "prompt": "صنف النص التالي على أنه إما إيجابي أو سلبي: \"أشعر بالإحباط الشديد اليوم.\"",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتحرير النص التالي لتصحيح القواعد النحوية: \"تقود السيارة للعمل\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بإنشاء برنامج لتوليد متوالية فيبوناتشي.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قائمة خمس مناطق مناخية في أمريكا الشمالية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "وصف الوظائف المختلفة لرئيس الولايات المتحدة.",
+    "language": "ar"
+  },
+  {
+    "prompt": "رتب الحروف لتكوين اسم جمع.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اسم أربع قارات في العالم.",
+    "language": "ar"
+  },
+  {
+    "prompt": "لخص عملية كيفية عمل الشبكة العصبية للتعلم العميق.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتكوين قصة بالعناصر التالية: مسافر ، ومدينة قديمة ، وسر.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اذكر خمس فوائد لاستخدام الذكاء الاصطناعي في التسويق.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اسم الممثلين الأربعة الذين لعبوا دور البطولة في فيلم \"العراب\".",
+    "language": "ar"
+  },
+  {
+    "prompt": "ما هي الصفات التي تحتاجها لتكون ناجحًا في مهنة البرمجة؟",
+    "language": "ar"
+  },
+  {
+    "prompt": "أنشئ كائن JSON صالحًا من السلاسل الثلاثة التالية.",
+    "language": "ar"
+  },
+  {
+    "prompt": "اشرح الغرض من استخدام خوارزمية الكمبيوتر.",
+    "language": "ar"
+  },
+  {
+    "prompt": "قم بتحسين استعلام SQL التالي لجعله أسرع.",
+    "language": "ar"
+  }
+]

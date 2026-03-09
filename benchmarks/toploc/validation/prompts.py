@@ -18,7 +18,8 @@ def preload_all_language_prompts(
     dataset = {}
     for lang in langs:
         hf_lang = LANG_MAP.get(lang, lang)
-        ds = load_dataset("MBZUAI/Bactrian-X", hf_lang, split="train")
+        data_files = f"hf://datasets/MBZUAI/Bactrian-X/data/{hf_lang}.json.gz"
+        ds = load_dataset("json", data_files=data_files, split="train")
         prompts = [item["instruction"] for item in ds]
         dataset[lang] = prompts
         print(f"Loaded {len(prompts)} prompts for language '{lang}' (hf: '{hf_lang}')")
