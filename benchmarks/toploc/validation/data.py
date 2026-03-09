@@ -43,6 +43,14 @@ class ValidationItem(BaseModel):
         return self.model_dump()
 
 
+class CollectionItem(BaseModel):
+    prompt: str
+    language: Optional[str] = None
+    result: Result
+    model: ModelInfo
+    request_params: RequestParams
+
+
 class ExperimentRequest(BaseModel):
     prompt: str
     language: Optional[str] = None
@@ -115,6 +123,31 @@ class InferenceValidationRun(BaseModel):
         inf_prec = self.model_inference.precision
         val_prec = self.model_validation.precision
         return f"{inf_model}_{inf_prec}_{inf_gpu}___{val_model}_{val_prec}_{val_gpu}.jsonl"
+
+
+def save_collection_to_jsonl(
+    items: List[CollectionItem],
+    path: str,
+    append: bool = False,
+):
+    mode = 'a' if append else 'w'
+    with open(path, mode) as f:
+        for item in items:
+            f.write(item.model_dump_json() + '\n')
+
+
+def load_collection_from_jsonl(
+    path: str,
+    n: Optional[int] = None,
+) -> List[CollectionItem]:
+    k = n if n is not None else float('inf')
+    results = []
+    with open(path, 'r') as f:
+        for i, line in enumerate(f):
+            if i >= k:
+                break
+            results.append(CollectionItem.model_validate_json(line))
+    return results
 
 
 def save_to_jsonl(
