@@ -72,20 +72,20 @@ def main():
         "--model", required=True, help="Model name as served by vLLM"
     )
     parser.add_argument(
-        "--prompts", required=True, help="Path to prompts JSON file from prepare_prompts.py"
+        "--prompts", required=True, help="Path to prompts JSON file from prepare_prompts.py", default="prompts.json"
     )
     parser.add_argument(
-        "--output-dir", required=True, help="Directory to save results"
+        "--output-dir", required=True, help="Directory to save results", default="/home/zenovkin_n/vllm_logs"
     )
-    parser.add_argument("--gpu", default="unknown", help="GPU label, e.g. 1xH100")
+    parser.add_argument("--gpu", default="V100", help="GPU label, e.g. 1xH100")
     parser.add_argument(
-        "--precision", default="unknown", help="Precision label, e.g. fp8"
+        "--precision", default="fp8", help="Precision label, e.g. fp8"
     )
     parser.add_argument("--max-tokens", type=int, default=3000)
     parser.add_argument("--temperature", type=float, default=0.99)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--top-logprobs", type=int, default=5)
-    parser.add_argument("--max-workers", type=int, default=None)
+    parser.add_argument("--top-logprobs", type=int, default=512)
+    parser.add_argument("--max-workers", type=int, default=1)
     args = parser.parse_args()
 
     prompts = load_prompts(args.prompts)

@@ -344,7 +344,7 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
         self.use_aux_hidden_state_outputs = False
 
         # TOPLOC hidden state collection (file-based).
-        self._toploc_output_dir = os.environ.get("VLLM_TOPLOC_OUTPUT_DIR")
+        self._toploc_output_dir = "/home/zenovkin_n/vllm_topk"
         self._toploc_buffers: dict[str, list[np.ndarray]] = {}
         if self._toploc_output_dir:
             os.makedirs(self._toploc_output_dir, exist_ok=True)
