@@ -5,10 +5,6 @@ from typing import List, Dict, Union, Optional
 class PositionResult(BaseModel):
     token: str
     logprobs: Dict[str, float]
-    toploc_indices: Optional[List[int]] = None
-    toploc_values: Optional[List[float]] = None
-    toploc_logprob_token_ids: Optional[List[int]] = None
-    toploc_logprob_values: Optional[List[float]] = None
 
 
 class Result(BaseModel):
@@ -49,6 +45,7 @@ class CollectionItem(BaseModel):
     result: Result
     model: ModelInfo
     request_params: RequestParams
+    response_id: Optional[str] = None
 
 
 class ExperimentRequest(BaseModel):

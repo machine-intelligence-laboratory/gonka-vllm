@@ -3,6 +3,7 @@
 
 import gc
 import itertools
+import os
 import time
 from collections import defaultdict
 from collections.abc import Iterator
@@ -341,6 +342,16 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
         self.encoder_cache: dict[str, torch.Tensor] = {}
 
         self.use_aux_hidden_state_outputs = False
+
+        # TOPLOC hidden state collection (file-based).
+        self._toploc_output_dir = os.environ.get("VLLM_TOPLOC_OUTPUT_DIR")
+        self._toploc_buffers: dict[str, list[np.ndarray]] = {}
+        if self._toploc_output_dir:
+            os.makedirs(self._toploc_output_dir, exist_ok=True)
+            logger.info(
+                "TOPLOC hidden state collection enabled, output dir: %s",
+                self._toploc_output_dir,
+            )
         # Set up speculative decoding.
         # NOTE(Jiayi): currently we put the entire draft model on
         # the last PP rank. This is not ideal if there are many
@@ -647,6 +658,23 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
     def _sync_device(self) -> None:
         torch.cuda.synchronize()
 
+    def _toploc_flush(self, finished_req_ids: set[str]) -> None:
+        """Save accumulated hidden states for finished requests to disk."""
+        for req_id in finished_req_ids:
+            buf = self._toploc_buffers.pop(req_id, None)
+            if buf is None:
+                continue
+            req_state = self.requests.get(req_id)
+            token_ids = (
+                np.array(req_state.output_token_ids, dtype=np.int32)
+                if req_state is not None
+                else np.array([], dtype=np.int32)
+            )
+            hidden_states = np.stack(buf)  # (num_tokens, hidden_dim)
+            path = os.path.join(self._toploc_output_dir, f"{req_id}.npz")
+            np.savez(path, hidden_states=hidden_states, token_ids=token_ids)
+            logger.debug("TOPLOC: saved %s (%d tokens)", req_id, len(buf))
+
     def _update_states(self, scheduler_output: "SchedulerOutput") -> None:
         """Update the cached states and the persistent batch with the scheduler
         output.
@@ -657,6 +685,10 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
         The SamplingMetadata is updated and copied to the GPU if there is a
         new/resumed/paused/finished request in the batch.
         """
+        # TOPLOC: flush hidden states for finished requests before removal.
+        if self._toploc_output_dir:
+            self._toploc_flush(scheduler_output.finished_req_ids)
+
         # Remove finished requests from the cached states.
         for req_id in scheduler_output.finished_req_ids:
             self.requests.pop(req_id, None)
@@ -2714,6 +2746,19 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
                 )
                 assert model_output_broadcast_data is not None
                 logits = model_output_broadcast_data["logits"]
+
+        # TOPLOC: accumulate hidden states per request.
+        if self._toploc_output_dir and spec_decode_metadata is None:
+            hs = sample_hidden_states
+            if hs.dtype == torch.bfloat16:
+                hs = hs.to(torch.float16)
+            hs_cpu = hs.cpu().numpy()
+            num_reqs = self.input_batch.num_reqs
+            for i in range(num_reqs):
+                req_id = self.input_batch.req_ids[i]
+                if req_id not in self._toploc_buffers:
+                    self._toploc_buffers[req_id] = []
+                self._toploc_buffers[req_id].append(hs_cpu[i])
 
         self.execute_model_state = ExecuteModelState(
             scheduler_output,

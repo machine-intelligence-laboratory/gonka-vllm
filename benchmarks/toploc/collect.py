@@ -1,14 +1,24 @@
-"""Collect top-k hidden states and logprobs from a running vLLM server.
+"""Collect logprobs from a running vLLM server.
 
-Start vLLM separately, then point this script at it.
+Hidden states are collected server-side via VLLM_TOPLOC_OUTPUT_DIR env var.
+Start vLLM with that env var set, then point this script at it.
+
+Each API response includes an ``id`` field (e.g. ``chatcmpl-<uuid>``).
+The server writes ``<id>.npz`` files containing the raw hidden-state
+vectors for every generated token.  This script saves a JSONL mapping
+``response_id → prompt + logprobs`` so you can join them offline.
 
 Usage:
-    python collect.py \
-        --server-url http://localhost:8000 \
-        --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \
-        --prompts prompts.json \
-        --output-dir ./data/run1 \
-        --gpu 1xH100 \
+    # On the server:
+    VLLM_TOPLOC_OUTPUT_DIR=/data/toploc_hs vllm serve ...
+
+    # On the client:
+    python collect.py \\
+        --server-url http://localhost:8000 \\
+        --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \\
+        --prompts prompts.json \\
+        --output-dir ./data/run1 \\
+        --gpu 1xH100 \\
         --precision fp8
 """
 import argparse
@@ -38,12 +48,14 @@ def load_prompts(path):
 def collect_one(prompt_entry, model_info, request_params):
     resp = inference(model_info, request_params, prompt_entry["prompt"])
     result = _extract_logprobs(resp)
+    response_id = resp.get("id")
     return CollectionItem(
         prompt=prompt_entry["prompt"],
         language=prompt_entry.get("language"),
         result=result,
         model=model_info,
         request_params=request_params,
+        response_id=response_id,
     )
 
 
@@ -72,8 +84,6 @@ def main():
     parser.add_argument("--max-tokens", type=int, default=3000)
     parser.add_argument("--temperature", type=float, default=0.99)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--toploc-k", type=int, default=512)
-    parser.add_argument("--toploc-logprobs-k", type=int, default=512)
     parser.add_argument("--top-logprobs", type=int, default=5)
     parser.add_argument("--max-workers", type=int, default=None)
     args = parser.parse_args()
@@ -91,10 +101,6 @@ def main():
         temperature=args.temperature,
         seed=args.seed,
         top_logprobs=args.top_logprobs,
-        additional_params={
-            "toploc_k": args.toploc_k,
-            "toploc_logprobs_k": args.toploc_logprobs_k,
-        },
     )
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -137,6 +143,10 @@ def main():
                 logger.exception("Failed for prompt: %s", prompt[:100])
 
     print(f"Done. {len(results)} results saved to {output_path}")
+    print(
+        "Hidden states are on the server in $VLLM_TOPLOC_OUTPUT_DIR. "
+        "Join with this JSONL via the 'response_id' field."
+    )
 
 
 if __name__ == "__main__":

@@ -128,14 +128,6 @@ def _extract_logprobs(resp) -> Result:
             token=position["token"],
             logprobs={lp["token"]: lp["logprob"] for lp in position["top_logprobs"]},
         )
-        if "toploc" in position:
-            toploc = position["toploc"]
-            if "hidden_state" in toploc:
-                pos_result.toploc_indices = toploc["hidden_state"]["indices"]
-                pos_result.toploc_values = toploc["hidden_state"]["values"]
-            if "logprobs" in toploc:
-                pos_result.toploc_logprob_token_ids = toploc["logprobs"]["token_ids"]
-                pos_result.toploc_logprob_values = toploc["logprobs"]["logprobs"]
         results.append(pos_result)
 
     return Result(text=text, results=results)
