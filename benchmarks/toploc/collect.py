@@ -65,11 +65,11 @@ def main():
     )
     parser.add_argument(
         "--server-url",
-        required=True,
+        required=True, default="http://localhost:8000",
         help="vLLM server URL, e.g. http://localhost:8000",
     )
     parser.add_argument(
-        "--model", required=True, help="Model name as served by vLLM"
+        "--model", required=True, help="Model name as served by vLLM", default="qwen",
     )
     parser.add_argument(
         "--prompts", required=True, help="Path to prompts JSON file from prepare_prompts.py", default="prompts.json"
