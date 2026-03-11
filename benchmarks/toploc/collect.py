@@ -65,17 +65,17 @@ def main():
     )
     parser.add_argument(
         "--server-url",
-        required=True, default="http://localhost:8000",
+        default="http://localhost:8000",
         help="vLLM server URL, e.g. http://localhost:8000",
     )
     parser.add_argument(
-        "--model", required=True, help="Model name as served by vLLM", default="qwen",
+        "--model",  help="Model name as served by vLLM", default="qwen",
     )
     parser.add_argument(
-        "--prompts", required=True, help="Path to prompts JSON file from prepare_prompts.py", default="prompts.json"
+        "--prompts", help="Path to prompts JSON file from prepare_prompts.py", default="prompts.json"
     )
     parser.add_argument(
-        "--output-dir", required=True, help="Directory to save results", default="/home/zenovkin_n/vllm_logs"
+        "--output-dir", help="Directory to save results", default="/home/zenovkin_n/vllm_logs"
     )
     parser.add_argument("--gpu", default="V100", help="GPU label, e.g. 1xH100")
     parser.add_argument(
