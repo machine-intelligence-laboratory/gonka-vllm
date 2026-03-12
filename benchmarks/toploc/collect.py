@@ -69,7 +69,7 @@ def main():
         help="vLLM server URL, e.g. http://localhost:8000",
     )
     parser.add_argument(
-        "--model",  help="Model name as served by vLLM", default="qwen",
+        "--model",  help="Model name as served by vLLM", default="/data/shared/CompressaAI/test_deploy/models/models/Qwen_Qwen2.5-0.5B-Instruct",
     )
     parser.add_argument(
         "--prompts", help="Path to prompts JSON file from prepare_prompts.py", default="prompts.json"
@@ -84,7 +84,7 @@ def main():
     parser.add_argument("--max-tokens", type=int, default=3000)
     parser.add_argument("--temperature", type=float, default=0.99)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--top-logprobs", type=int, default=512)
+    parser.add_argument("--top-logprobs", type=int, default=20)
     parser.add_argument("--max-workers", type=int, default=1)
     args = parser.parse_args()
 
