@@ -85,7 +85,7 @@ def main():
     parser.add_argument("--temperature", type=float, default=0.99)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--top-logprobs", type=int, default=20)
-    parser.add_argument("--num-samples", type=int, default=None,
+    parser.add_argument("--num-samples", type=int, default=100,
                         help="Collect only the first N prompts (default: all)")
     parser.add_argument("--max-workers", type=int, default=1)
     args = parser.parse_args()
