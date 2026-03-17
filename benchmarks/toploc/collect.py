@@ -165,7 +165,7 @@ def main():
         max_tokens=args.max_tokens,
         temperature=args.temperature,
         seed=args.seed,
-        top_logprobs=args.top_logprobs,
+        top_logprobs=1,
     )
 
     os.makedirs(args.output_dir, exist_ok=True)
