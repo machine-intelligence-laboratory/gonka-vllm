@@ -20,23 +20,7 @@ Usage:
     # On the server:
     VLLM_TOPLOC_OUTPUT_DIR=/data/toploc_hs vllm serve ...
 
-    # Free run (GPU A):
-    python collect.py \\
-        --server-url http://localhost:8000 \\
-        --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \\
-        --prompts prompts.json \\
-        --output-dir ./data/run1 \\
-        --gpu 1xH100 \\
-        --precision fp8
 
-    # Enforced run (GPU B), reusing tokens from the free run:
-    python collect.py \\
-        --server-url http://gpu-b:8000 \\
-        --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \\
-        --from-collection ./data/run1/Meta-Llama-3.1-8B-Instruct-FP8_fp8_1xH100_free.jsonl \\
-        --output-dir ./data/run2 \\
-        --gpu 1xA100 \\
-        --precision fp8
 """
 import argparse
 import json
@@ -141,7 +125,6 @@ def main():
     parser.add_argument("--max-tokens", type=int, default=3000)
     parser.add_argument("--temperature", type=float, default=0.99)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--top-logprobs", type=int, default=20)
     parser.add_argument(
         "--num-samples", type=int, default=100,
         help="Collect only the first N prompts (default: all)",
