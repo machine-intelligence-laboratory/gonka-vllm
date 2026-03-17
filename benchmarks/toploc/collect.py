@@ -118,6 +118,8 @@ def main():
         help="Directory to save results",
         default="/home/zenovkin_n/vllm_logs",
     )
+    parser.add_argument("--top-logprobs", type=int, default=20)
+
     parser.add_argument("--gpu", default="V100", help="GPU label, e.g. 1xH100")
     parser.add_argument(
         "--precision", default="fp8", help="Precision label, e.g. fp8"
@@ -165,7 +167,7 @@ def main():
         max_tokens=args.max_tokens,
         temperature=args.temperature,
         seed=args.seed,
-        top_logprobs=1,
+        top_logprobs=args.top_logprobs,
     )
 
     os.makedirs(args.output_dir, exist_ok=True)
