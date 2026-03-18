@@ -20,23 +20,7 @@ Usage:
     # On the server:
     VLLM_TOPLOC_OUTPUT_DIR=/data/toploc_hs vllm serve ...
 
-    # Free run (GPU A):
-    python collect.py \\
-        --server-url http://localhost:8000 \\
-        --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \\
-        --prompts prompts.json \\
-        --output-dir ./data/run1 \\
-        --gpu 1xH100 \\
-        --precision fp8
 
-    # Enforced run (GPU B), reusing tokens from the free run:
-    python collect.py \\
-        --server-url http://gpu-b:8000 \\
-        --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \\
-        --from-collection ./data/run1/Meta-Llama-3.1-8B-Instruct-FP8_fp8_1xH100_free.jsonl \\
-        --output-dir ./data/run2 \\
-        --gpu 1xA100 \\
-        --precision fp8
 """
 import argparse
 import json
@@ -76,9 +60,15 @@ def load_items_jsonl(path, n=None):
 
 
 def _extract_tokens(resp):
-    """Return the list of token strings from an API response."""
+    """Return list of {token, top_tokens} dicts from an API response."""
     content = resp["choices"][0]["logprobs"]["content"]
-    return [pos["token"] for pos in content]
+    return [
+        {
+            "token": pos["token"],
+            "top_tokens": [tp["token"] for tp in pos.get("top_logprobs", [])],
+        }
+        for pos in content
+    ]
 
 
 def collect_one(prompt_entry, model_info, request_params):
@@ -95,7 +85,10 @@ def collect_one(prompt_entry, model_info, request_params):
 def collect_one_enforced(prior_entry, model_info, request_params):
     """Enforced generation: replay tokens from a prior run."""
     enforced_tokens = EnforcedTokens(
-        tokens=[EnforcedToken(token=t) for t in prior_entry["tokens"]]
+        tokens=[
+            EnforcedToken(token=t["token"], top_tokens=t["top_tokens"])
+            for t in prior_entry["tokens"]
+        ]
     )
     resp = validation(
         model_info, request_params, prior_entry["prompt"],
@@ -134,6 +127,8 @@ def main():
         help="Directory to save results",
         default="/home/zenovkin_n/vllm_logs",
     )
+    parser.add_argument("--top-logprobs", type=int, default=20)
+
     parser.add_argument("--gpu", default="V100", help="GPU label, e.g. 1xH100")
     parser.add_argument(
         "--precision", default="fp8", help="Precision label, e.g. fp8"
@@ -141,7 +136,6 @@ def main():
     parser.add_argument("--max-tokens", type=int, default=3000)
     parser.add_argument("--temperature", type=float, default=0.99)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--top-logprobs", type=int, default=20)
     parser.add_argument(
         "--num-samples", type=int, default=None,
         help="Collect only the first N prompts (default: all)",
@@ -161,6 +155,25 @@ def main():
         prior_items = load_items_jsonl(
             args.from_collection, n=args.num_samples
         )
+        # Validate that the collection has structured token data
+        for i, item in enumerate(prior_items):
+            tokens = item.get("tokens", [])
+            if not tokens:
+                raise ValueError(
+                    f"Item {i} in {args.from_collection} has no tokens"
+                )
+            if isinstance(tokens[0], str):
+                raise ValueError(
+                    f"Item {i} in {args.from_collection} has flat token "
+                    f"strings instead of {{token, top_tokens}} dicts. "
+                    f"Re-run the free collection to include top logprobs."
+                )
+            if not tokens[0].get("top_tokens"):
+                raise ValueError(
+                    f"Item {i} in {args.from_collection} has empty "
+                    f"top_tokens. Re-run the free collection with "
+                    f"--top-logprobs > 0."
+                )
         logger.info(
             "Loaded %d items from %s for enforced collection",
             len(prior_items), args.from_collection,
