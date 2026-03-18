@@ -143,7 +143,7 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--top-logprobs", type=int, default=20)
     parser.add_argument(
-        "--num-samples", type=int, default=100,
+        "--num-samples", type=int, default=None,
         help="Collect only the first N prompts (default: all)",
     )
     parser.add_argument("--max-workers", type=int, default=1)
