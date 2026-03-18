@@ -345,8 +345,9 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
 
         # TOPLOC hidden state collection (file-based).
         self._toploc_output_dir = "/home/zenovkin_n/vllm_topk"
-        self._toploc_logprobs_k = 512  # top-k logprobs to collect
-        self._toploc_buffers: dict[str, list[np.ndarray]] = {}
+        self._toploc_hidden_k = 128  # top-k hidden state dims to collect
+        self._toploc_logprobs_k = 128  # top-k logprobs to collect
+        self._toploc_buffers: dict[str, list[tuple[np.ndarray, np.ndarray]]] = {}
         self._toploc_logprob_buffers: dict[str, list[tuple[np.ndarray, np.ndarray]]] = {}
         if self._toploc_output_dir:
             os.makedirs(self._toploc_output_dir, exist_ok=True)
@@ -661,7 +662,7 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
         torch.cuda.synchronize()
 
     def _toploc_flush(self, finished_req_ids: set[str]) -> None:
-        """Save accumulated hidden states and logprobs for finished requests."""
+        """Save accumulated top-k hidden states and logprobs for finished requests."""
         for req_id in finished_req_ids:
             buf = self._toploc_buffers.pop(req_id, None)
             lp_buf = self._toploc_logprob_buffers.pop(req_id, None)
@@ -673,10 +674,14 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
                 if req_state is not None
                 else np.array([], dtype=np.int32)
             )
-            hidden_states = np.stack(buf)  # (num_tokens, hidden_dim)
 
             save_dict = dict(
-                hidden_states=hidden_states,
+                topk_hidden_indices=np.stack(
+                    [t[0] for t in buf]
+                ),  # (num_tokens, k) int32
+                topk_hidden_values=np.stack(
+                    [t[1] for t in buf]
+                ),  # (num_tokens, k) float16
                 token_ids=token_ids,
             )
             # Add top-k logprobs if collected.
@@ -2764,12 +2769,19 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
                 assert model_output_broadcast_data is not None
                 logits = model_output_broadcast_data["logits"]
 
-        # TOPLOC: accumulate hidden states and top-k logprobs per request.
+        # TOPLOC: accumulate top-k hidden states and top-k logprobs per request.
         if self._toploc_output_dir and spec_decode_metadata is None:
+            # Top-k hidden state dimensions (by absolute value).
             hs = sample_hidden_states
-            if hs.dtype == torch.bfloat16:
-                hs = hs.to(torch.float16)
-            hs_cpu = hs.cpu().numpy()
+            hs_topk_vals, hs_topk_ids = torch.topk(
+                hs.abs(), self._toploc_hidden_k, dim=-1
+            )
+            # Gather the actual (signed) values at those indices.
+            hs_topk_vals = hs.gather(-1, hs_topk_ids)
+            if hs_topk_vals.dtype == torch.bfloat16:
+                hs_topk_vals = hs_topk_vals.to(torch.float16)
+            hs_topk_ids_cpu = hs_topk_ids.to(torch.int32).cpu().numpy()
+            hs_topk_vals_cpu = hs_topk_vals.to(torch.float16).cpu().numpy()
 
             # Compute top-k logprobs from the raw logits.
             if logits is not None and self._toploc_logprobs_k > 0:
@@ -2789,7 +2801,9 @@ class GPUModelRunner(LoRAModelRunnerMixin, KVConnectorModelRunnerMixin):
                 if req_id not in self._toploc_buffers:
                     self._toploc_buffers[req_id] = []
                     self._toploc_logprob_buffers[req_id] = []
-                self._toploc_buffers[req_id].append(hs_cpu[i])
+                self._toploc_buffers[req_id].append(
+                    (hs_topk_ids_cpu[i], hs_topk_vals_cpu[i])
+                )
                 if topk_ids_cpu is not None:
                     self._toploc_logprob_buffers[req_id].append(
                         (topk_ids_cpu[i], topk_vals_cpu[i])
