@@ -30,6 +30,8 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 
+import requests as http_requests
+
 from validation.utils import inference, validation, EnforcedTokens, EnforcedToken
 from validation.data import ModelInfo, RequestParams
 
@@ -113,9 +115,8 @@ def main():
     )
     parser.add_argument(
         "--model",
-        help="Model name as served by vLLM",
-        default="/data/shared/CompressaAI/test_deploy/models/models/"
-                "Qwen_Qwen2.5-0.5B-Instruct",
+        help="Model name as served by vLLM (auto-detected from server if omitted)",
+        default=None,
     )
     parser.add_argument(
         "--prompts",
@@ -148,6 +149,19 @@ def main():
              "tokens from that run instead of generating freely.",
     )
     args = parser.parse_args()
+
+    # ── Auto-detect model name from server if not provided ──
+    if args.model is None:
+        resp = http_requests.get(f"{args.server_url}/v1/models")
+        resp.raise_for_status()
+        models = resp.json()["data"]
+        if len(models) != 1:
+            parser.error(
+                f"Server has {len(models)} models; specify --model explicitly. "
+                f"Available: {[m['id'] for m in models]}"
+            )
+        args.model = models[0]["id"]
+        print(f"Auto-detected model: {args.model}")
 
     # ── Load prior run (enforced mode) or prompts (free mode) ──
     prior_items = None
