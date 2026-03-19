@@ -1,5 +1,9 @@
 """Evaluate toploc verification on collected hidden states and logprobs.
 
+Supports two data formats:
+  - Full: NPZ with dense hidden_states (N, hidden_dim) and sparse logprobs
+  - Reduced: NPZ with sparse topk_hidden_{indices,values} (N, 128) and sparse logprobs
+
 Supports:
   - Self-verification (baseline): build and verify against same data
   - Perturbation test: add noise to test sensitivity
@@ -12,7 +16,7 @@ Usage:
     # Perturbation sensitivity test
     python evaluate.py --npz-dir collected_logs/vllm_topk --perturbation 0.01
 
-    # Cross-run comparison
+    # Cross-run comparison (matched by prompt via JSONL)
     python evaluate.py \\
         --npz-dir collected_logs/run_a/vllm_topk \\
         --npz-dir-b collected_logs/run_b/vllm_topk \\
@@ -22,6 +26,8 @@ Usage:
     # Single configuration
     python evaluate.py --npz-dir ... --mode logprobs --k 128 --num-positions 2
 """
+
+from __future__ import annotations
 
 import argparse
 import glob
@@ -116,6 +122,27 @@ def make_hidden_state_tensor(
     return torch.from_numpy(selected.astype(np.float32)).to(torch.bfloat16)
 
 
+def make_sparse_hidden_state_tensor(
+    indices: np.ndarray,
+    values: np.ndarray,
+    positions: list[int],
+    hidden_dim: int,
+) -> torch.Tensor:
+    """Reconstruct dense hidden states from sparse top-k representation.
+
+    indices: (N, top_k_stored) int32 — dimension indices
+    values:  (N, top_k_stored) float16 — values at those dims
+    Returns: (len(positions), hidden_dim) bfloat16
+    """
+    n_pos = len(positions)
+    tensor = torch.zeros(n_pos, hidden_dim, dtype=torch.bfloat16)
+    for i, pos in enumerate(positions):
+        idx = indices[pos]   # (top_k_stored,)
+        vals = values[pos]   # (top_k_stored,)
+        tensor[i, idx] = torch.from_numpy(vals.astype(np.float32)).to(torch.bfloat16)
+    return tensor
+
+
 def make_logprob_tensor(
     token_ids: np.ndarray,
     values: np.ndarray,
@@ -137,11 +164,24 @@ def make_logprob_tensor(
     return tensor
 
 
+def is_reduced_format(data: dict) -> bool:
+    """Check if NPZ data uses the reduced sparse format."""
+    return "topk_hidden_indices" in data
+
+
 def load_tensor(
-    npz_path: str, mode: str, positions: list[int], vocab_size: int
+    npz_path: str, mode: str, positions: list[int],
+    vocab_size: int, hidden_dim: int = 0,
 ) -> torch.Tensor:
     data = dict(np.load(npz_path))
     if mode == "hidden_states":
+        if is_reduced_format(data):
+            return make_sparse_hidden_state_tensor(
+                data["topk_hidden_indices"],
+                data["topk_hidden_values"],
+                positions,
+                hidden_dim,
+            )
         return make_hidden_state_tensor(data["hidden_states"], positions)
     else:
         return make_logprob_tensor(
@@ -161,22 +201,13 @@ def _build_and_verify(
     tensor_b: torch.Tensor,
     k: int,
 ) -> list[VerifyResult]:
-    """Build proofs from tensor_a, verify against tensor_b.
-
-    Prepends a dummy row so that skip_prefill=True drops it and the C++
-    fast-path processes all real rows in one decode batch → one proof.
-    """
+    """Build proofs from tensor_a, verify against tensor_b."""
     n = tensor_a.shape[0]
-    dummy = torch.zeros(1, tensor_a.shape[1], dtype=tensor_a.dtype)
-
-    full_a = torch.cat([dummy, tensor_a], dim=0)
     proofs = build_proofs(
-        full_a, decode_batching_size=n, topk=k, skip_prefill=True
+        tensor_a, decode_batching_size=n, topk=k,
     )
-
-    full_b = torch.cat([dummy, tensor_b], dim=0)
     vr_list = verify_proofs(
-        full_b, proofs, decode_batching_size=n, topk=k, skip_prefill=True
+        tensor_b, proofs, decode_batching_size=n, topk=k,
     )
 
     return [
@@ -242,12 +273,30 @@ def infer_vocab_size(npz_files: list[str], n_sample: int = 20) -> int:
     return ((max_id + 1024) // 1024) * 1024
 
 
+def infer_hidden_dim(npz_files: list[str], n_sample: int = 20) -> int:
+    """Infer hidden dimension from sparse format or dense shape."""
+    max_idx = 0
+    for f in npz_files[:n_sample]:
+        data = np.load(f)
+        if "topk_hidden_indices" in data:
+            max_idx = max(max_idx, int(data["topk_hidden_indices"].max()))
+        elif "hidden_states" in data:
+            return data["hidden_states"].shape[1]
+    # Round up to next power of 2
+    dim = max_idx + 1
+    p = 1
+    while p < dim:
+        p *= 2
+    return p
+
+
 def run_experiment(
     pairs: list[tuple[str, str | None]],
     mode: str,
     k: int,
     num_positions: int,
     vocab_size: int,
+    hidden_dim: int = 0,
     perturbation: float = 0.0,
 ) -> ExperimentResult:
     """Run toploc build + verify for one (mode, k, num_positions) config."""
@@ -255,7 +304,12 @@ def run_experiment(
 
     for npz_a, npz_b in pairs:
         data_a = dict(np.load(npz_a))
-        n_tokens = data_a["hidden_states"].shape[0]
+        reduced = is_reduced_format(data_a)
+
+        if reduced:
+            n_tokens = data_a["topk_hidden_values"].shape[0]
+        else:
+            n_tokens = data_a["hidden_states"].shape[0]
 
         if n_tokens < max(num_positions, 1):
             result.skipped += 1
@@ -264,9 +318,17 @@ def run_experiment(
         positions = select_positions(n_tokens, num_positions)
 
         if mode == "hidden_states":
-            tensor_a = make_hidden_state_tensor(
-                data_a["hidden_states"], positions
-            )
+            if reduced:
+                tensor_a = make_sparse_hidden_state_tensor(
+                    data_a["topk_hidden_indices"],
+                    data_a["topk_hidden_values"],
+                    positions,
+                    hidden_dim,
+                )
+            else:
+                tensor_a = make_hidden_state_tensor(
+                    data_a["hidden_states"], positions
+                )
         else:
             tensor_a = make_logprob_tensor(
                 data_a["topk_logprob_token_ids"],
@@ -277,7 +339,9 @@ def run_experiment(
 
         # Verification target
         if npz_b is not None and npz_b != npz_a:
-            tensor_b = load_tensor(npz_b, mode, positions, vocab_size)
+            tensor_b = load_tensor(
+                npz_b, mode, positions, vocab_size, hidden_dim
+            )
         elif perturbation > 0:
             noise = torch.randn_like(tensor_a.float()) * perturbation
             tensor_b = (tensor_a.float() + noise).to(torch.bfloat16)
@@ -351,10 +415,12 @@ def main():
     else:
         pairs = [(f, None) for f in npz_files_a]
 
-    # ── vocab size (needed for logprobs mode) ──
+    # ── vocab size & hidden dim ──
     all_npz = npz_files_a
     vocab_size = infer_vocab_size(all_npz)
+    hidden_dim = infer_hidden_dim(all_npz)
     print(f"Vocab size (inferred): {vocab_size}")
+    print(f"Hidden dim (inferred): {hidden_dim}")
 
     label = "self-verify"
     if args.npz_dir_b:
@@ -380,6 +446,7 @@ def main():
                         k,
                         num_pos,
                         vocab_size,
+                        hidden_dim=hidden_dim,
                         perturbation=args.perturbation,
                     )
                     all_results.append(exp)

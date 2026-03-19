@@ -41,7 +41,7 @@ python collect.py \
     --server-url http://localhost:8000 \
     --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \
     --prompts prompts.json \
-    --output-dir ./data/experiment1 \
+    --output-dir vllm_1k_prompt \
     --gpu 1xH100 \
     --precision fp8
 ```
@@ -56,7 +56,7 @@ python collect.py \
     --server-url http://localhost:8000 \
     --model hugging-quants/Meta-Llama-3.1-8B-Instruct-AWQ-INT4 \
     --prompts prompts.json \
-    --output-dir ./data/experiment1 \
+    --output-dir vllm_1k_prompt \
     --gpu 1xH100 \
     --precision int4
 
@@ -65,7 +65,7 @@ python collect.py \
     --server-url http://localhost:8000 \
     --model RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \
     --prompts prompts.json \
-    --output-dir ./data/experiment1 \
+    --output-dir vllm_1k_prompt \
     --gpu 1xA6000 \
     --precision fp8
 ```
@@ -96,6 +96,73 @@ Each run produces two files in `--output-dir`:
 |------|----------|
 | `<model>_<precision>_<gpu>.jsonl` | One JSON line per prompt with toploc data |
 | `<model>_<precision>_<gpu>_config.json` | Run configuration |
+
+### 5. Evaluate
+
+Run `evaluate.py` to verify toploc proofs across collected data. Supports self-verification (baseline), cross-model, and cross-GPU comparison. Works with both full dense NPZ files and reduced sparse format (top-128 indices + values).
+
+#### Self-verify (baseline — should be 100% exact)
+
+```bash
+python evaluate.py \
+    --npz-dir vllm_1k_prompt/qwen_int8_a100_5 \
+    --mode both --k 64,128 --num-positions 1,2,4,8
+```
+
+#### Cross-verify: Int8 vs full precision (same GPU)
+
+```bash
+python evaluate.py \
+    --npz-dir vllm_1k_prompt/qwen_int8_a100_5 \
+    --npz-dir-b vllm_1k_prompt/qwen_full_a100_5 \
+    --jsonl vllm_1k_prompt/Qwen2.5-3B-Instruct-GPTQ-Int8_fp8_A100_5_free.jsonl \
+    --jsonl-b vllm_1k_prompt/Qwen2.5-3B-Instruct_fp8_A100_5_enforced.jsonl \
+    --mode both --k 128 --num-positions 1 \
+    --output results_int8_vs_full.json
+```
+
+#### Cross-verify: Int8 vs Int4 (same GPU)
+
+```bash
+python evaluate.py \
+    --npz-dir vllm_1k_prompt/qwen_int8_a100_5 \
+    --npz-dir-b vllm_1k_prompt/qwen_int4_a100_5 \
+    --jsonl vllm_1k_prompt/Qwen2.5-3B-Instruct-GPTQ-Int8_fp8_A100_5_free.jsonl \
+    --jsonl-b vllm_1k_prompt/Qwen2.5-3B-Instruct-GPTQ-Int4_fp8_A100_5_enforced.jsonl \
+    --mode both --k 64,128 --num-positions 1,2,4,8 \
+    --output results_int8_vs_int4.json
+```
+
+#### Cross-verify: same model, different GPU
+
+```bash
+python evaluate.py \
+    --npz-dir vllm_1k_prompt/qwen_int8_a100_5 \
+    --npz-dir-b vllm_1k_prompt/qwen_int8_a100_7 \
+    --jsonl vllm_1k_prompt/Qwen2.5-3B-Instruct-GPTQ-Int8_fp8_A100_5_free.jsonl \
+    --jsonl-b vllm_1k_prompt/Qwen2.5-3B-Instruct-GPTQ-Int8_fp8_A100_7_enforced.jsonl \
+    --mode both --k 64,128 --num-positions 1,2,4,8 \
+    --output results_int8_gpu5_vs_gpu7.json
+```
+
+#### Results (1k samples, Qwen2.5-3B-Instruct, A100)
+
+| Comparison | Mode | k | exact% | exp_mismatch | mant_err |
+|---|---|---|---|---|---|
+| self (int8) | hidden_states | 128 | 100% | 0 | 0 |
+| self (int8) | logprobs | 128 | 100% | 0 | 0 |
+| int8 GPU5 vs GPU7 | hidden_states | 128 | 100% | 0 | 0 |
+| int8 GPU5 vs GPU7 | logprobs | 128 | 100% | 0 | 0 |
+| int8 vs full | hidden_states | 64 | 0% | 2.08 | 1.91 |
+| int8 vs full | hidden_states | 128 | 0% | 3.87 | 1.96 |
+| int8 vs full | logprobs | 64 | 0% | 11.19 | 17.90 |
+| int8 vs full | logprobs | 128 | 0% | 22.82 | 18.10 |
+| int8 vs int4 | hidden_states | 64 | 0% | 14.27 | 11.21 |
+| int8 vs int4 | hidden_states | 128 | 0% | 26.97 | 12.45 |
+| int8 vs int4 | logprobs | 64 | 0% | 48.00 | ~10^17 |
+| int8 vs int4 | logprobs | 128 | 0% | 97.01 | ~10^17 |
+
+Same model on different GPUs produces identical proofs. Quantization level (int8 vs full, int8 vs int4) creates detectable divergence, with int4 logprobs diverging catastrophically.
 
 ### Loading results
 
