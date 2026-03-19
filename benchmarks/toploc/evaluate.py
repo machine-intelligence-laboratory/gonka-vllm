@@ -204,10 +204,10 @@ def _build_and_verify(
     """Build proofs from tensor_a, verify against tensor_b."""
     n = tensor_a.shape[0]
     proofs = build_proofs(
-        tensor_a, decode_batching_size=n, topk=k,
+        tensor_a, decode_batching_size=n, topk=k, skip_prefill=True,
     )
     vr_list = verify_proofs(
-        tensor_b, proofs, decode_batching_size=n, topk=k,
+        tensor_b, proofs, decode_batching_size=n, topk=k, skip_prefill=True,
     )
 
     return [
