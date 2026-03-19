@@ -10,11 +10,8 @@ Supports:
   - Cross-run comparison: verify between two sets of data
 
 Usage:
-    # Self-verification sweep (all modes, k values, positions)
+    # Self-verification sweep
     python evaluate.py --npz-dir collected_logs/vllm_topk
-
-    # Perturbation sensitivity test
-    python evaluate.py --npz-dir collected_logs/vllm_topk --perturbation 0.01
 
     # Cross-run comparison (matched by prompt via JSONL)
     python evaluate.py \\
@@ -24,7 +21,7 @@ Usage:
         --jsonl-b collected_logs/run_b/logs.jsonl
 
     # Single configuration
-    python evaluate.py --npz-dir ... --mode logprobs --k 128 --num-positions 2
+    python evaluate.py --npz-dir ... --mode logprobs --k 4 --decode-batch-size 1
 """
 
 from __future__ import annotations
@@ -61,7 +58,7 @@ class VerifyResult:
 class ExperimentResult:
     mode: str
     k: int
-    num_positions: int
+    decode_batch_size: int
     results: list[VerifyResult] = field(default_factory=list)
     skipped: int = 0
 
@@ -91,54 +88,30 @@ class ExperimentResult:
 
 
 # ---------------------------------------------------------------------------
-# Position selection
+# Tensor construction — all tokens, no position selection
 # ---------------------------------------------------------------------------
 
-def select_positions(n_tokens: int, num_positions: int) -> list[int]:
-    """Select evenly-spaced token positions, always including the last.
-
-    num_positions=1  → [last]
-    num_positions=2  → [mid, last]
-    num_positions=4  → [N/4-1, N/2-1, 3N/4-1, N-1]
-    num_positions<=0 → all tokens
-    """
-    if num_positions <= 0 or num_positions >= n_tokens:
-        return list(range(n_tokens))
-    return [
-        int(n_tokens * (i + 1) / num_positions) - 1
-        for i in range(num_positions)
-    ]
-
-
-# ---------------------------------------------------------------------------
-# Tensor construction
-# ---------------------------------------------------------------------------
-
-def make_hidden_state_tensor(
-    hidden_states: np.ndarray, positions: list[int]
-) -> torch.Tensor:
-    """hidden_states (N, hidden_dim) float16 → selected bfloat16 tensor."""
-    selected = hidden_states[positions]
-    return torch.from_numpy(selected.astype(np.float32)).to(torch.bfloat16)
+def make_hidden_state_tensor(hidden_states: np.ndarray) -> torch.Tensor:
+    """hidden_states (N, hidden_dim) float16 → bfloat16 tensor."""
+    return torch.from_numpy(hidden_states.astype(np.float32)).to(torch.bfloat16)
 
 
 def make_sparse_hidden_state_tensor(
     indices: np.ndarray,
     values: np.ndarray,
-    positions: list[int],
     hidden_dim: int,
 ) -> torch.Tensor:
     """Reconstruct dense hidden states from sparse top-k representation.
 
     indices: (N, top_k_stored) int32 — dimension indices
     values:  (N, top_k_stored) float16 — values at those dims
-    Returns: (len(positions), hidden_dim) bfloat16
+    Returns: (N, hidden_dim) bfloat16
     """
-    n_pos = len(positions)
-    tensor = torch.zeros(n_pos, hidden_dim, dtype=torch.bfloat16)
-    for i, pos in enumerate(positions):
-        idx = indices[pos]   # (top_k_stored,)
-        vals = values[pos]   # (top_k_stored,)
+    n_tokens = indices.shape[0]
+    tensor = torch.zeros(n_tokens, hidden_dim, dtype=torch.bfloat16)
+    for i in range(n_tokens):
+        idx = indices[i]
+        vals = values[i]
         tensor[i, idx] = torch.from_numpy(vals.astype(np.float32)).to(torch.bfloat16)
     return tensor
 
@@ -146,19 +119,18 @@ def make_sparse_hidden_state_tensor(
 def make_logprob_tensor(
     token_ids: np.ndarray,
     values: np.ndarray,
-    positions: list[int],
     vocab_size: int,
 ) -> torch.Tensor:
-    """Build dense probability vectors at selected positions.
+    """Build dense probability vectors for all tokens.
 
     Uses exp(logprob) so the most probable tokens have the largest values,
     matching toploc's top-k-by-absolute-value selection.
     """
-    n_pos = len(positions)
-    tensor = torch.zeros(n_pos, vocab_size, dtype=torch.bfloat16)
-    for i, pos in enumerate(positions):
-        ids = token_ids[pos]    # (k_collected,)
-        vals = values[pos]      # (k_collected,)
+    n_tokens = token_ids.shape[0]
+    tensor = torch.zeros(n_tokens, vocab_size, dtype=torch.bfloat16)
+    for i in range(n_tokens):
+        ids = token_ids[i]
+        vals = values[i]
         probs = np.exp(vals.astype(np.float32))
         tensor[i, ids] = torch.from_numpy(probs).to(torch.bfloat16)
     return tensor
@@ -170,24 +142,20 @@ def is_reduced_format(data: dict) -> bool:
 
 
 def load_tensor(
-    npz_path: str, mode: str, positions: list[int],
-    vocab_size: int, hidden_dim: int = 0,
+    data: dict, mode: str, vocab_size: int, hidden_dim: int = 0,
 ) -> torch.Tensor:
-    data = dict(np.load(npz_path))
     if mode == "hidden_states":
         if is_reduced_format(data):
             return make_sparse_hidden_state_tensor(
                 data["topk_hidden_indices"],
                 data["topk_hidden_values"],
-                positions,
                 hidden_dim,
             )
-        return make_hidden_state_tensor(data["hidden_states"], positions)
+        return make_hidden_state_tensor(data["hidden_states"])
     else:
         return make_logprob_tensor(
             data["topk_logprob_token_ids"],
             data["topk_logprob_values"],
-            positions,
             vocab_size,
         )
 
@@ -200,14 +168,20 @@ def _build_and_verify(
     tensor_a: torch.Tensor,
     tensor_b: torch.Tensor,
     k: int,
+    decode_batch_size: int,
 ) -> list[VerifyResult]:
-    """Build proofs from tensor_a, verify against tensor_b."""
-    n = tensor_a.shape[0]
+    """Build proofs from tensor_a, verify against tensor_b.
+
+    All tokens are decode tokens — skip_prefill=True so toploc batches
+    them all via decode_batching_size without treating row 0 as prefill.
+    """
     proofs = build_proofs(
-        tensor_a, decode_batching_size=n, topk=k, skip_prefill=True,
+        tensor_a, decode_batching_size=decode_batch_size,
+        topk=k, skip_prefill=True,
     )
     vr_list = verify_proofs(
-        tensor_b, proofs, decode_batching_size=n, topk=k, skip_prefill=True,
+        tensor_b, proofs, decode_batching_size=decode_batch_size,
+        topk=k, skip_prefill=True,
     )
 
     return [
@@ -294,61 +268,30 @@ def run_experiment(
     pairs: list[tuple[str, str | None]],
     mode: str,
     k: int,
-    num_positions: int,
+    decode_batch_size: int,
     vocab_size: int,
     hidden_dim: int = 0,
     perturbation: float = 0.0,
 ) -> ExperimentResult:
-    """Run toploc build + verify for one (mode, k, num_positions) config."""
-    result = ExperimentResult(mode=mode, k=k, num_positions=num_positions)
+    """Run toploc build + verify for one (mode, k, decode_batch_size) config."""
+    result = ExperimentResult(mode=mode, k=k, decode_batch_size=decode_batch_size)
 
     for npz_a, npz_b in pairs:
         data_a = dict(np.load(npz_a))
-        reduced = is_reduced_format(data_a)
 
-        if reduced:
-            n_tokens = data_a["topk_hidden_values"].shape[0]
-        else:
-            n_tokens = data_a["hidden_states"].shape[0]
-
-        if n_tokens < max(num_positions, 1):
-            result.skipped += 1
-            continue
-
-        positions = select_positions(n_tokens, num_positions)
-
-        if mode == "hidden_states":
-            if reduced:
-                tensor_a = make_sparse_hidden_state_tensor(
-                    data_a["topk_hidden_indices"],
-                    data_a["topk_hidden_values"],
-                    positions,
-                    hidden_dim,
-                )
-            else:
-                tensor_a = make_hidden_state_tensor(
-                    data_a["hidden_states"], positions
-                )
-        else:
-            tensor_a = make_logprob_tensor(
-                data_a["topk_logprob_token_ids"],
-                data_a["topk_logprob_values"],
-                positions,
-                vocab_size,
-            )
+        tensor_a = load_tensor(data_a, mode, vocab_size, hidden_dim)
 
         # Verification target
         if npz_b is not None and npz_b != npz_a:
-            tensor_b = load_tensor(
-                npz_b, mode, positions, vocab_size, hidden_dim
-            )
+            data_b = dict(np.load(npz_b))
+            tensor_b = load_tensor(data_b, mode, vocab_size, hidden_dim)
         elif perturbation > 0:
             noise = torch.randn_like(tensor_a.float()) * perturbation
             tensor_b = (tensor_a.float() + noise).to(torch.bfloat16)
         else:
             tensor_b = tensor_a
 
-        vr_list = _build_and_verify(tensor_a, tensor_b, k)
+        vr_list = _build_and_verify(tensor_a, tensor_b, k, decode_batch_size)
         result.results.extend(vr_list)
 
     return result
@@ -382,9 +325,9 @@ def main():
         help="Top-k values, comma-separated (default: 64,128,256)",
     )
     parser.add_argument(
-        "--num-positions",
-        default="1,2,4,8",
-        help="Number of positions to check, comma-separated (default: 1,2,4,8)",
+        "--decode-batch-size",
+        default="1,10,100",
+        help="Decode batching sizes, comma-separated (default: 1,10,100)",
     )
     parser.add_argument(
         "--perturbation",
@@ -397,7 +340,7 @@ def main():
 
     # ── parse parameter grids ──
     k_values = [int(x) for x in args.k.split(",")]
-    num_pos_values = [int(x) for x in args.num_positions.split(",")]
+    batch_sizes = [int(x) for x in args.decode_batch_size.split(",")]
     modes = (
         ["hidden_states", "logprobs"] if args.mode == "both" else [args.mode]
     )
@@ -431,20 +374,20 @@ def main():
 
     # ── sweep ──
     all_results: list[ExperimentResult] = []
-    total_configs = len(modes) * len(k_values) * len(num_pos_values)
+    total_configs = len(modes) * len(k_values) * len(batch_sizes)
 
     with tqdm(total=total_configs, desc="Configs") as pbar:
         for mode in modes:
             for k in k_values:
-                for num_pos in num_pos_values:
+                for bs in batch_sizes:
                     pbar.set_postfix_str(
-                        f"{mode[:6]} k={k} pos={num_pos}"
+                        f"{mode[:6]} k={k} bs={bs}"
                     )
                     exp = run_experiment(
                         pairs,
                         mode,
                         k,
-                        num_pos,
+                        bs,
                         vocab_size,
                         hidden_dim=hidden_dim,
                         perturbation=args.perturbation,
@@ -454,7 +397,7 @@ def main():
 
     # ── summary table ──
     hdr = (
-        f"{'mode':<16} {'k':>4} {'#pos':>5} "
+        f"{'mode':<16} {'k':>4} {'bs':>5} "
         f"{'exact':>9} {'pct':>7} {'exp_mis':>8} {'mant_err':>10} "
         f"{'skip':>5}"
     )
@@ -463,7 +406,7 @@ def main():
     print("-" * len(hdr))
     for exp in all_results:
         print(
-            f"{exp.mode:<16} {exp.k:>4} {exp.num_positions:>5} "
+            f"{exp.mode:<16} {exp.k:>4} {exp.decode_batch_size:>5} "
             f"{exp.n_exact:>4}/{exp.n_total:<4} {exp.pct_exact:>6.1f}% "
             f"{exp.mean_exp_mismatch:>8.2f} {exp.mean_mant_err:>10.4f} "
             f"{exp.skipped:>5}"
@@ -476,7 +419,7 @@ def main():
             {
                 "mode": e.mode,
                 "k": e.k,
-                "num_positions": e.num_positions,
+                "decode_batch_size": e.decode_batch_size,
                 "n_exact": e.n_exact,
                 "n_total": e.n_total,
                 "pct_exact": round(e.pct_exact, 2),
