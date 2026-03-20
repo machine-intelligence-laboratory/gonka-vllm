@@ -178,6 +178,16 @@ Verify against: `Qwen2.5-3B-Instruct-GPTQ-Int4` on A100_5 (enforced tokens)
 | logprobs | 16 | 100 | 3.1 | 34 | 136 | 0.52 | 39.3% | 2.3929 | 2.0234 |
 | logprobs | 16 | 200 | 1.9 | 34 | 68 | 0.26 | 62.8% | 1.4774 | 1.7122 |
 
+## Baseline: per-token verification (k=20, batch_size=1)
+
+Extreme case: one proof per generated token using all 20 collected logprobs. Same model on two different A100 GPUs.
+
+| Mode | k | batch_size | avg_proofs | proof_bytes | proof_total_bytes | bytes/token | exact% | exp_mismatch | mant_err |
+|------|--:|-----------:|-----------:|------------:|------------------:|------------:|-------:|-------------:|---------:|
+| logprobs | 20 | 1 | 261.6 | 42 | 11004 | 42.06 | 100.0% | 0.0000 | 0 |
+
+**261602/261602 proofs exact (100%)** across all 1000 samples — every single token-level proof matches, confirming full reproducibility even at maximum granularity.
+
 ## Focused analysis: logprobs k=16, batch_size 8-16
 
 ### Focused: Int8 (A100_5) vs Int8 (A100_7) — logprobs k=16
