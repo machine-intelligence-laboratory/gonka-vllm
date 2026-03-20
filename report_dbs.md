@@ -178,11 +178,108 @@ Verify against: `Qwen2.5-3B-Instruct-GPTQ-Int4` on A100_5 (enforced tokens)
 | logprobs | 16 | 100 | 3.1 | 34 | 136 | 0.52 | 39.3% | 2.3929 | 2.0234 |
 | logprobs | 16 | 200 | 1.9 | 34 | 68 | 0.26 | 62.8% | 1.4774 | 1.7122 |
 
+## Focused analysis: logprobs k=16, batch_size 8-16
+
+### Focused: Int8 (A100_5) vs Int8 (A100_7) — logprobs k=16
+
+Reference: `Qwen2.5-3B-Instruct-GPTQ-Int8` on A100_5 (free generation)
+Verify against: `Qwen2.5-3B-Instruct-GPTQ-Int8` on A100_7 (enforced tokens)
+
+| Mode | k | batch_size | avg_proofs | proof_bytes | proof_total_bytes | bytes/token | exact% | exp_mismatch | mant_err |
+|------|--:|-----------:|-----------:|------------:|------------------:|------------:|-------:|-------------:|---------:|
+| logprobs | 16 | 8 | 33.1 | 34 | 1156 | 4.42 | 100.0% | 0.0000 | 0 |
+| logprobs | 16 | 10 | 26.6 | 34 | 918 | 3.51 | 100.0% | 0.0000 | 0 |
+| logprobs | 16 | 12 | 22.3 | 34 | 782 | 2.99 | 100.0% | 0.0000 | 0 |
+| logprobs | 16 | 14 | 19.1 | 34 | 680 | 2.60 | 100.0% | 0.0000 | 0 |
+| logprobs | 16 | 16 | 16.8 | 34 | 578 | 2.21 | 100.0% | 0.0000 | 0 |
+
+### Focused: Int8 vs Full Precision — logprobs k=16
+
+Reference: `Qwen2.5-3B-Instruct-GPTQ-Int8` on A100_5 (free generation)
+Verify against: `Qwen2.5-3B-Instruct` (full precision) on A100_5 (enforced tokens)
+
+| Mode | k | batch_size | avg_proofs | proof_bytes | proof_total_bytes | bytes/token | exact% | exp_mismatch | mant_err |
+|------|--:|-----------:|-----------:|------------:|------------------:|------------:|-------:|-------------:|---------:|
+| logprobs | 16 | 8 | 33.1 | 34 | 1156 | 4.42 | 0.0% | 1.2078 | 6.5081 |
+| logprobs | 16 | 10 | 26.6 | 34 | 918 | 3.51 | 0.0% | 1.0433 | 5.5112 |
+| logprobs | 16 | 12 | 22.3 | 34 | 782 | 2.99 | 0.0% | 0.9196 | 4.6595 |
+| logprobs | 16 | 14 | 19.1 | 34 | 680 | 2.60 | 0.0% | 0.7999 | 3.8932 |
+| logprobs | 16 | 16 | 16.8 | 34 | 578 | 2.21 | 0.3% | 0.6849 | 3.2864 |
+
+#### False positive analysis (sequence level)
+
+**batch_size=16**: 57 false positive proofs across 33 samples (1 fully accepted)
+
+| sample | seq_len | n_proofs | n_exact | fp_rate |
+|-------:|--------:|--------:|--------:|--------:|
+| 6 | 349 | 22 | 2 | 9.1% |
+| 54 | 338 | 22 | 1 | 4.5% |
+| 57 | 394 | 25 | 2 | 8.0% |
+| 94 | 584 | 37 | 1 | 2.7% |
+| 98 | 338 | 22 | 1 | 4.5% |
+| 114 | 493 | 31 | 1 | 3.2% |
+| 116 | 689 | 44 | 2 | 4.5% |
+| 123 | 409 | 26 | 1 | 3.8% |
+| 127 | 426 | 27 | 1 | 3.7% |
+| 175 | 395 | 25 | 2 | 8.0% |
+| 223 | 1440 | 90 | 2 | 2.2% |
+| 280 | 222 | 14 | 1 | 7.1% |
+| 357 | 210 | 14 | 1 | 7.1% |
+| 383 | 399 | 25 | 1 | 4.0% |
+| 411 | 396 | 25 | 1 | 4.0% |
+| 442 | 11 | 1 | 1 | 100.0% **(fully accepted)** |
+| 443 | 429 | 27 | 9 | 33.3% |
+| 444 | 465 | 30 | 2 | 6.7% |
+| 447 | 154 | 10 | 3 | 30.0% |
+| 566 | 1233 | 78 | 1 | 1.3% |
+| 593 | 617 | 39 | 3 | 7.7% |
+| 614 | 899 | 57 | 5 | 8.8% |
+| 630 | 175 | 11 | 1 | 9.1% |
+| 688 | 433 | 28 | 1 | 3.6% |
+| 697 | 927 | 58 | 2 | 3.4% |
+| 731 | 410 | 26 | 1 | 3.8% |
+| 745 | 182 | 12 | 1 | 8.3% |
+| 772 | 500 | 32 | 1 | 3.1% |
+| 782 | 540 | 34 | 1 | 2.9% |
+| 831 | 680 | 43 | 1 | 2.3% |
+| 840 | 356 | 23 | 2 | 8.7% |
+| 983 | 444 | 28 | 1 | 3.6% |
+| 988 | 628 | 40 | 1 | 2.5% |
+
+### Focused: Int8 vs Int4 — logprobs k=16
+
+Reference: `Qwen2.5-3B-Instruct-GPTQ-Int8` on A100_5 (free generation)
+Verify against: `Qwen2.5-3B-Instruct-GPTQ-Int4` on A100_5 (enforced tokens)
+
+| Mode | k | batch_size | avg_proofs | proof_bytes | proof_total_bytes | bytes/token | exact% | exp_mismatch | mant_err |
+|------|--:|-----------:|-----------:|------------:|------------------:|------------:|-------:|-------------:|---------:|
+| logprobs | 16 | 8 | 33.1 | 34 | 1156 | 4.42 | 0.0% | 7.5328 | 2.78e+15 |
+| logprobs | 16 | 10 | 26.6 | 34 | 918 | 3.51 | 0.0% | 6.7459 | 2.08e+15 |
+| logprobs | 16 | 12 | 22.3 | 34 | 782 | 2.99 | 0.0% | 6.0765 | 1.66e+15 |
+| logprobs | 16 | 14 | 19.1 | 34 | 680 | 2.60 | 0.0% | 5.4198 | 2.89e+15 |
+| logprobs | 16 | 16 | 16.8 | 34 | 578 | 2.21 | 0.1% | 4.8665 | 16.1360 |
+
+#### False positive analysis (sequence level)
+
+**batch_size=16**: 10 false positive proofs across 8 samples (0 fully accepted)
+
+| sample | seq_len | n_proofs | n_exact | fp_rate |
+|-------:|--------:|--------:|--------:|--------:|
+| 6 | 349 | 22 | 1 | 4.5% |
+| 223 | 1440 | 90 | 2 | 2.2% |
+| 280 | 222 | 14 | 1 | 7.1% |
+| 411 | 396 | 25 | 1 | 4.0% |
+| 443 | 429 | 27 | 1 | 3.7% |
+| 614 | 899 | 57 | 2 | 3.5% |
+| 745 | 182 | 12 | 1 | 8.3% |
+| 988 | 628 | 40 | 1 | 2.5% |
+
 ## Summary
 
 - **Same model, different GPU**: 100% exact match across all configurations. TOPLOC proofs are fully reproducible across A100 cards.
 - **Int8 vs Full Precision**: Small but detectable divergence. Hidden states show low exponent mismatch with moderate mantissa error. Larger batch sizes increase exact match rate (especially for logprobs at low k) because more tokens are aggregated into each proof, diluting per-token differences.
 - **Int8 vs Int4**: Large divergence across all metrics. Logprob mantissa errors frequently overflow. Hidden states fare better but still show significant mismatch. Even with large batch sizes and low k, int4 divergence remains detectable.
+- **False positives at batch_size=16**: A small number of individual proofs pass verification despite model mismatch (57/16828 for int8 vs full, 10/16828 for int8 vs int4). At the sequence level, these are scattered across many samples (1-9 FP proofs out of 10-90 per sample). Only 1 sample (seq_len=11, 1 proof) is fully accepted as a false positive — very short sequences with a single proof are the main risk. No short-sequence false positives occur for int8 vs int4.
 
 ## Notes on proof encoding (paper vs library)
 
