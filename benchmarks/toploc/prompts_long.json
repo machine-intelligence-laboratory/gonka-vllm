@@ -1,0 +1,502 @@
+[
+  {
+    "prompt": "Given these two sets of instructions, will you end up at the same end point if you started at the same beginning point? First instructions: 1) Take 2 steps forward 2) Turn left 3) Take 3 steps forward 4) Turn left 5) take 2 steps forward. Second instructions: 1) Turn left 2) Take 6 steps forward 3) Take 1 step backward 4) Take 2 steps backward.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a list of steps on how to write a literature review.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a dialogue between two characters discussing the impact of social media on their lives. Your dialogue should explore how to compare social media to real life.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "You need to design an app for making restaurant reservations. Explain the steps taken during the process.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the advantages of having a well-structured coding process in the software development process.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Analyze what are the differences between two products and provide a conclusion on which one is better.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given two text samples, compare and analyze any similarities or differences between them.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given two datasets, analyze and compare them to find the similarities and differences.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a list of steps to explain how to set up a voicemail greeting on a cell phone.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare the two given products and provide the advantages and disadvantages.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the difference between UI design, UX design and Product design?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a 3-step guide on how to create an Instagram post.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain how to create an outline for a research paper.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create an outline of the steps to create an essay.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a guide on how to write a blog post.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize this paragraph in 10 words or less:\n\n\"Robotic Process Automation (RPA) is an automation technology that allows businesses to streamline and automate repeatable, manual business processes by replacing manual work with programmed bots. RPA bots can execute the same process each time they are triggered, providing reliable and accurate results\"",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are the advantages and disadvantages of allowing people to perform delivery tasks by walking instead of requiring the use of a bike or car? When do you think it is more pragmatic for deliveries to be fulfilled by walking versus biking or driving?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Provide a bullet point list of all primary matter phase transitions, with the name of the process following by the matter states involved  Use the format: {process name}: {initial state} -> {final state}",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe a plan for a road trip from Las Vegas to West Grand Canyon, including stops for visiting Hoover Dam and lunch. Your plan should include a budget, a timeline, and a description of the sights, for a group of 7 friends.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "My wife and I have two kids: one boy, age 4, and one girl, age 1. We are thinking of buying a pet. What are some good pet options for our family of four? Please include some advantages and disadvantages for each option.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Luka Modrić (Croatian pronunciation: [lûːka mǒːdritɕ];[4][5] born 9 September 1985) is a Croatian professional footballer who plays as a midfielder for La Liga club Real Madrid and captains the Croatia national team. He plays mainly as a central midfielder, but can also play as an attacking midfielder or as a defensive midfielder. He is widely regarded as one of the greatest midfielders of all time,[6] and as the greatest ever Croatian footballer.[7]\n\nBorn in Zadar,[8] Modrić's childhood coincided with the Croatian War of Independence which displaced his family. In 2002, he was signed by Dinamo Zagreb at age 16, after showing promise with his hometown club NK Zadar's youth team. He continued his development in Zagreb, before spells on loan to Zrinjski Mostar and Inter Zaprešić. He made his debut for Dinamo in 2005 and won three consecutive league titles and domestic cups, being named the Prva HNL Player of the Year in 2007. In 2008, he moved to Premier League club Tottenham Hotspur for a club-record transfer fee of £16.5 million, where he led Spurs to their first UEFA Champions League appearance in almost 50 years, reaching the quarter-finals of the 2010–11 tournament.\n\nIn the summer of 2012, Modrić joined Real Madrid for a £30 million transfer fee. There he became a key contributor and helped the team win La Décima and was selected for the 2013–14 Champions League squad of the season. After Zinedine Zidane took over Madrid, Modrić was critical to three consecutive Champions League titles from 2015–16 to 2017–18, each time being voted into the squad of the season. He has won twenty-two major trophies at Real Madrid, including five UEFA Champions League titles, three La Liga titles, one Copa del Rey, four Supercopa de España titles, four UEFA Super Cup titles and five FIFA Club World Cup titles. He won the La Liga Award for \"Best Midfielder\" in 2016 for the second time, and the UEFA Club Football Award for \"Best Midfielder\" in 2017 and 2018. In 2015, he became the first Croatian player to be included in the FIFA FIFPRO World 11, in which he was regularly included until 2019 and then again in 2022, as well in the UEFA Team of the Year between 2016 and 2018. In 2018, Modrić became the first Croatian player to win the UEFA Men's Player of the Year Award, and by winning The Best FIFA Men's Player and Ballon d'Or awards, he became the first player other than Lionel Messi or Cristiano Ronaldo to claim the awards in more than a decade. In 2019, he was awarded the Golden Foot award for career results and personality.\n\nModrić made his international debut for Croatia against Argentina in March 2006, and scored his first international goal in a friendly match against Italy. Modrić has anchored Croatia's \"second Golden Generation\", participating in every major tournament Croatia has qualified for, including the UEFA Euro 2008, 2012, 2016, and 2020, as well as the 2006, 2014, 2018, and 2022 FIFA World Cup. At the Euro 2008, he was selected for the Team of the Tournament, becoming only the second Croatian to ever achieve this honour. Following group stage eliminations in his first two World Cups, Modrić led Croatia to the 2018 World Cup Final, winning the Golden Ball in process. At the following tournament, he led the team to a third-place finish, winning the Bronze Ball in process. In March 2021, he went on to become the country's most capped player in history. Furthermore, he has been named Croatian Footballer of the Year a record eleven times between 2007 and 2022.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a plan for a road trip to ski resorts in California that are available on the Ikon pass, with stops at three different resorts. The plan should depart and end at San Francisco, include a budget, timeline, and short description of each resort.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Based on the above information, provide the real names of the cast in the American television sitcom Friends. Separate the names using a comma. Also provide the date when the series finale was aired. Provide the date in MM/DD/YYYY format.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "You have been asked to join the School Health Advisory Council to develop a new policy that focuses on the development of a more sustainable food service. List the steps you would take to develop and implement the new policy. How would you involve staff, families, and children?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a friendly letter to my landlord, convincing them to let me get a cat. His name is George and my name is Steve. I live alone in Unit 2C and I work long hours. Include details regarding my rental contract that currently only permits dogs under 25 pounds and caged animals and requires pet deposit and rent. Give him examples as to why those animals are not ideal (include my dog allergy) and why a cat is better. Let him know I plan a robotic vacuum and mop to keep things clean. Tell him I've already found a potential pet at the local animal shelter, who is a two-year-old shelter cat who is housebroken and friendly. Remind him that Unit 2C does not have any carpeted floors and a tiled bathroom which is good for the future litter box. Convince him I'm open to a conversation to discuss further.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe a plan for training to compete in a long distance gravel cycling event, including nutrition, preparation, and recovery requirements. Your plan should include a timeline and be relevant to someone who works a full time job.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "How do Nietzsche and Haraway critique the concept of scientific knowledge and its pursuit of objectivity? How do they use the ideas of \"the god-trick\" and \"pride\" to explain the faults in scientific discoveries?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "The following is an Abstract of a paper on Autism Spectrum Disorder. Based on this abstract  would it be a good idea to enroll a child with ASD into group sports? \n\"Given the characteristics of people with Autism Spectrum Disorder, it is evident the difficulties they show in the development of social skills. The scarce participation of people with Autism Spectrum Disorder in group sports can be taken as a reference. The aim of this study was to analyse the impact of football on the development of social skills in children with Autism Spectrum Disorder. In order to measure the sporting impact, it was necessary to implement a football training programme with the intention of evaluating different social skills. Thirteen children participated in the programme, all of them with a diagnosis of Autism Spectrum Disorder and with a severity level of 1. The study was based on a pre-experimental, pre-test/post-test design. Non-parametric tests were used for the statistical analysis, applying the Wilcoxon test. Two specific tools on social skills were used for data collection. The results showed a generalised improvement in the dimensions linked to the social skills assessed. This highlights the possibility of considering group sport as an alternative to be taken into account to work on and enhance social skills in children with Autism Spectrum Disorder\"",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given this series of navigation instructions, determine whether one would end up back at the starting point: Take 1 step. Take 2 steps. Take 3 steps. Turn around. Take 6 steps. Turn right.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe a plan for a trip to San Francisco (Bay Area), California. Your plan should include a budget, a timeline, and a description of the sights and activities at spot",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe a plan to progressively ski harder trails. Recommend a ski resort in Tahoe including trails that I can use to follow the plan.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Discuss at least two risks associated with scraping data from websites. Describe steps an analyst could take to mitigate those risks.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Discuss the meaning of the quote \"The greatest minds discuss ideas, the average discuss events, the small minded talk about people\".",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare the advantages and disadvantages of the two popular machine learning approaches linear regression and decision trees.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a review of your stay in a AirBnB in Rome that had a great location but poor amenities that is overall a neutral review",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write an essay comparing the similarities and differences between the educational systems of the United States and China.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a new document named \"Blogs\" and write a blog post on the following topic: How Can Self-Care Help Reduce Anxiety?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given this paragraph, what are the potential advantages or disadvantages of using XGBoost versus a single decision tree?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a case study about the following topics, focusing on the advantages and disadvantages of using machine learning.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a brief passage or elaborate in favour of or against the use or impact of social media in our day to day life.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare the advantages and disadvantages of using a recurrent neural network versus a convolutional neural network.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a paragraph summarizing the advantages and disadvantages of using renewable energy sources in our daily life.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate a speech outline with three main points to plan for a presentation on the importance of renewable energy.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a sample output to the following task: Analyze the impact of climate change on water resources in the USA.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Design a PowerPoint presentation to explain the differences between artificial intelligence and machine learning.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "To summarize the article on \"Artificial Intelligence and Its Impact On Society\", explain the three main points.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "You are the mayor of a major city and you need to create a budget plan. Please describe how you would do this.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a report outlining the advantages and disadvantages of using [Machine Learning] in a certain industry.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare two given poems (example provided below) and explain the differences in language, structure and tone.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Analyze a given article on the impact of Artificial Intelligence on Education and explain its main points.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a 250-300 word essay summarizing the similarities and differences between two Ancient Civilizations.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe a plan for driving from Florida to New York with some great places to stop with American History.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a paragraph to describe the impact of initiatives to reduce vehicular emissions on the environment.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a table listing the advantages/disadvantages of using a laptop as compared to a desktop computer.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the difference between solar power and hydrogen fuel cell?  What are the advantages of hydrogen?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compose an essay answering the following prompt: What are the main differences between a cat and a dog?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Identify three approaches for solving a problem and compare the advantages and disadvantages of each.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Given a reference text about the Build Back Better Plan, what are the 3 parts that make up the plan?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare the differences between the effects of the pandemic on traditional retail and online retail",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare and contrast the advantages and disadvantages of deep learning and reinforcement learning.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create two comparision statements to describe the differences between manual and automated testing",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Design an outline for a five-minute presentation on the topic of “How to Reduce Carbon Emissions”",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Generate an outline for an article that explores the effects of global warming on food security.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create an outline of key points to discuss in a 5-minute talk about the benefits of traveling.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare and contrast the main similarities and differences between a computer and a smartphone",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a three-column table that displays the advantages and disadvantages of online shopping.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize the advantages and disadvantages of using artificial intelligence in the workplace.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are the advantages and disadvantages of using a neural network for classification tasks?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Research the history of the internet, and create an outline that summarizes the key moments.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Provide a list of advantages and disadvantages of using artificial intelligence technology.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create an analogy to describe the history of the US Constitution and the US Supreme Court.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare the advantages and disadvantages of traditional and virtual learning environments.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare the similarities and differences between a microwave oven and a convection oven.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Define judicial review and explain John Marshall’s role in establishing judicial review.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create an outline for a research paper on the effects of social media on mental health.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write an essay discussing the advantages and disadvantages of ubiquitous computer usage",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Select one genetically modified organism and describe its advantages and disadvantages.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a script for a teacher giving her class instructions on how to create a snowman.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compare two types of text processing techniques and explain differences between them.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Provide an outline to create a blog post about machine learning using the given data.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are the steps involved in implementing a successful digital marketing strategy?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a chart that compares the advantages and disadvantages of working from home.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Outline the steps required to create an Internet of Things (IoT) compatible device.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Compose an outline of a speech on the following topic: How to help the environment.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What is the difference between Responsive Design and Adaptive Design for webpages?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the advantages and disadvantages of using a project management software.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create an outline for a blog post about the advantages of using home automation.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a timeline outlining the different steps in the process of making a cake.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are the similarities and differences between a blue whale and a sperm whale",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain how to use the GPT information to generate a response from an assistant.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are the main differences between top-down and bottom-up design approaches?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe the major advantages and disadvantages of using a hybrid cloud system.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Explain what a GPT language model is and write  down 3 advantages of using it.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are the steps you need to take to create a successful marketing campaign?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe three advantages and three disadvantages of using a laptop computer.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Write a paragraph to describe the differences between a car and a motorcycle.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Summarize the main points of the article \"How to write an effective resume\".",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "What are two advantages and two disadvantages of using relational databases?",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Create a chart to describe the process of converting a sentence to a vector.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  },
+  {
+    "prompt": "Describe a significant event in British History and explain its importance.",
+    "system_prompt": "You are a thorough, knowledgeable writer. Provide an extremely comprehensive and detailed response. Cover every major aspect of the topic with specific examples, explanations, and analysis. Structure your response with clear sections. Be extensive — aim for a complete, in-depth treatment that leaves no important angle unexplored.",
+    "language": "en"
+  }
+]

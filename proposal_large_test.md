@@ -104,35 +104,25 @@ Target: **< 1 MB per 100K tokens** → k=128/bs=32, k=256/bs=64, or k=512/bs=128
 
 ## Test Set
 
-### Why the existing prompts are insufficient
+### Existing prompts (1000 samples)
 
-The current 1000 prompts (UltraChat-derived, avg 261 tokens, max 3000) have two problems:
-1. **Too short** — production workloads on a 256K-context model routinely hit 8K–32K+ total tokens. The paper's Figure 2 shows mantissa errors grow with token index; we need to stress-test this at 10K–100K positions.
-2. **Unrealistic task distribution** — UltraChat is conversational Q&A. Real production text workloads include document processing, RAG with large context windows, and structured extraction.
+The current 1000 prompts (Bactrian-X, 200 per language: en/es/zh/hi/ar, avg ~261 output tokens, max 3000). These cover the short-output regime well. Stored in `benchmarks/toploc/prompts.json`.
 
-### Proposed test set: 500 samples across 5 workload categories
+### Long-output prompts (100 samples, new)
 
-| Category | N | Input length (tokens) | Expected output length | Total tokens | Source |
-|----------|--:|----------------------:|-----------------------:|-------------:|--------|
-| **Short Q&A** | 100 | 50–500 | 200–1,000 | 250–1,500 | UltraChat / LMSYS-Chat-1M (existing short prompts can be reused) |
-| **Document summarization** | 100 | 4K–16K | 500–2,000 | 4.5K–18K | GovReport, BookSum, or arXiv papers — long input, short output |
-| **RAG / grounded QA** | 100 | 8K–32K | 200–2,000 | 8.2K–34K | Synthetic: concatenate 5–15 retrieved passages + question. Use NQ or HotpotQA questions with Wikipedia passages. |
-| **Multi-turn dialogue** | 100 | 2K–8K | 500–3,000 | 2.5K–11K | LMSYS-Chat-1M multi-turn conversations, or ShareGPT with long histories |
-| **Code generation / analysis** | 100 | 1K–16K | 500–4,000 | 1.5K–20K | SWE-bench prompts, or CodeContests with long problem descriptions |
+To stress-test TOPLOC at high token positions (10K–30K), we add 100 prompts that naturally elicit long outputs. These are drawn from a single source for simplicity.
 
-**Total generated tokens across the set**: ~2–5M tokens (substantial enough for statistical significance on proof-level metrics).
+**Source**: [MBZUAI/Bactrian-X](https://huggingface.co/datasets/MBZUAI/Bactrian-X) (same source as the existing 1000 prompts). We select 100 substantive English instructions and wrap each with a system prompt requesting an extremely detailed, comprehensive response. Run with `max_new_tokens=32768`.
 
-### Key properties of the test set
+Script: `benchmarks/toploc/prepare_long_prompts.py`
 
-- **Token-index coverage**: At least 100 samples exceed 8K total tokens, at least 50 exceed 16K. This lets us measure error accumulation (Figure 2 from paper) at production-relevant positions.
-- **Output length diversity**: Mix of short answers and long generations — tests both the "batch covers the whole output" regime and the "many proofs per response" regime.
-- **Realistic system prompts**: Each category gets a plausible system prompt (e.g., "You are a document analyst..."), since the paper showed system prompt changes are detectable (Table 3).
+| Subset | N | Expected output length | Purpose |
+|--------|--:|----------------------:|---------|
+| Existing short | 1000 | 200–3,000 tokens | Baseline regime, multilingual |
+| New long-output | 100 | 10,000–30,000 tokens | Stress-test error accumulation at high token positions |
+| **Total** | **1100** | | |
 
-### Construction approach
-
-1. For each category, draw from existing public datasets and format into Qwen3 chat templates (system + user messages).
-2. Use one hardware setup (4×H100) as the reference for free generation. Collect top-512 hidden states per token to support all k values in the grid.
-3. Enforce the same token sequences on all other setups.
+Not all long prompts will hit 30K — output length depends on the topic and model behavior. We select prompts that ask for writing, explanation, or analysis (naturally longer outputs) and the system prompt encourages comprehensive, extensive responses.
 
 ## Experiment Matrix
 
@@ -192,25 +182,28 @@ Plus:
 
 4 runs total: 1 INT4, 3 FP8.
 
+**Fraud scenario**: provider claims FP8 but actually served INT4. Both on new GPUs.
+**Honest scenario**: provider ran FP8 on old hardware, verifier checks on new hardware.
+
 ```
-Run 1: INT4 free generation (4×H100, TP=4)
-  → Generates 500 responses from scratch
+Run 1: INT4 free generation (4×H100 or 4×B200, TP=4)
+  → Generates 1100 responses from scratch
   → Collects top-512 hidden states per output token
   → These are the "fraudulent" outputs — claimed to be from FP8 but actually INT4
 
-Run 2: FP8 free generation (4×H100, TP=4) — REFERENCE
-  → Generates 500 responses from scratch
+Run 2: FP8 free generation (4×A100, TP=4) — HONEST REFERENCE
+  → Generates 1100 responses from scratch
   → Collects top-512 hidden states per output token
-  → This is the honest reference run
+  → This is the honest provider running on older hardware
 
-Run 3: FP8 enforced with INT4 tokens (4×H100, TP=4) — NEGATIVE CONTROL
-  → Feeds Run 1's token sequences into the FP8 model
+Run 3: FP8 enforced with INT4 tokens (4×H100 or 4×B200, TP=4) — NEGATIVE CONTROL
+  → Feeds Run 1's token sequences into the FP8 model on new hardware
   → Collects top-512 hidden states per token
   → Compare these hidden states against Run 1's hidden states
   → Expected result: MISMATCH (different model produced the tokens)
 
-Run 4: FP8 enforced with FP8 tokens (4×B200 or 4×A100, TP=4) — POSITIVE CONTROL
-  → Feeds Run 2's token sequences into FP8 on different hardware
+Run 4: FP8 enforced with FP8 tokens (4×H100 or 4×B200, TP=4) — POSITIVE CONTROL
+  → Feeds Run 2's token sequences into FP8 on new hardware
   → Collects top-512 hidden states per token
   → Compare these hidden states against Run 2's hidden states
   → Expected result: MATCH (same model, different hardware)
@@ -218,18 +211,13 @@ Run 4: FP8 enforced with FP8 tokens (4×B200 or 4×A100, TP=4) — POSITIVE CONT
 
 ### Token volume estimate
 
-From the 500-sample test set:
+| Subset | N | Avg input tokens | Avg output tokens | Total input | Total output |
+|--------|--:|----------------:|-----------------:|------------:|-------------:|
+| Existing short | 1000 | ~50 | ~261 | 50K | 261K |
+| New long-output | 100 | ~100 | ~15K | 10K | 1.5M |
+| **Total** | **1100** | | | **~60K** | **~1.76M** |
 
-| Category | N | Avg input tokens | Avg output tokens | Total input | Total output |
-|----------|--:|----------------:|-----------------:|------------:|-------------:|
-| Short Q&A | 100 | ~275 | ~600 | 27.5K | 60K |
-| Doc summarization | 100 | ~10K | ~1.25K | 1M | 125K |
-| RAG / grounded QA | 100 | ~20K | ~1.1K | 2M | 110K |
-| Multi-turn dialogue | 100 | ~5K | ~1.75K | 500K | 175K |
-| Code generation | 100 | ~8.5K | ~2.25K | 850K | 225K |
-| **Total** | **500** | | | **~4.4M** | **~700K** |
-
-Total tokens per run: ~5.1M (input + output).
+Total tokens per run: ~1.82M (input + output). The long-output subset dominates: 100 samples × ~15K output tokens = ~1.5M output tokens.
 
 ### Throughput assumptions
 
@@ -245,22 +233,26 @@ On 4×B200: likely ≥ H100 throughput.
 
 ### Time estimates per run
 
+The bottleneck is the 100 long-output samples: 100 × ~15K output tokens = ~1.5M decode tokens. The 1000 short samples add ~261K decode tokens. Total decode per free-gen run: ~1.76M tokens.
+
 | Run | Type | What happens | Hardware | Est. time |
 |-----|------|-------------|----------|-----------|
-| 1 | INT4 free gen | Prefill 4.4M input tok + decode 700K output tok | 4×H100 | 30–45 min |
-| 2 | FP8 free gen | Prefill 4.4M input tok + decode 700K output tok | 4×H100 | 30–45 min |
-| 3 | FP8 enforced | Forward pass over 5.1M tokens (prefill-like, no sampling) | 4×H100 | 15–25 min |
-| 4 | FP8 enforced | Forward pass over 5.1M tokens (prefill-like, no sampling) | 4×A100 | 20–35 min |
+| 1 | INT4 free gen | Prefill 60K input tok + decode 1.76M output tok | 4×H100 or 4×B200 | 20–35 min |
+| 2 | FP8 free gen | Prefill 60K input tok + decode 1.76M output tok | 4×A100 | 30–50 min |
+| 3 | FP8 enforced | Forward pass over 1.82M tokens (prefill-like, no sampling) | 4×H100 or 4×B200 | 5–10 min |
+| 4 | FP8 enforced | Forward pass over 1.82M tokens (prefill-like, no sampling) | 4×H100 or 4×B200 | 5–10 min |
 
 **Enforced generation is faster than free generation** because all tokens are known ahead of time — the model processes them in chunks (like prefill) rather than one-at-a-time autoregressive decode.
 
+Run 2 (A100) is the slowest: older hardware (~60–70% of H100 throughput) doing free generation of the full 1.76M tokens.
+
 | | Optimistic | Realistic (with overhead) |
 |---|--------:|----------:|
-| Pure compute (4 runs) | 1.5 hours | 2.5 hours |
-| Model loading (4×) | 20 min | 20 min |
+| Pure compute (4 runs) | 1 hour | 1.75 hours |
+| Model loading (4×, ~5 min each) | 20 min | 20 min |
 | Data transfer between setups | — | 15 min |
 | Debugging / restarts | — | 30–60 min |
-| **Total wall-clock** | **~2 hours** | **~3–4 hours** |
+| **Total wall-clock** | **~1.5 hours** | **~2.5–3 hours** |
 
 Offline evaluation (building proofs and verifying across the hyperparameter grid) is cheap — pure NumPy/CPU, minutes at most.
 
