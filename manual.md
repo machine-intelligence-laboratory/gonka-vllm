@@ -26,18 +26,18 @@ huggingface-cli download Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4 \
 ## Run 1: INT4 free generation (V100)
 
 ```bash
-env CUDA_VISIBLE_DEVICES=3 \
+env CUDA_VISIBLE_DEVICES=5 \
     CUDA_DEVICE_ORDER=PCI_BUS_ID \
     CUDA_LAUNCH_BLOCKING=1 \
-    VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen_int4_v100_3 \
+    VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen_int4_a100_5 \
   vllm serve /data/shared/gonka/models/Qwen2.5-3B-Instruct-GPTQ-Int4 --port 8801
 ```
 
 ```bash
 cd benchmarks/toploc
 python collect.py \
-  --gpu v100_3 \
-  --precision fp8 \
+  --gpu a100_5 \
+  --precision int4 \
   --server-url http://localhost:8801 \
   --prompts prompts.json \
   --output-dir ~/vllm_logs
@@ -65,35 +65,35 @@ python collect.py \
 ## Run 3: INT8 enforced with INT4 tokens (A100) — negative control
 
 ```bash
-env CUDA_VISIBLE_DEVICES=7 \
+env CUDA_VISIBLE_DEVICES=5 \
     CUDA_DEVICE_ORDER=PCI_BUS_ID \
     CUDA_LAUNCH_BLOCKING=1 \
-    VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen_int8_a100_7_enf_from_int4 \
+    VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen_int8_a100_5_enf_from_int4 \
   vllm serve /data/shared/gonka/models/Qwen2.5-3B-Instruct-GPTQ-Int8 --port 8801
 ```
 
 ```bash
 python collect.py \
-  --gpu A100_7 \
+  --gpu A100_5 \
   --precision fp8 \
   --server-url http://localhost:8801 \
-  --from-collection ~/vllm_logs/Qwen2.5-3B-Instruct-GPTQ-Int4_fp8_v100_3_free.jsonl \
+  --from-collection ~/vllm_logs/Qwen2.5-3B-Instruct-GPTQ-Int4_int4_a100_5_free.jsonl  \
   --output-dir ~/vllm_logs
 ```
 
 ## Run 4: INT8 enforced with INT8 tokens (A100) — positive control
 
 ```bash
-env CUDA_VISIBLE_DEVICES=7 \
+env CUDA_VISIBLE_DEVICES=6 \
     CUDA_DEVICE_ORDER=PCI_BUS_ID \
     CUDA_LAUNCH_BLOCKING=1 \
-    VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen_int8_a100_7_enf_from_int8 \
+    VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen_int8_a100_6_enf_from_int8 \
   vllm serve /data/shared/gonka/models/Qwen2.5-3B-Instruct-GPTQ-Int8 --port 8801
 ```
 
 ```bash
 python collect.py \
-  --gpu A100_7 \
+  --gpu A100_6 \
   --precision fp8 \
   --server-url http://localhost:8801 \
   --from-collection ~/vllm_logs/Qwen2.5-3B-Instruct-GPTQ-Int8_fp8_A100_5_free.jsonl \
