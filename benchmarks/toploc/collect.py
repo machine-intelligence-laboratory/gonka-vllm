@@ -134,7 +134,7 @@ def main():
     parser.add_argument(
         "--precision", default="fp8", help="Precision label, e.g. fp8"
     )
-    parser.add_argument("--max-tokens", type=int, default=3000)
+    parser.add_argument("--max-tokens", type=int, default=250000)
     parser.add_argument("--temperature", type=float, default=0.99)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
