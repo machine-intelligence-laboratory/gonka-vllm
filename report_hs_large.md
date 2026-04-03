@@ -7,7 +7,7 @@
 - **Variants**:
   - `Qwen3-235B-A22B-Instruct-2507-FP8` — native FP8 quantization
   - `Qwen3-235B-A22B-Instruct-2507-INT4-W4A16` — GPTQ 4-bit (weights only)
-- **GPUs**: 4×H100 (same node), tensor-parallel TP=4
+- **GPUs**: 4×H100, 4×A100, tensor-parallel TP=4
 - **Hidden dimension**: 4096
 - **Collected data**: top-512 hidden state indices/values per generated token
 - **Serving**: vLLM with FP8 KV cache
@@ -17,8 +17,9 @@
 
 | Experiment | mean | median | min | max | total tokens |
 |-----------:|-----:|-------:|----:|----:|-------------:|
-| FP8 free generation | 583.1 | 385 | 6 | 9240 | 641,455 |
-| INT4 free generation | 578.1 | 374 | 6 | 10,004 | 635,925 |
+| FP8 free generation (H100) | 583.1 | 385 | 6 | 9240 | 641,455 |
+| FP8 free generation (A100) | 589.9 | 384 | 6 | 10,042 | 648,902 |
+| INT4 free generation (H100) | 578.1 | 374 | 6 | 10,004 | 635,925 |
 
 ### Collection protocol
 
@@ -36,8 +37,7 @@ The FP8 free collection was initially started from a wrong branch (collecting to
 |:-:|-----------|-------------|-----------|---------|
 | 1 | FP8 on 4×H100 (free) | FP8 on 4×H100 (enforced) | same node | Positive control: same model, same hardware |
 | 2 | INT4 on 4×H100 (free) | FP8 on 4×H100 (enforced from INT4 tokens) | same node | Negative control: different quantization |
-
-**Note**: Both experiments ran on the same H100 node. A stronger positive control (different nodes) is planned for follow-up.
+| 3 | FP8 on 4×A100 (free) | FP8 on 4×H100 (enforced from A100 tokens) | cross-hardware | Cross-architecture: Ampere vs Hopper |
 
 ### Proof encoding
 
@@ -168,10 +168,78 @@ Verify against: `Qwen3-235B-A22B-Instruct-2507-FP8` on 4×H100 (enforced tokens 
 | 512 | 256 | 2.8 | 1026 | 3078 | 5.32 | 0.0% | 94.2056 | 10.8005 |
 | 512 | 512 | 1.7 | 1026 | 2052 | 3.55 | 0.0% | 90.4306 | 10.9018 |
 
+## FP8 (4×A100) vs FP8 (4×H100) — same model, different GPU architecture
+
+Reference: `Qwen3-235B-A22B-Instruct-2507-FP8` on 4×A100 (free generation)
+Verify against: `Qwen3-235B-A22B-Instruct-2507-FP8` on 4×H100 (enforced tokens from A100)
+
+| k | batch_size | avg_proofs | proof_bytes | proof_total_bytes | bytes/token | exact% | exp_mismatch | mant_err |
+|--:|-----------:|-----------:|------------:|------------------:|------------:|-------:|-------------:|---------:|
+| 8 | 8 | 74.2 | 18 | 1332 | 2.26 | 0.0% | 0.5607 | 2.67e+16 |
+| 8 | 16 | 37.4 | 18 | 666 | 1.13 | 0.0% | 0.5509 | 2.15e+16 |
+| 8 | 32 | 18.9 | 18 | 342 | 0.58 | 0.0% | 0.6003 | 1.95e+16 |
+| 8 | 64 | 9.7 | 18 | 180 | 0.31 | 0.0% | 0.5905 | 2.76e+16 |
+| 8 | 128 | 5.1 | 18 | 90 | 0.15 | 0.0% | 0.6166 | 2.61e+16 |
+| 8 | 256 | 2.9 | 18 | 54 | 0.09 | 0.0% | 0.6984 | 2.92e+16 |
+| 8 | 512 | 1.8 | 18 | 36 | 0.06 | 0.0% | 0.7369 | 3.80e+16 |
+| 16 | 8 | 74.2 | 34 | 2516 | 4.27 | 0.0% | 1.0799 | 1.20e+16 |
+| 16 | 16 | 37.4 | 34 | 1258 | 2.13 | 0.0% | 1.0531 | 1.08e+16 |
+| 16 | 32 | 18.9 | 34 | 646 | 1.10 | 0.0% | 1.0507 | 7.09e+15 |
+| 16 | 64 | 9.7 | 34 | 340 | 0.58 | 0.0% | 1.1550 | 5.17e+15 |
+| 16 | 128 | 5.1 | 34 | 170 | 0.29 | 0.0% | 1.0841 | 9.78e+15 |
+| 16 | 256 | 2.9 | 34 | 102 | 0.17 | 0.0% | 1.1587 | 5.84e+15 |
+| 16 | 512 | 1.8 | 34 | 68 | 0.12 | 0.0% | 1.2508 | 2.4213 |
+| 32 | 8 | 74.2 | 66 | 4884 | 8.28 | 0.0% | 1.9685 | 1.36e+15 |
+| 32 | 16 | 37.4 | 66 | 2442 | 4.14 | 0.0% | 2.0761 | 8.98e+14 |
+| 32 | 32 | 18.9 | 66 | 1254 | 2.13 | 0.0% | 1.9440 | 1.77e+15 |
+| 32 | 64 | 9.7 | 66 | 660 | 1.12 | 0.0% | 2.0378 | 2.9188 |
+| 32 | 128 | 5.1 | 66 | 330 | 0.56 | 0.0% | 2.2008 | 2.5909 |
+| 32 | 256 | 2.9 | 66 | 198 | 0.34 | 0.0% | 2.0387 | 2.4506 |
+| 32 | 512 | 1.8 | 66 | 132 | 0.22 | 0.0% | 2.1905 | 2.5101 |
+| 64 | 8 | 74.2 | 130 | 9620 | 16.31 | 0.0% | 3.9209 | 3.8871 |
+| 64 | 16 | 37.4 | 130 | 4810 | 8.15 | 0.0% | 3.8399 | 3.6276 |
+| 64 | 32 | 18.9 | 130 | 2470 | 4.19 | 0.0% | 4.0253 | 3.2549 |
+| 64 | 64 | 9.7 | 130 | 1300 | 2.20 | 0.0% | 3.6627 | 3.0921 |
+| 64 | 128 | 5.1 | 130 | 650 | 1.10 | 0.0% | 3.9081 | 2.9325 |
+| 64 | 256 | 2.9 | 130 | 390 | 0.66 | 0.0% | 4.1854 | 2.6572 |
+| 64 | 512 | 1.8 | 130 | 260 | 0.44 | 0.0% | 3.9274 | 2.6364 |
+| 128 | 8 | 74.2 | 258 | 19092 | 32.36 | 0.0% | 8.7140 | 4.3890 |
+| 128 | 16 | 37.4 | 258 | 9546 | 16.18 | 0.0% | 7.4832 | 3.8413 |
+| 128 | 32 | 18.9 | 258 | 4902 | 8.31 | 0.0% | 7.5372 | 3.6076 |
+| 128 | 64 | 9.7 | 258 | 2580 | 4.37 | 0.0% | 7.8355 | 3.2325 |
+| 128 | 128 | 5.1 | 258 | 1290 | 2.19 | 0.0% | 7.0035 | 3.1159 |
+| 128 | 256 | 2.9 | 258 | 774 | 1.31 | 0.0% | 7.6797 | 2.9951 |
+| 128 | 512 | 1.8 | 258 | 516 | 0.87 | 0.0% | 8.0721 | 2.8326 |
+| 256 | 8 | 74.2 | 514 | 38036 | 64.48 | 0.0% | 20.2528 | 4.6970 |
+| 256 | 16 | 37.4 | 514 | 19018 | 32.24 | 0.0% | 17.4418 | 4.3591 |
+| 256 | 32 | 18.9 | 514 | 9766 | 16.56 | 0.0% | 14.4664 | 3.8191 |
+| 256 | 64 | 9.7 | 514 | 5140 | 8.71 | 0.0% | 14.9492 | 3.6061 |
+| 256 | 128 | 5.1 | 514 | 2570 | 4.36 | 0.0% | 15.5226 | 3.2553 |
+| 256 | 256 | 2.9 | 514 | 1542 | 2.61 | 0.0% | 13.9794 | 3.2016 |
+| 256 | 512 | 1.8 | 514 | 1028 | 1.74 | 0.0% | 15.1684 | 3.1774 |
+| 512 | 8 | 74.2 | 1026 | 75924 | 128.71 | 0.0% | 47.6712 | 4.8299 |
+| 512 | 16 | 37.4 | 1026 | 37962 | 64.35 | 0.0% | 40.2848 | 4.6811 |
+| 512 | 32 | 18.9 | 1026 | 19494 | 33.05 | 0.0% | 34.8388 | 4.3447 |
+| 512 | 64 | 9.7 | 1026 | 10260 | 17.39 | 0.0% | 28.2716 | 3.8211 |
+| 512 | 128 | 5.1 | 1026 | 5130 | 8.70 | 0.0% | 29.7361 | 3.6283 |
+| 512 | 256 | 2.9 | 1026 | 3078 | 5.22 | 0.0% | 30.7934 | 3.3500 |
+| 512 | 512 | 1.8 | 1026 | 2052 | 3.48 | 0.0% | 28.1308 | 3.3758 |
+
 ## Summary
 
-- **Same model, same node (FP8 vs FP8)**: 100% exact match across all 49 configurations (k=8..512, batch_size=8..512). TOPLOC hidden-state proofs are fully reproducible. Zero false negatives.
-- **Different quantization, same node (INT4 vs FP8)**: 0% exact match across all 49 configurations. Every single proof correctly detects the quantization mismatch. Zero false positives. Exponent mismatches scale roughly linearly with k (from ~1.6 at k=8 to ~146 at k=512). Mantissa errors at k=8 occasionally overflow to ~1e14–1e15 due to catastrophic exponent divergence; at k≥16 they stabilize around 8–15.
-- **No false positives or false negatives**: The hidden-state channel achieves perfect separation between the positive and negative controls at every (k, batch_size) combination tested.
-- **Scale-up validation**: These results on a 235B-parameter MoE model (4096 hidden dim, TP=4) confirm the same perfect separation previously observed on the 3B-parameter Qwen2.5 dense model (2048 hidden dim, TP=1).
-- **Caveat**: The positive control ran on the same H100 node (different vLLM server instances). A cross-node test is needed to confirm reproducibility across hardware.
+### Error comparison at k=128, batch_size=128
+
+| Experiment | exact% | exp_mismatch | mant_err |
+|------------|-------:|-------------:|---------:|
+| FP8 H100 vs FP8 H100 (same node) | 100.0% | 0.00 | 0.00 |
+| FP8 A100 vs FP8 H100 (cross-architecture) | 0.0% | 7.00 | 3.12 |
+| INT4 H100 vs FP8 H100 (cross-quantization) | 0.0% | 21.71 | 10.07 |
+
+### Findings
+
+- **Same model, same node (FP8 H100 vs FP8 H100)**: 100% exact match across all 49 configurations (k=8..512, batch_size=8..512). TOPLOC hidden-state proofs are fully reproducible within the same GPU architecture. Zero false negatives.
+- **Same model, different architecture (FP8 A100 vs FP8 H100)**: 0% exact match across all 49 configurations. Hidden states diverge across GPU architectures (Ampere vs Hopper), likely due to differences in FP8 implementation (A100 emulates FP8, H100 has native FP8 hardware). Error magnitudes are ~3× lower than the cross-quantization case (exp_mismatch ~7 vs ~22 at k=128), indicating a smaller but consistent divergence.
+- **Different quantization, same node (INT4 H100 vs FP8 H100)**: 0% exact match across all 49 configurations. Every proof detects the quantization mismatch. Exponent mismatches scale roughly linearly with k (from ~1.6 at k=8 to ~146 at k=512). Mantissa errors at k=8 occasionally overflow to ~1e14–1e16 due to catastrophic exponent divergence; at k>=16 they stabilize around 8–15.
+- **Cross-architecture divergence is distinguishable from cross-quantization**: While both fail exact match, the error magnitudes differ by ~3× (exp_mismatch) and ~3× (mant_err). A threshold-based verifier could potentially accept cross-hardware proofs while rejecting cross-quantization proofs, but this requires careful calibration and is not currently supported by the exact-match metric.
+- **Scale-up validation**: These results on a 235B-parameter MoE model (4096 hidden dim, TP=4) confirm and extend the patterns observed on the 3B-parameter Qwen2.5 dense model (2048 hidden dim, TP=1).
+- **Implication for TOPLOC deployment**: TOPLOC's current exact-match verification is only reliable when the verifier uses the same GPU architecture as the prover. Cross-architecture verification requires threshold-based acceptance criteria calibrated per hardware pair.
