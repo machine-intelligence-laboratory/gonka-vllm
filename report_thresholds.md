@@ -83,6 +83,62 @@ A100 honest runs from INT4 fraud.
 - **Low-cost: k=128, bs=8** → 33 B/token, `mean_mant > 9.91`. FP=0.18%,
   FN=6.82% (75 fraud samples escape out of 1100).
 
+## Trading FP for cheaper proofs (0.45% and 1% FPR budgets)
+
+If we can tolerate a few more honest A100 runs being flagged, the bytes/token
+required to reach near-zero FN drops sharply. Below: same 2D joint threshold
+policy, but with budget = 5 FPs (≈0.45% FPR) and 11 FPs (≈1% FPR).
+
+### 0.45% FPR (5 false positives out of 1100)
+
+| k | bs | B/tok | FP % (count)   | FN % (count)      | t_exp | t_mant |
+|--:|--:|------:|---------------:|------------------:|------:|-------:|
+| 512 | 8  | 129.6 | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0†  | 9.138  |
+| 512 | 16 | 65.7  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0†  | 9.254  |
+| 256 | 8  | 64.9  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0†  | 9.162  |
+| 512 | 32 | 33.7  | 0.45% (5/1100) | 0.82% (9/1100)    | 0.0†  | 8.848  |
+| 256 | 16 | 32.9  | 0.45% (5/1100) | 0.91% (10/1100)   | 0.0†  | 8.840  |
+| 128 | 8  | 32.6  | 0.45% (5/1100) | 1.45% (16/1100)   | 0.0†  | 9.005  |
+| 256 | 32 | 16.9  | 0.45% (5/1100) | 6.64% (73/1100)   | 0.0†  | 8.453  |
+| 64  | 8  | 16.4  | 0.45% (5/1100) | 6.45% (71/1100)   | 7.0   | 8.295  |
+| 128 | 16 | 16.5  | 0.45% (5/1100) | 8.64% (95/1100)   | 0.0†  | 8.759  |
+| 128 | 32 | 8.48  | 0.45% (5/1100) | 16.09% (177/1100) | 6.0   | 8.275  |
+| 64  | 16 | 8.32  | 0.45% (5/1100) | 16.64% (183/1100) | 7.71  | 7.649  |
+| 16  | 32 | 1.12  | 0.45% (5/1100) | 24.45% (269/1100) | 2.567 | 5.672  |
+
+### 1.00% FPR (11 false positives out of 1100)
+
+| k | bs | B/tok | FP % (count)     | FN % (count)      | t_exp | t_mant |
+|--:|--:|------:|-----------------:|------------------:|------:|-------:|
+| 512 | 8  | 129.6 | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.403  |
+| 512 | 16 | 65.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.273  |
+| 256 | 8  | 64.9  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.457  |
+| 512 | 32 | 33.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.235  |
+| 256 | 16 | 32.9  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.367  |
+| 128 | 8  | 32.6  | 1.00% (11/1100) | 0.18% (2/1100)    | 0.0†  | 8.611  |
+| 256 | 32 | 16.9  | 1.00% (11/1100) | 4.55% (50/1100)   | 25.75 | 7.885  |
+| 128 | 16 | 16.5  | 1.00% (11/1100) | 3.73% (41/1100)   | 0.0†  | 7.980  |
+| 64  | 8  | 16.4  | 1.00% (11/1100) | 3.64% (40/1100)   | 6.7   | 7.825  |
+| 128 | 32 | 8.48  | 1.00% (11/1100) | 10.64% (117/1100) | 6.0   | 7.694  |
+| 64  | 16 | 8.32  | 1.00% (11/1100) | 10.36% (114/1100) | 5.5   | 7.649  |
+| 32  | 16 | 4.22  | 1.00% (11/1100) | 11.36% (125/1100) | 3.0   | 7.158  |
+| 32  | 32 | 2.17  | 1.00% (11/1100) | 17.18% (189/1100) | 3.5   | 6.742  |
+
+### What changes as FPR is relaxed
+
+- **At 0.45% FPR**: three configurations now achieve **0% FN** — k=512/bs=8
+  (130 B/tok), k=512/bs=16 (66 B/tok), and **k=256/bs=8 (65 B/tok)**. The
+  16 B/tok regime collapses from ≥14% FN at 0.18% FPR down to ≈7% FN.
+- **At 1.00% FPR**: five configurations achieve **0% FN**, and the cheapest
+  is now **k=512/bs=32 at 33.7 B/tok or k=256/bs=16 at 32.9 B/tok** — a 2×
+  reduction over the strictest budget for the same perfect detection.
+  k=128/bs=8 reaches FN=0.18% at the same 33 B/tok cost.
+
+The qualitative pattern: each 2× relaxation of FPR roughly halves the
+bytes/token needed to reach a fixed FN. Whether the trade is worthwhile
+depends on how often honest A100 verifiers can tolerate being asked to
+re-prove a flagged generation.
+
 ## Sequence-length separability
 
 The per-sample scatter of mean_exp and mean_mant vs sequence length for five
@@ -161,6 +217,7 @@ All live in `benchmarks/toploc/` and are runnable with the project venv
 | `benchmarks/toploc/separability_by_seqlen.py` | Produces `vllm_logs/separability_by_seqlen.png` (seq_len vs mean_exp and mean_mant scatter for 5 configs × 3 classes) and `vllm_logs/a100_outliers.json` (top 10 A100 mean_exp outliers per config). |
 | `benchmarks/toploc/final_separation.py`       | Identifies persistent A100 outliers by averaging `mean_exp / k` across all 49 configs. Reports detection under 1D mean_exp at {0, 0.2, 0.5, 1}% FPR, with and without dropping the two outliers. Also runs exhaustive 2D (mean_exp AND mean_mant) threshold search. |
 | `benchmarks/toploc/exactly_2fp.py`            | **The main table above.** Computes 1D mean_exp, 1D mean_mant, and 2D joint threshold that admit exactly 2 false positives (idx 605 and 692). Prints the Pareto frontier of detection vs bytes-per-token. |
+| `benchmarks/toploc/fpr_tables.py`             | **The 0.45%/1% FPR tables.** Vectorized 2D joint-threshold search. Sweeps FP budgets {2, 5, 11} across 19 representative (k, bs) configurations. |
 
 ### Commands
 
@@ -177,6 +234,9 @@ All live in `benchmarks/toploc/` and are runnable with the project venv
 
 # Render the separability-by-seq-length figure:
 .venv/bin/python3 benchmarks/toploc/separability_by_seqlen.py
+
+# Reproduce the 0.45% / 1.00% FPR tables:
+.venv/bin/python3 benchmarks/toploc/fpr_tables.py
 ```
 
 ### Persistent outliers for pre-filtering
