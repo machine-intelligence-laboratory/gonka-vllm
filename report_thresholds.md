@@ -14,6 +14,7 @@ Setting: 1100 matched samples on `Qwen3-235B-A22B-Instruct-2507` (MoE,
 235B/22B, hidden_dim=4096, TP=4) with TOPLOC top-512 hidden-state proofs.
 
 - Positive control: A100 FP8 → H100 FP8 (honest cross-architecture verify)
+- Positive control: H100 FP8 → A100 FP8 (honest cross-architecture, reverse)
 - Negative control: H100 INT4 → H100 FP8 (cross-quantization fraud)
 
 For each (k, batch_size) we ask: can we pick a threshold that rarely flags
@@ -58,21 +59,21 @@ outliers above) → FP rate = 2/1100 = **0.18%** in every row.
 FN rate = fraction of 1100 INT4 samples whose (mean_exp, mean_mant) falls
 below the joint threshold (fraud that escapes detection).
 
+Where `t_exp = 0.0`, the 2D optimum collapses to mantissa-only: flag iff
+`mean_mant > t_mant`. At these k values mantissa alone separates the bulk
+of cross-arch honest runs from INT4 fraud.
+
 | k | bs | B/tok | FP % (count)    | FN % (count)       | t_exp  | t_mant |
 |--:|--:|------:|----------------:|-------------------:|-------:|-------:|
-| 512 | 8  | 129.6 | 0.18% (2/1100) | **0.00% (0/1100)** | 0.0†   | 9.926  |
+| 512 | 8  | 129.6 | 0.18% (2/1100) | **0.00% (0/1100)** | 0.0    | 9.926  |
 | 512 | 16 | 65.7  | 0.18% (2/1100) | 0.18% (2/1100)     | 71.0   | 9.578  |
-| 256 | 8  | 64.9  | 0.18% (2/1100) | 0.55% (6/1100)     | 0.0†   | 10.017 |
+| 256 | 8  | 64.9  | 0.18% (2/1100) | 0.55% (6/1100)     | 0.0    | 10.017 |
 | 512 | 32 | 33.7  | 0.18% (2/1100) | 4.55% (50/1100)    | 66.0   | 9.343  |
 | 256 | 16 | 32.9  | 0.18% (2/1100) | 5.00% (55/1100)    | 33.75  | 9.184  |
-| 128 | 8  | 32.6  | 0.18% (2/1100) | 6.82% (75/1100)    | 0.0†   | 9.913  |
-| 256 | 32 | 16.9  | 0.18% (2/1100) | 8.73% (96/1100)    | 0.0†   | 8.700  |
+| 128 | 8  | 32.6  | 0.18% (2/1100) | 6.82% (75/1100)    | 0.0    | 9.913  |
+| 256 | 32 | 16.9  | 0.18% (2/1100) | 8.73% (96/1100)    | 0.0    | 8.700  |
 | 64  | 8  | 16.4  | 0.18% (2/1100) | 13.82% (152/1100)  | 7.4    | 9.311  |
 | 16  | 32 | 1.12  | 0.18% (2/1100) | 28.45% (313/1100)  | 2.567  | 6.282  |
-
-† `t_exp = 0` → the 2D optimum collapses to mantissa-only: flag iff
-`mean_mant > t_mant`. At these k values mantissa alone separates the bulk of
-A100 honest runs from INT4 fraud.
 
 ### Recommended operating points
 
@@ -93,15 +94,15 @@ policy, but with budget = 5 FPs (≈0.45% FPR) and 11 FPs (≈1% FPR).
 
 | k | bs | B/tok | FP % (count)   | FN % (count)      | t_exp | t_mant |
 |--:|--:|------:|---------------:|------------------:|------:|-------:|
-| 512 | 8  | 129.6 | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0†  | 9.138  |
-| 512 | 16 | 65.7  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0†  | 9.254  |
-| 256 | 8  | 64.9  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0†  | 9.162  |
-| 512 | 32 | 33.7  | 0.45% (5/1100) | 0.82% (9/1100)    | 0.0†  | 8.848  |
-| 256 | 16 | 32.9  | 0.45% (5/1100) | 0.91% (10/1100)   | 0.0†  | 8.840  |
-| 128 | 8  | 32.6  | 0.45% (5/1100) | 1.45% (16/1100)   | 0.0†  | 9.005  |
-| 256 | 32 | 16.9  | 0.45% (5/1100) | 6.64% (73/1100)   | 0.0†  | 8.453  |
+| 512 | 8  | 129.6 | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0    | 9.138  |
+| 512 | 16 | 65.7  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0    | 9.254  |
+| 256 | 8  | 64.9  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0    | 9.162  |
+| 512 | 32 | 33.7  | 0.45% (5/1100) | 0.82% (9/1100)    | 0.0    | 8.848  |
+| 256 | 16 | 32.9  | 0.45% (5/1100) | 0.91% (10/1100)   | 0.0    | 8.840  |
+| 128 | 8  | 32.6  | 0.45% (5/1100) | 1.45% (16/1100)   | 0.0    | 9.005  |
+| 256 | 32 | 16.9  | 0.45% (5/1100) | 6.64% (73/1100)   | 0.0    | 8.453  |
 | 64  | 8  | 16.4  | 0.45% (5/1100) | 6.45% (71/1100)   | 7.0   | 8.295  |
-| 128 | 16 | 16.5  | 0.45% (5/1100) | 8.64% (95/1100)   | 0.0†  | 8.759  |
+| 128 | 16 | 16.5  | 0.45% (5/1100) | 8.64% (95/1100)   | 0.0    | 8.759  |
 | 128 | 32 | 8.48  | 0.45% (5/1100) | 16.09% (177/1100) | 6.0   | 8.275  |
 | 64  | 16 | 8.32  | 0.45% (5/1100) | 16.64% (183/1100) | 7.71  | 7.649  |
 | 16  | 32 | 1.12  | 0.45% (5/1100) | 24.45% (269/1100) | 2.567 | 5.672  |
@@ -110,14 +111,14 @@ policy, but with budget = 5 FPs (≈0.45% FPR) and 11 FPs (≈1% FPR).
 
 | k | bs | B/tok | FP % (count)     | FN % (count)      | t_exp | t_mant |
 |--:|--:|------:|-----------------:|------------------:|------:|-------:|
-| 512 | 8  | 129.6 | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.403  |
-| 512 | 16 | 65.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.273  |
-| 256 | 8  | 64.9  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.457  |
-| 512 | 32 | 33.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.235  |
-| 256 | 16 | 32.9  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0†  | 8.367  |
-| 128 | 8  | 32.6  | 1.00% (11/1100) | 0.18% (2/1100)    | 0.0†  | 8.611  |
+| 512 | 8  | 129.6 | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.403  |
+| 512 | 16 | 65.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.273  |
+| 256 | 8  | 64.9  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.457  |
+| 512 | 32 | 33.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.235  |
+| 256 | 16 | 32.9  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.367  |
+| 128 | 8  | 32.6  | 1.00% (11/1100) | 0.18% (2/1100)    | 0.0    | 8.611  |
 | 256 | 32 | 16.9  | 1.00% (11/1100) | 4.55% (50/1100)   | 25.75 | 7.885  |
-| 128 | 16 | 16.5  | 1.00% (11/1100) | 3.73% (41/1100)   | 0.0†  | 7.980  |
+| 128 | 16 | 16.5  | 1.00% (11/1100) | 3.73% (41/1100)   | 0.0    | 7.980  |
 | 64  | 8  | 16.4  | 1.00% (11/1100) | 3.64% (40/1100)   | 6.7   | 7.825  |
 | 128 | 32 | 8.48  | 1.00% (11/1100) | 10.64% (117/1100) | 6.0   | 7.694  |
 | 64  | 16 | 8.32  | 1.00% (11/1100) | 10.36% (114/1100) | 5.5   | 7.649  |
@@ -138,6 +139,106 @@ The qualitative pattern: each 2× relaxation of FPR roughly halves the
 bytes/token needed to reach a fixed FN. Whether the trade is worthwhile
 depends on how often honest A100 verifiers can tolerate being asked to
 re-prove a flagged generation.
+
+## Reverse cross-architecture: H100 → A100 FP/FN tables
+
+The reverse direction (H100 FP8 free → A100 FP8 enforced) uses the same
+1100 H100 free-generation samples as reference, verified on A100.
+Results in `vllm_logs/results_h100_vs_a100_fp8.json`.
+
+### Distribution symmetry
+
+Error distributions are nearly identical in both directions. At k=128,
+bs=128: A100→H100 mean_exp=7.00, H100→A100 mean_exp=6.95; mant_err
+3.12 vs 3.08. This holds across all 49 (k, bs) configurations.
+
+The same two prompts (idx=692 and idx=605) are catastrophic outliers in
+both directions, with normalized scores 0.911/0.754 (H100→A100) vs
+0.892/0.755 (A100→H100).
+
+### H100 → A100: 0.18% FPR (2 false positives out of 1100)
+
+| k | bs | B/tok | FP % (count)    | FN % (count)       | t_exp  | t_mant |
+|--:|--:|------:|----------------:|-------------------:|-------:|-------:|
+| 512 | 8  | 129.6 | 0.18% (2/1100) | **0.00% (0/1100)** | 0.0    | 9.537  |
+| 512 | 16 | 65.7  | 0.18% (2/1100) | **0.00% (0/1100)** | 0.0    | 9.293  |
+| 256 | 8  | 64.9  | 0.18% (2/1100) | **0.00% (0/1100)** | 0.0    | 9.440  |
+| 512 | 32 | 33.7  | 0.18% (2/1100) | 3.36% (37/1100)    | 0.0    | 9.315  |
+| 256 | 16 | 32.9  | 0.18% (2/1100) | 3.18% (35/1100)    | 32.0   | 9.015  |
+| 128 | 8  | 32.6  | 0.18% (2/1100) | 3.27% (36/1100)    | 14.43  | 9.346  |
+| 256 | 32 | 16.9  | 0.18% (2/1100) | 12.18% (134/1100)  | 26.67  | 9.043  |
+| 64  | 8  | 16.4  | 0.18% (2/1100) | 16.64% (183/1100)  | 0.0    | 9.694  |
+
+### H100 → A100: 0.45% FPR (5 false positives out of 1100)
+
+| k | bs | B/tok | FP % (count)    | FN % (count)       | t_exp  | t_mant |
+|--:|--:|------:|----------------:|-------------------:|-------:|-------:|
+| 512 | 8  | 129.6 | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0    | 9.089  |
+| 512 | 16 | 65.7  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0    | 8.708  |
+| 256 | 8  | 64.9  | 0.45% (5/1100) | **0.00% (0/1100)** | 0.0    | 8.775  |
+| 512 | 32 | 33.7  | 0.45% (5/1100) | 0.55% (6/1100)     | 58.0   | 8.658  |
+| 256 | 16 | 32.9  | 0.45% (5/1100) | 1.91% (21/1100)    | 0.0    | 9.050  |
+| 128 | 8  | 32.6  | 0.45% (5/1100) | 2.45% (27/1100)    | 14.43  | 9.212  |
+| 256 | 32 | 16.9  | 0.45% (5/1100) | 5.91% (65/1100)    | 22.33  | 8.327  |
+| 64  | 8  | 16.4  | 0.45% (5/1100) | 7.00% (77/1100)    | 6.5    | 8.581  |
+
+### H100 → A100: 1.00% FPR (11 false positives out of 1100)
+
+| k | bs | B/tok | FP % (count)     | FN % (count)       | t_exp  | t_mant |
+|--:|--:|------:|-----------------:|-------------------:|-------:|-------:|
+| 512 | 8  | 129.6 | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.454  |
+| 512 | 16 | 65.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.369  |
+| 256 | 8  | 64.9  | 1.00% (11/1100) | **0.00% (0/1100)** | 0.0    | 8.365  |
+| 512 | 32 | 33.7  | 1.00% (11/1100) | **0.00% (0/1100)** | 49.5   | 8.471  |
+| 256 | 16 | 32.9  | 1.00% (11/1100) | 0.09% (1/1100)     | 0.0    | 8.480  |
+| 128 | 8  | 32.6  | 1.00% (11/1100) | 0.27% (3/1100)     | 0.0    | 8.678  |
+| 256 | 32 | 16.9  | 1.00% (11/1100) | 2.55% (28/1100)    | 22.33  | 7.654  |
+| 64  | 8  | 16.4  | 1.00% (11/1100) | 3.64% (40/1100)    | 5.2    | 7.957  |
+
+### Direction comparison at key operating points
+
+H100→A100 shows slightly *better* separation than A100→H100 at low FPR.
+At 0.18% FPR: H100→A100 achieves 0% FN at k=512/bs=16 (66 B/tok), while
+A100→H100 achieves 0% FN only at k=512/bs=8 (130 B/tok). At 1% FPR,
+both directions achieve 0% FN at the same configs (k≥256).
+
+### Union thresholds (covering both directions simultaneously)
+
+When the verifier doesn't know which direction it's checking, we combine
+both positive-control sets (2200 samples total). FP budget = 2× per
+direction.
+
+#### Union: 0.45% FPR per direction (10 FPs out of 2200)
+
+| k | bs | B/tok | FP % (count)     | FN % (count)       | t_exp  | t_mant |
+|--:|--:|------:|-----------------:|-------------------:|-------:|-------:|
+| 512 | 8  | 129.6 | 0.45% (10/2200) | **0.00% (0/1100)** | 0.0    | 9.138  |
+| 512 | 16 | 65.7  | 0.45% (10/2200) | **0.00% (0/1100)** | 0.0    | 8.984  |
+| 256 | 8  | 64.9  | 0.45% (10/2200) | **0.00% (0/1100)** | 0.0    | 9.024  |
+| 512 | 32 | 33.7  | 0.45% (10/2200) | 1.09% (12/1100)    | 58.0   | 8.848  |
+| 256 | 16 | 32.9  | 0.45% (10/2200) | 1.91% (21/1100)    | 0.0    | 9.050  |
+| 128 | 8  | 32.6  | 0.45% (10/2200) | 2.45% (27/1100)    | 14.43  | 9.212  |
+
+#### Union: 1.00% FPR per direction (22 FPs out of 2200)
+
+| k | bs | B/tok | FP % (count)     | FN % (count)       | t_exp  | t_mant |
+|--:|--:|------:|-----------------:|-------------------:|-------:|-------:|
+| 512 | 8  | 129.6 | 1.00% (22/2200) | **0.00% (0/1100)** | 0.0    | 8.454  |
+| 512 | 16 | 65.7  | 1.00% (22/2200) | **0.00% (0/1100)** | 0.0    | 8.303  |
+| 256 | 8  | 64.9  | 1.00% (22/2200) | **0.00% (0/1100)** | 0.0    | 8.444  |
+| 512 | 32 | 33.7  | 1.00% (22/2200) | **0.00% (0/1100)** | 0.0    | 8.343  |
+| 256 | 16 | 32.9  | 1.00% (22/2200) | **0.00% (0/1100)** | 0.0    | 8.409  |
+| 128 | 8  | 32.6  | 1.00% (22/2200) | 0.27% (3/1100)     | 0.0    | 8.638  |
+
+### Threshold cross-applicability
+
+A threshold calibrated on one direction works for the other. At the
+0.45% FPR budget (5 FPs), applying the A100→H100 mant_err threshold to
+H100→A100 positives yields 3-8 FPs (target was 5), and vice versa.
+
+**Takeaway**: a single mant_err threshold in the 8.3–9.1 range works for
+both A100→H100 and H100→A100 verification. There is no need to calibrate
+per-direction thresholds.
 
 ## Sequence-length separability
 
@@ -195,6 +296,7 @@ All paths relative to the repo root (`/Users/nikolai/projects/ml/vllm`).
 | Per-proof results, FP8 vs FP8 (same-arch positive)      | `vllm_logs/results_fp8_vs_fp8_large.json` |
 | Per-proof results, INT4 vs FP8 (fraud negative)         | `vllm_logs/results_int4_vs_fp8_large.json` |
 | Per-proof results, A100 vs H100 (cross-arch positive)   | `a100_logs/results_a100_vs_h100_fp8.json` |
+| Per-proof results, H100 vs A100 (reverse cross-arch)    | `vllm_logs/results_h100_vs_a100_fp8.json` |
 
 Each results JSON is a list of 49 entries (one per `(k, decode_batch_size)`
 pair with `k, bs ∈ {8, 16, 32, 64, 128, 256, 512}`). Each entry has a
@@ -218,6 +320,7 @@ All live in `benchmarks/toploc/` and are runnable with the project venv
 | `benchmarks/toploc/final_separation.py`       | Identifies persistent A100 outliers by averaging `mean_exp / k` across all 49 configs. Reports detection under 1D mean_exp at {0, 0.2, 0.5, 1}% FPR, with and without dropping the two outliers. Also runs exhaustive 2D (mean_exp AND mean_mant) threshold search. |
 | `benchmarks/toploc/exactly_2fp.py`            | **The main table above.** Computes 1D mean_exp, 1D mean_mant, and 2D joint threshold that admit exactly 2 false positives (idx 605 and 692). Prints the Pareto frontier of detection vs bytes-per-token. |
 | `benchmarks/toploc/fpr_tables.py`             | **The 0.45%/1% FPR tables.** Vectorized 2D joint-threshold search. Sweeps FP budgets {2, 5, 11} across 19 representative (k, bs) configurations. |
+| `benchmarks/toploc/add_reverse_direction.py`  | **Reverse cross-arch analysis.** Compares A100→H100 vs H100→A100 distributions, finds H100→A100 outliers, computes union thresholds, and tests cross-applicability of thresholds between directions. |
 
 ### Commands
 
@@ -237,6 +340,9 @@ All live in `benchmarks/toploc/` and are runnable with the project venv
 
 # Reproduce the 0.45% / 1.00% FPR tables:
 .venv/bin/python3 benchmarks/toploc/fpr_tables.py
+
+# Reverse direction (H100→A100) and threshold symmetry analysis:
+.venv/bin/python3 benchmarks/toploc/add_reverse_direction.py
 ```
 
 ### Persistent outliers for pre-filtering

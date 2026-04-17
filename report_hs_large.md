@@ -37,7 +37,8 @@ The FP8 free collection was initially started from a wrong branch (collecting to
 |:-:|-----------|-------------|-----------|---------|
 | 1 | FP8 on 4×H100 (free) | FP8 on 4×H100 (enforced) | same node | Positive control: same model, same hardware |
 | 2 | INT4 on 4×H100 (free) | FP8 on 4×H100 (enforced from INT4 tokens) | same node | Negative control: different quantization |
-| 3 | FP8 on 4×A100 (free) | FP8 on 4×H100 (enforced from A100 tokens) | cross-hardware | Cross-architecture: Ampere vs Hopper |
+| 3 | FP8 on 4×A100 (free) | FP8 on 4×H100 (enforced from A100 tokens) | cross-hardware | Cross-architecture: Ampere → Hopper |
+| 4 | FP8 on 4×H100 (free) | FP8 on 4×A100 (enforced from H100 tokens) | cross-hardware | Cross-architecture: Hopper → Ampere (reverse) |
 
 ### Proof encoding
 
@@ -225,6 +226,63 @@ Verify against: `Qwen3-235B-A22B-Instruct-2507-FP8` on 4×H100 (enforced tokens 
 | 512 | 256 | 2.9 | 1026 | 3078 | 5.22 | 0.0% | 30.7934 | 3.3500 |
 | 512 | 512 | 1.8 | 1026 | 2052 | 3.48 | 0.0% | 28.1308 | 3.3758 |
 
+## FP8 (4×H100) vs FP8 (4×A100) — same model, reverse cross-architecture
+
+Reference: `Qwen3-235B-A22B-Instruct-2507-FP8` on 4×H100 (free generation)
+Verify against: `Qwen3-235B-A22B-Instruct-2507-FP8` on 4×A100 (enforced tokens from H100)
+
+| k | batch_size | avg_proofs | proof_bytes | proof_total_bytes | bytes/token | exact% | exp_mismatch | mant_err |
+|--:|-----------:|-----------:|------------:|------------------:|------------:|-------:|-------------:|---------:|
+| 8 | 8 | 73.3 | 18 | 1332 | 2.28 | 0.0% | 0.5558 | 2.012e+16 |
+| 8 | 16 | 36.9 | 18 | 666 | 1.14 | 0.0% | 0.5497 | 1.635e+16 |
+| 8 | 32 | 18.7 | 18 | 342 | 0.59 | 0.0% | 0.6020 | 2.061e+16 |
+| 8 | 64 | 9.6 | 18 | 180 | 0.31 | 0.1% | 0.5867 | 2.615e+16 |
+| 8 | 128 | 5.1 | 18 | 108 | 0.19 | 0.0% | 0.6159 | 3.951e+16 |
+| 8 | 256 | 2.9 | 18 | 54 | 0.09 | 0.0% | 0.6692 | 4.698e+16 |
+| 8 | 512 | 1.8 | 18 | 36 | 0.06 | 0.0% | 0.7246 | 4.784e+16 |
+| 16 | 8 | 73.3 | 34 | 2516 | 4.31 | 0.0% | 1.0781 | 6.86e+15 |
+| 16 | 16 | 36.9 | 34 | 1258 | 2.16 | 0.0% | 1.0407 | 4.995e+15 |
+| 16 | 32 | 18.7 | 34 | 646 | 1.11 | 0.0% | 1.0523 | 3.584e+15 |
+| 16 | 64 | 9.6 | 34 | 340 | 0.58 | 0.0% | 1.1386 | 5.23e+15 |
+| 16 | 128 | 5.1 | 34 | 204 | 0.35 | 0.0% | 1.0621 | 1.317e+16 |
+| 16 | 256 | 2.9 | 34 | 102 | 0.17 | 0.0% | 1.1223 | 1.762e+16 |
+| 16 | 512 | 1.8 | 34 | 68 | 0.12 | 0.0% | 1.2132 | 2.87e+16 |
+| 32 | 8 | 73.3 | 66 | 4884 | 8.38 | 0.0% | 1.9527 | 6.86e+14 |
+| 32 | 16 | 36.9 | 66 | 2442 | 4.19 | 0.0% | 2.0720 | 2.27e+15 |
+| 32 | 32 | 18.7 | 66 | 1254 | 2.15 | 0.0% | 1.9494 | 1.792e+15 |
+| 32 | 64 | 9.6 | 66 | 660 | 1.13 | 0.0% | 2.0146 | 2.877 |
+| 32 | 128 | 5.1 | 66 | 396 | 0.68 | 0.0% | 2.1929 | 2.588 |
+| 32 | 256 | 2.9 | 66 | 198 | 0.34 | 0.0% | 2.0322 | 2.441 |
+| 32 | 512 | 1.8 | 66 | 132 | 0.23 | 0.0% | 2.1592 | 2.536 |
+| 64 | 8 | 73.3 | 130 | 9620 | 16.50 | 0.0% | 3.9119 | 3.852 |
+| 64 | 16 | 36.9 | 130 | 4810 | 8.25 | 0.0% | 3.7979 | 3.599 |
+| 64 | 32 | 18.7 | 130 | 2470 | 4.24 | 0.0% | 4.0192 | 3.217 |
+| 64 | 64 | 9.6 | 130 | 1300 | 2.23 | 0.0% | 3.6321 | 3.053 |
+| 64 | 128 | 5.1 | 130 | 780 | 1.34 | 0.0% | 3.8667 | 2.899 |
+| 64 | 256 | 2.9 | 130 | 390 | 0.67 | 0.0% | 4.1334 | 2.644 |
+| 64 | 512 | 1.8 | 130 | 260 | 0.45 | 0.0% | 3.8454 | 2.624 |
+| 128 | 8 | 73.3 | 258 | 19092 | 32.74 | 0.0% | 8.6750 | 4.352 |
+| 128 | 16 | 36.9 | 258 | 9546 | 16.37 | 0.0% | 7.4552 | 3.805 |
+| 128 | 32 | 18.7 | 258 | 4902 | 8.41 | 0.0% | 7.4650 | 3.574 |
+| 128 | 64 | 9.6 | 258 | 2580 | 4.42 | 0.0% | 7.8037 | 3.204 |
+| 128 | 128 | 5.1 | 258 | 1548 | 2.65 | 0.0% | 6.9511 | 3.079 |
+| 128 | 256 | 2.9 | 258 | 774 | 1.33 | 0.0% | 7.5438 | 2.97 |
+| 128 | 512 | 1.8 | 258 | 516 | 0.88 | 0.0% | 8.0078 | 2.824 |
+| 256 | 8 | 73.3 | 514 | 38036 | 65.23 | 0.0% | 20.2223 | 4.664 |
+| 256 | 16 | 36.9 | 514 | 19018 | 32.61 | 0.0% | 17.3563 | 4.323 |
+| 256 | 32 | 18.7 | 514 | 9766 | 16.75 | 0.0% | 14.3709 | 3.784 |
+| 256 | 64 | 9.6 | 514 | 5140 | 8.81 | 0.0% | 14.7718 | 3.575 |
+| 256 | 128 | 5.1 | 514 | 3084 | 5.29 | 0.0% | 15.3928 | 3.229 |
+| 256 | 256 | 2.9 | 514 | 1542 | 2.64 | 0.0% | 13.8526 | 3.157 |
+| 256 | 512 | 1.8 | 514 | 1028 | 1.76 | 0.0% | 15.1037 | 3.128 |
+| 512 | 8 | 73.3 | 1026 | 75924 | 130.20 | 0.0% | 47.5069 | 4.806 |
+| 512 | 16 | 36.9 | 1026 | 37962 | 65.10 | 0.0% | 40.2614 | 4.647 |
+| 512 | 32 | 18.7 | 1026 | 19494 | 33.43 | 0.0% | 34.6947 | 4.307 |
+| 512 | 64 | 9.6 | 1026 | 10260 | 17.59 | 0.0% | 28.0007 | 3.785 |
+| 512 | 128 | 5.1 | 1026 | 6156 | 10.56 | 0.0% | 29.5292 | 3.606 |
+| 512 | 256 | 2.9 | 1026 | 3078 | 5.28 | 0.0% | 30.5234 | 3.325 |
+| 512 | 512 | 1.8 | 1026 | 2052 | 3.52 | 0.0% | 28.1302 | 3.342 |
+
 ## Summary
 
 ### Error comparison at k=128, batch_size=128
@@ -232,13 +290,15 @@ Verify against: `Qwen3-235B-A22B-Instruct-2507-FP8` on 4×H100 (enforced tokens 
 | Experiment | exact% | exp_mismatch | mant_err |
 |------------|-------:|-------------:|---------:|
 | FP8 H100 vs FP8 H100 (same node) | 100.0% | 0.00 | 0.00 |
-| FP8 A100 vs FP8 H100 (cross-architecture) | 0.0% | 7.00 | 3.12 |
+| FP8 A100 → FP8 H100 (cross-arch) | 0.0% | 7.00 | 3.12 |
+| FP8 H100 → FP8 A100 (cross-arch reverse) | 0.0% | 6.95 | 3.08 |
 | INT4 H100 vs FP8 H100 (cross-quantization) | 0.0% | 21.71 | 10.07 |
 
 ### Findings
 
 - **Same model, same node (FP8 H100 vs FP8 H100)**: 100% exact match across all 49 configurations (k=8..512, batch_size=8..512). TOPLOC hidden-state proofs are fully reproducible within the same GPU architecture. Zero false negatives.
 - **Same model, different architecture (FP8 A100 vs FP8 H100)**: 0% exact match across all 49 configurations. Hidden states diverge across GPU architectures (Ampere vs Hopper), likely due to differences in FP8 implementation (A100 emulates FP8, H100 has native FP8 hardware). Error magnitudes are ~3× lower than the cross-quantization case (exp_mismatch ~7 vs ~22 at k=128), indicating a smaller but consistent divergence.
+- **Reverse cross-architecture (FP8 H100 → FP8 A100)**: Error distributions are nearly identical to the forward direction (A100→H100). At k=128/bs=128: exp_mismatch=6.95 (vs 7.00), mant_err=3.08 (vs 3.12). The same two persistent outlier prompts (idx=692, idx=605) dominate both directions. Cross-architecture divergence is symmetric.
 - **Different quantization, same node (INT4 H100 vs FP8 H100)**: 0% exact match across all 49 configurations. Every proof detects the quantization mismatch. Exponent mismatches scale roughly linearly with k (from ~1.6 at k=8 to ~146 at k=512). Mantissa errors at k=8 occasionally overflow to ~1e14–1e16 due to catastrophic exponent divergence; at k>=16 they stabilize around 8–15.
 - **Cross-architecture divergence is distinguishable from cross-quantization**: While both fail exact match, the error magnitudes differ by ~3× (exp_mismatch) and ~3× (mant_err). A threshold-based verifier could potentially accept cross-hardware proofs while rejecting cross-quantization proofs, but this requires careful calibration and is not currently supported by the exact-match metric.
 - **Scale-up validation**: These results on a 235B-parameter MoE model (4096 hidden dim, TP=4) confirm and extend the patterns observed on the 3B-parameter Qwen2.5 dense model (2048 hidden dim, TP=1).
