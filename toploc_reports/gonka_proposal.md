@@ -1,4 +1,5 @@
-# TOPLOC as a tunable hidden-state validation mechanism
+A clarification of the ticket description above, based on the offline
+benchmarks we ran on Qwen3-235B-A22B-Instruct-2507.
 
 ## Summary
 
@@ -44,12 +45,12 @@ FPR ≤ 0.5% on honest cross-arch pairs is:
 | 10x smaller        |  64 |  32 |         4.2 | ~15%                      |
 
 Even at ~10× smaller artifacts, the false-negative rate stays low enough
-to detect fraud with high confidence. 
+to detect fraud with high confidence.
 
-And because the size is a knob rather than a fixed cost, it can later be made adaptive 
-— varied per model type, prompt length, request importance / risk class, or any
-other policy the network wants — giving the protocol a flexibility
-the current fixed-shape logprobs check does not have.
+And because the size is a knob rather than a fixed cost, it can later be
+made adaptive — varied per model type, prompt length, request importance /
+risk class, or any other policy the network wants — giving the protocol a
+flexibility the current fixed-shape logprobs check does not have.
 
 ## Impact
 
@@ -127,4 +128,3 @@ the current fixed-shape logprobs check does not have.
 ## Intermediate results
 
 Full report with figures: `toploc_reports/gonka_research_summary.md`.
-
