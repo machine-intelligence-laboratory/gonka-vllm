@@ -52,6 +52,12 @@ made adaptive — varied per model type, prompt length, request importance /
 risk class, or any other policy the network wants — giving the protocol a
 flexibility the current fixed-shape logprobs check does not have.
 
+On this dataset we can't directly compare TOPLOC's FPR against the
+logprobs check. The few prompts that fail produce very different outputs
+on A100 vs H100, so the model itself is behaving differently across
+architectures and it's not a TOPLOC issue. We'd need more experiments to
+pin this down. Details in the research summary.
+
 ## Impact
 
 - `gonka-ai/vllm`:
@@ -79,52 +85,7 @@ flexibility the current fixed-shape logprobs check does not have.
 - A documented size / detection-quality curve so the protocol can pick a
   point and revisit it as new hardware joins the network.
 
-
-## Proposed approach
-
-1. **Hidden-state collection in vLLM.** Add a `toploc_k` request parameter;
-   the GPU runner already supports computing top-k via `torch.topk` (sub-ms
-   at k=512 on a 4096-dim hidden state, see `mil/topk-collect`). Thread
-   the result through `ModelRunnerOutput → CompletionOutput`.
-2. **Server-side artifact store.** API server caches per-request top-k
-   arrays (~768 B/token at k=512) keyed by `request_id`, with TTL eviction.
-   `/v1/validate` looks up artifacts by `request_id` and runs the proof /
-   verify path internally — no hidden states cross the wire. (Two options
-   already designed in `toploc_propagation_plan.md`: in-process shared
-   state for single-GPU, or pipeline-level propagation for multi-GPU.)
-3. **Threshold calibration.** Sweep `(k, decode_batch_size)` ∈ a 7×7 grid
-   on each new hardware pair; pick operating points per the FPR budget
-   and store them as protocol parameters. The 2D rule
-   (`mean_exp > t_e` AND `mean_mant > t_m`) helps at small k; mantissa
-   alone covers k ≥ 256.
-4. **Sequence-length-aware threshold.** `t(L) = a · log₁₀(seq_len) + b + lift`
-   fitted on cross-arch positives shaves 2–6 percentage points of FNR at
-   the cheaper configs (~16 B/token) for free vs a flat threshold.
-5. **Tunability at the protocol layer.** Expose the operating point as a
-   per-request or per-class setting so the validator can use a cheap
-   first-pass proof on every request and a stricter re-verification on
-   suspicion or on a sampled fraction.
-
-## Caveats / what still needs tuning on the live network
-
-- **Real-prompt distribution.** Our calibration set is 1100 multilingual
-  Bactrian-X prompts with avg ~580 / max ~10K output tokens. Production
-  prompts (longer, code-heavy, tool-calling) may shift the per-sample mean
-  distribution and require re-fitting the threshold. The proof-and-verify
-  code does not change — only the `t_mant` / `t_exp` values do.
-- **Other hardware.** Calibration covers A100 (Ampere) and H100 (Hopper)
-  on the production model. B200 (Blackwell) and TP × PP combinations need
-  a calibration pass once those nodes are reachable. We expect the same
-  qualitative pattern (a clean ~3× gap between honest cross-arch and
-  cross-quantization fraud), but the absolute thresholds will move.
-- **Other quantizations.** The fraud baseline is INT4-W4A16. AWQ INT8,
-  NVFP4, and other low-precision variants need their own calibration runs
-  to confirm the gap doesn't shrink below the safe operating range.
-- **MoE non-determinism.** On Qwen3-235B-A22B (MoE) the same-node positive
-  control is already 100% exact at every (k, bs) we tested, so expert
-  routing is reproducible in our setup. Other MoE topologies / different
-  parallelism strategies should be re-tested before being trusted.
-
-## Intermediate results
+  
+## Experimental results
 
 Full report with figures: `toploc_reports/gonka_research_summary.md`.
