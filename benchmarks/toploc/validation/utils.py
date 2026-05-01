@@ -69,6 +69,7 @@ def inference(
         "top_logprobs": request_params.top_logprobs,
         "skip_special_tokens": False,
         "repetition_penalty": 1.2,
+        "return_tokens_as_token_ids": True,
     }
     for key, value in request_params.additional_params.items():
         payload[key] = value
@@ -101,6 +102,7 @@ def validation(
         "n": 1,
         "skip_special_tokens": False,
         "repetition_penalty": 1.2,
+        "return_tokens_as_token_ids": True,
     }
     for key, value in request_params.additional_params.items():
         payload[key] = value

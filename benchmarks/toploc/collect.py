@@ -62,12 +62,21 @@ def load_items_jsonl(path, n=None):
 
 
 def _extract_tokens(resp):
-    """Return list of {token, top_tokens} dicts from an API response."""
+    """Return list of {token, logprob, top_tokens, top_logprobs} dicts.
+
+    `token` / `top_tokens` are token-id strings (server is asked to return
+    `return_tokens_as_token_ids=True`). `logprob` is the chosen token's
+    logprob (None if the server omitted it) and `top_logprobs` is the
+    parallel list of logprobs for `top_tokens`. Logprobs are needed to
+    cross-check the gonka logprobs validator against TOPLOC.
+    """
     content = resp["choices"][0]["logprobs"]["content"]
     return [
         {
             "token": pos["token"],
+            "logprob": pos.get("logprob"),
             "top_tokens": [tp["token"] for tp in pos.get("top_logprobs", [])],
+            "top_logprobs": [tp["logprob"] for tp in pos.get("top_logprobs", [])],
         }
         for pos in content
     ]
