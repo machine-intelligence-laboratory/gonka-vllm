@@ -8,7 +8,8 @@ env CUDA_VISIBLE_DEVICES=0,1,2,3 \
     VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen235b_fp8_4xa100 \
   vllm serve /data/models/Qwen3-235B-A22B-Instruct-2507-FP8 \
     --tensor-parallel-size 4 \
-    --port 8801
+    --port 8801 \
+    --logprobs-mode raw_logprobs
 ```
 
 ```bash
@@ -30,7 +31,8 @@ env CUDA_VISIBLE_DEVICES=0,1,2,3 \
     VLLM_TOPLOC_OUTPUT_DIR=~/vllm_logs/qwen235b_fp8_4xh100_enf_from_fp8 \
   vllm serve /data/models/Qwen3-235B-A22B-Instruct-2507-FP8 \
     --tensor-parallel-size 4 \
-    --port 8801
+    --port 8801 \
+    --logprobs-mode raw_logprobs
 ```
 
 ```bash

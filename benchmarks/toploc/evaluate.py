@@ -204,7 +204,12 @@ def match_files_by_prompt(
     npz_dir_b: str,
     jsonl_b: str,
 ) -> list[tuple[str, str]]:
-    """Match NPZ files between two directories via prompt text in JSONL."""
+    """Match NPZ files between two directories via prompt text in JSONL.
+
+    The OpenAI response_id (in JSONL) is a prefix of the on-disk NPZ filename
+    on newer vLLM bases — the engine appends a per-sub-request UUID. We index
+    the NPZ dirs by leading prefix once and look up rids against that index.
+    """
 
     def _load_mapping(path):
         m = {}
@@ -214,8 +219,24 @@ def match_files_by_prompt(
                 m[item["response_id"]] = item["prompt"]
         return m
 
+    def _index_npz_dir(npz_dir: str) -> dict[str, str]:
+        idx: dict[str, str] = {}
+        for fname in os.listdir(npz_dir):
+            if not fname.endswith(".npz"):
+                continue
+            stem = fname[:-4]
+            # Exact match wins; if rid is a prefix of stem (rid + "-" + suffix),
+            # we record the prefix too. Last-write-wins is fine for our flows.
+            idx[stem] = fname
+            if "-" in stem:
+                head = stem.rsplit("-", 1)[0]
+                idx.setdefault(head, fname)
+        return idx
+
     map_a = _load_mapping(jsonl_a)
     map_b = _load_mapping(jsonl_b)
+    idx_a = _index_npz_dir(npz_dir_a)
+    idx_b = _index_npz_dir(npz_dir_b)
 
     prompt_to_b = {v: k for k, v in map_b.items()}
 
@@ -224,8 +245,12 @@ def match_files_by_prompt(
         rid_b = prompt_to_b.get(prompt)
         if rid_b is None:
             continue
-        pa = os.path.join(npz_dir_a, f"{rid_a}.npz")
-        pb = os.path.join(npz_dir_b, f"{rid_b}.npz")
+        fa = idx_a.get(rid_a)
+        fb = idx_b.get(rid_b)
+        if fa is None or fb is None:
+            continue
+        pa = os.path.join(npz_dir_a, fa)
+        pb = os.path.join(npz_dir_b, fb)
         if os.path.exists(pa) and os.path.exists(pb):
             pairs.append((pa, pb))
 
