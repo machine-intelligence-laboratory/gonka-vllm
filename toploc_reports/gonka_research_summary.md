@@ -221,3 +221,110 @@ not logprob values.
 Secondary recurring FPs (idx 23, 1009, 534, 823, 97, …) each show up
 in 5–30 configs out of 49 and are well covered by the 0.45% / 1.00%
 FPR budgets.
+
+
+## Recollection on newer vLLM (May 2026)
+
+The full A100 → H100 cross-arch FP8 honest pair (1100 prompts) was
+re-collected on a newer vLLM base (`mil/topk-collect-new`, branched from
+`tg/scratchpad_for_mode`) with `--logprobs-mode raw_logprobs` so the
+verifier returns un-truncated top-20 logprobs. INT4 fraud and the reverse
+H100 → A100 direction were not re-collected; comparisons against fraud
+below use the original `mil/topk-collect` int4 results. PyTorch kernel versions 
+and the vLLM sampler path differ from the
+original run, so small numerical shifts are expected.
+
+### Heatmap: TOPLOC FNR on the recollected honest cross-arch pair
+
+![FNR heatmap recollect — new A100→H100 honest + old INT4 fraud](./fnr_heatmap_lr_recollect.png)
+
+(Source: `benchmarks/toploc/fnr_heatmap_lr_recollect.py`)
+
+The structure of the heatmap is unchanged. Honest cross-arch
+mean `mant_err` is uniformly ~0.15–0.18 higher on the recollection (e.g.
+k=128/bs=128: 3.12 → 3.29). At cheap configs around 4 B/token this
+costs 1–6 pp of FNR (k=128/bs=64: 15.1% → 18.7% at FPR=0.5%); at
+≥17 B/token cells the separation is essentially identical to the
+original. The "two persistent outliers 605/692" finding does **not**
+reproduce — those prompts now sit at average ranks 425/1100 and
+326/1100 across (k, bs) configs. Outlier identity is sample-dependent
+(temperature=0.99 sampling), but the seqlen-bin distribution of
+outliers persists.
+
+### Heatmap with FPR=0 — new-only honest
+
+![FNR heatmap recollect, new-only honest, FPR ∈ {0, 0.20, 0.50, 1.00}%](./fnr_heatmap_new_only_recollect.png)
+
+(Source: `benchmarks/toploc/fnr_heatmap_new_only_recollect.py`)
+
+This variant uses only the recollected NEW A100→H100 honest pair (no old
+H100→A100 reverse data is mixed in) and adds an **FPR = 0% panel** to the
+usual triplet. Without the two persistent outliers (605/692) dragging
+the threshold up, FPR = 0 is now a usable regime: at the most strict
+k=512 / bs=8 cell (~129 B/tok) FNR remains ~0%, and at ~16 B/tok
+configs (k=512 bs=64 or k=256 bs=32) FNR sits around 4–7%. The cost of
+forbidding any honest false positive is roughly +13–15 pp of FNR
+relative to the same cells at FPR = 0.5% — i.e. the strict regime
+needs ~2× the proof size for comparable detection. Below ~4 B/tok the
+honest variance still pulls the threshold high enough that ≥30% of
+fraud slips below it at FPR = 0.
+
+### Gonka logprobs validator on the recollected pair
+
+![gonka logprobs scatter — A100→H100 honest, similarity vs sequence length](./scatter_logprobs_recollect.png)
+
+(Source: `benchmarks/toploc/scatter_logprobs_recollect.py`)
+
+Each green dot is one prompt; red rings highlight the 225 honest samples
+falling below the 0.99 default threshold. The summary numbers across
+the 1100-prompt corpus:
+
+```
+mean similarity  = 0.9922      pass at 0.99: 875 / 1100 = 79.5 %
+p50 = 0.9917     p95 = 0.9984  max = 0.9996
+```
+
+Two structural observations:
+
+1. **Long sequences (>2000 tokens) sit just below the 0.99 line.**
+   The per-position relative-distance metric averages over many
+   positions; the `max(100, n_pos)·K` denominator stops growing past
+   100 positions, so the long tail compresses tightly into a band
+   around 0.992. Most long-output samples fail the 0.99 threshold by a
+   small margin, almost deterministically.
+2. **The 100–1000 token range carries most of the variance.** Per-bin
+   medians are similar across 50–2000 tokens (~0.991) but the spread
+   in 100–1000 is largest, with similarity ranging from ~0.985 to
+   ~0.999 within the same bin. Below 50 tokens there are too few
+   positions for the distance to accumulate (similarity ≈ 1.0 for
+   nearly all); above 2000 the distance is averaged into a tight band.
+
+Together with the TOPLOC FNR-by-seqlen pattern from earlier in this
+document, this means the **50–2000 token band is the joint hard zone**
+for both validators, by different mechanisms — gonka because per-position
+distance accumulates without yet being diluted, TOPLOC because honest
+cross-arch mant_err sits closer to the int4 fraud cluster's lower tail
+in that range.
+
+The two validators are **statistically uncorrelated** at the per-sample
+level: across (k, bs) configs Pearson r between gonka similarity and
+TOPLOC mant_err sits in [-0.01, +0.18], Spearman ρ in [-0.11, +0.08].
+Gonka measures post-LM-head logprob-distribution drift at agreed
+indices; TOPLOC measures pre-LM-head bf16 hidden-state-coordinate
+drift at top-K dimensions. Sharing only the forward pass, they're as
+independent as two probes can be — a fraudulent run would need to
+game both signals simultaneously.
+
+### Practical implication for the gonka threshold
+
+At the gonka default threshold of 0.99, this honest cross-arch pair
+yields a **20.5 % false positive rate**. The validator was calibrated
+on same-precision same-arch test fixtures (where similarity sits at
+~1.000); it has not been calibrated against cross-architecture honest
+runs. To admit 100 % of honest cross-arch FP8 pairs the threshold
+needs to drop to ~0.98. Either the threshold should be lowered for
+cross-arch validation, or the per-position normalization in
+`compare_logprobs` (the `max(100, len)·K` denominator and the
+`next_logprob = min1 - (min2 - min1)` extrapolation) needs a
+calibration pass against multilingual short-output prompts where most
+of the failures cluster.
